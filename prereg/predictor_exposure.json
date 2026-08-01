@@ -1,0 +1,462 @@
+{
+  "_README": [
+    "PRE-REGISTERED classification of each dbNSFP predictor by its exposure to",
+    "clinical variant labels. Written 2026-07-31, BEFORE any dbNSFP scores were",
+    "extracted or any gradient computed. Nothing in this file may be revised",
+    "after looking at a result; if a classification turns out to be wrong, the",
+    "correction is recorded as a dated amendment below with its reason, and both",
+    "versions are reported.",
+    "",
+    "WHY THIS EXISTS. The manuscript claims the change under gene control orders",
+    "by exposure to ClinVar. With five predictors that ordering was perfectly",
+    "confounded with global AUROC. Expanding to ~37 predictors is only worth",
+    "doing if the exposure axis is fixed in advance -- otherwise the assignment",
+    "can drift, consciously or not, toward whichever labelling makes the gradient",
+    "look best. That would be unfalsifiable and a reviewer would be right to say",
+    "so.",
+    "",
+    "EXPOSURE LEVELS",
+    "  0  no clinical labels of any kind. Conservation, population genetics, or",
+    "     unsupervised sequence models. Never fitted to pathogenic/benign calls.",
+    "  1  clinical labels used for calibration or thresholding only, not as",
+    "     fitting targets; or trained on a proxy that is not a clinical archive.",
+    "  2  supervised directly on clinical labels (ClinVar, HGMD, UniProt humsavar,",
+    "     or similar curated disease databases).",
+    "  x  EXCLUDED from the gradient. Two grounds, recorded per entry:",
+    "     'ensemble' - takes other predictors in this list as input features, so",
+    "        it is not statistically independent of them;",
+    "     'unclear' - published training description does not settle the level.",
+    "",
+    "CONFIDENCE is our own, on the level assignment: high / medium / low. Any",
+    "entry below 'high' is reported separately in a sensitivity analysis.",
+    "",
+    "ANALYSIS PLAN, fixed in advance:",
+    "  0. Family rule: several columns can come from one model (four VARITY, three",
+    "     Meta*, two each of Polyphen2/SIFT/MisFit/BayesDel). The primary analysis",
+    "     uses one pre-specified representative per family so no single model is",
+    "     counted more than once; the sensitivity analysis uses every column.",
+    "  1. Primary: Spearman correlation between exposure level and change under",
+    "     gene control, over entries with level in {0,1,2} and confidence 'high'.",
+    "  2. Headroom control: the same correlation on residuals against the",
+    "     noise-degradation curve, exactly as in scripts/rebuild/23.",
+    "  3. Sensitivity: repeat including 'medium' and 'low' confidence entries.",
+    "  4. Excluded entries are never silently dropped; counts are reported.",
+    "  5. A predictor is only used where it covers >=50% of the 197,904 variants.",
+    "",
+    "Any score column found in the extract but absent from this file stops the",
+    "analysis. Unclassified predictors must be classified deliberately, not",
+    "defaulted."
+  ],
+  "_amendments": [
+    {
+      "date": "2026-07-31",
+      "made_before_any_result": true,
+      "what": "Added the four predictors present in the dbNSFP 5.3.1a extract but absent from the original list, and introduced model families.",
+      "why_families": "The extract carries four VARITY columns, three Meta*, and two each of Polyphen2, SIFT, MisFit and BayesDel. These are outputs of one model per family, not independent predictors. Correlating exposure against change over all of them would inflate the effective sample size and weight VARITY four times. The primary analysis therefore uses one pre-specified representative per family; the sensitivity analysis uses all columns.",
+      "why_now": "Written after seeing which columns exist and their coverage, but before computing any AUROC, change, or correlation. The four new classifications come from published training descriptions, not from the data.",
+      "representatives": {
+        "VARITY": "VARITY_R_LOO_score (leave-one-out, the column used throughout the manuscript)",
+        "Polyphen2": "Polyphen2_HVAR_score (the variant its authors recommend for Mendelian disease)",
+        "SIFT": "SIFT_score (the original; SIFT4G is a reimplementation of the same method)",
+        "MisFit": "MisFit_S_score (the selection coefficient, the model's headline output)",
+        "BayesDel": "BayesDel_noAF_score (excluded as an ensemble regardless)",
+        "Meta": "MetaSVM_score (excluded as an ensemble regardless)"
+      }
+    },
+    {
+      "date": "2026-07-31",
+      "made_before_any_gradient_was_believed": true,
+      "what": "Recorded score polarity. Several dbNSFP columns encode damage as a LOW value.",
+      "why": "The first run gave SIFT4G global AUROC 0.098 and ESM1b 0.076 - not weak predictors but inverted encodings. Left uncorrected, both would enter the gradient as strongly negative changes and corrupt it. This is the same class of error as the 0.130 artefact recorded in STUDY_DESIGN.",
+      "how": "Polarity is taken from dbNSFP's documented convention for each tool, NOT by choosing whichever direction scores above 0.5 - that would be fitting the encoding to the labels. After flipping, the script asserts that no retained predictor still has global AUROC below 0.5; if one does, it stops rather than flipping it silently.",
+      "negated": [
+        "SIFT_score",
+        "SIFT4G_score",
+        "PROVEAN_score",
+        "FATHMM_score",
+        "ESM1b_score",
+        "popEVE_score",
+        "LRT_score"
+      ]
+    }
+  ],
+  "predictors": {
+    "SIFT_score": {
+      "level": 0,
+      "confidence": "high",
+      "basis": "Sequence conservation from homologous alignments. No clinical training data.",
+      "ref": "Ng & Henikoff, Nucleic Acids Res 2003",
+      "family": "SIFT",
+      "representative": true
+    },
+    "SIFT4G_score": {
+      "level": 0,
+      "confidence": "high",
+      "basis": "SIFT algorithm with a faster aligner. Same conservation-only basis.",
+      "ref": "Vaser et al., Nat Protoc 2016",
+      "family": "SIFT",
+      "representative": false
+    },
+    "Polyphen2_HDIV_score": {
+      "level": 1,
+      "confidence": "medium",
+      "basis": "Naive Bayes trained on UniProt HumDiv: disease-causing alleles vs divergence-derived controls. Curated disease alleles are a clinical proxy but not ClinVar; predates modern ClinVar.",
+      "ref": "Adzhubei et al., Nat Methods 2010",
+      "family": "Polyphen2",
+      "representative": false
+    },
+    "Polyphen2_HVAR_score": {
+      "level": 1,
+      "confidence": "medium",
+      "basis": "As HDIV but trained on HumVar, human disease-causing vs common non-damaging alleles. Same reasoning.",
+      "ref": "Adzhubei et al., Nat Methods 2010",
+      "family": "Polyphen2",
+      "representative": true
+    },
+    "LRT_score": {
+      "level": 0,
+      "confidence": "high",
+      "basis": "Likelihood ratio test for codon-level constraint across species. Comparative genomics only.",
+      "ref": "Chun & Fay, Genome Res 2009",
+      "family": "LRT",
+      "representative": true
+    },
+    "MutationTaster_score": {
+      "level": 2,
+      "confidence": "medium",
+      "basis": "Bayes classifier trained with known disease mutations (HGMD/ClinVar) among its positive sets.",
+      "ref": "Steinhaus et al., Nucleic Acids Res 2021",
+      "family": "MutationTaster",
+      "representative": true
+    },
+    "MutationAssessor_score": {
+      "level": 0,
+      "confidence": "high",
+      "basis": "Evolutionary conservation within protein family subfamilies. No clinical labels.",
+      "ref": "Reva et al., Nucleic Acids Res 2011",
+      "family": "MutationAssessor",
+      "representative": true
+    },
+    "FATHMM_score": {
+      "level": 2,
+      "confidence": "medium",
+      "basis": "HMM-based conservation weighted by disease-associated variant frequencies from curated databases.",
+      "ref": "Shihab et al., Hum Mutat 2013",
+      "family": "FATHMM",
+      "representative": true
+    },
+    "PROVEAN_score": {
+      "level": 0,
+      "confidence": "high",
+      "basis": "Alignment-based delta score against homologous sequences. No clinical training.",
+      "ref": "Choi et al., PLoS One 2012",
+      "family": "PROVEAN",
+      "representative": true
+    },
+    "VEST4_score": {
+      "level": 2,
+      "confidence": "high",
+      "basis": "Random forest trained on disease mutations from HGMD against common polymorphisms.",
+      "ref": "Carter et al., BMC Genomics 2013",
+      "family": "VEST4",
+      "representative": true
+    },
+    "MetaSVM_score": {
+      "level": "x",
+      "reason": "ensemble",
+      "confidence": "high",
+      "basis": "SVM over the outputs of SIFT, PolyPhen-2, LRT, MutationTaster, MutationAssessor, FATHMM, GERP++, PhyloP and SiPhy, trained on curated clinical data. Both non-independent and clinically supervised.",
+      "ref": "Dong et al., Hum Mol Genet 2015",
+      "family": "Meta",
+      "representative": true
+    },
+    "MetaLR_score": {
+      "level": "x",
+      "reason": "ensemble",
+      "confidence": "high",
+      "basis": "Logistic regression over the same component predictors as MetaSVM.",
+      "ref": "Dong et al., Hum Mol Genet 2015",
+      "family": "Meta",
+      "representative": false
+    },
+    "MetaRNN_score": {
+      "level": "x",
+      "reason": "ensemble",
+      "confidence": "high",
+      "basis": "Recurrent network over component predictor scores plus allele frequencies; trained on ClinVar.",
+      "ref": "Li et al., Genome Med 2022",
+      "family": "Meta",
+      "representative": false
+    },
+    "M-CAP_score": {
+      "level": "x",
+      "reason": "ensemble",
+      "confidence": "high",
+      "basis": "Gradient boosting over other predictors' scores and conservation; trained on clinical variants.",
+      "ref": "Jagadeesh et al., Nat Genet 2016",
+      "family": "M-CAP",
+      "representative": true
+    },
+    "REVEL_score": {
+      "level": "x",
+      "reason": "ensemble",
+      "confidence": "high",
+      "basis": "Random forest over 13 component predictors including SIFT, PolyPhen-2, MutationAssessor, PROVEAN and VEST. Trained on HGMD disease variants vs ESP/ARIC/ExAC controls.",
+      "ref": "Ioannidis et al., Am J Hum Genet 2016",
+      "family": "REVEL",
+      "representative": true
+    },
+    "MutPred_score": {
+      "level": 2,
+      "confidence": "medium",
+      "basis": "Trained on HGMD disease mutations against SwissProt neutral polymorphisms.",
+      "ref": "Pejaver et al., Nat Commun 2020",
+      "family": "MutPred",
+      "representative": true
+    },
+    "MVP_score": {
+      "level": 2,
+      "confidence": "medium",
+      "basis": "Deep network trained on curated pathogenic variants from clinical databases.",
+      "ref": "Qi et al., Nat Commun 2021",
+      "family": "MVP",
+      "representative": true
+    },
+    "gMVP_score": {
+      "level": 2,
+      "confidence": "high",
+      "basis": "Graph attention network supervised on curated pathogenic variants. Matches the gMVP column already used in the manuscript.",
+      "ref": "Zhang et al., Nat Mach Intell 2022",
+      "family": "gMVP",
+      "representative": true
+    },
+    "MPC_score": {
+      "level": 0,
+      "confidence": "medium",
+      "basis": "Regional missense constraint from population sequencing depletion (ExAC). Population genetics, not clinical labels.",
+      "ref": "Samocha et al., bioRxiv 2017",
+      "family": "MPC",
+      "representative": true
+    },
+    "PrimateAI_score": {
+      "level": 0,
+      "confidence": "high",
+      "basis": "Trained on common variants observed in non-human primates as benign, against simulated variants. Explicitly avoids human clinical databases.",
+      "ref": "Sundaram et al., Nat Genet 2018",
+      "family": "PrimateAI",
+      "representative": true
+    },
+    "DEOGEN2_score": {
+      "level": 2,
+      "confidence": "medium",
+      "basis": "Combines functional and conservation features; trained on curated deleterious variant sets.",
+      "ref": "Raimondi et al., Nucleic Acids Res 2017",
+      "family": "DEOGEN2",
+      "representative": true
+    },
+    "BayesDel_addAF_score": {
+      "level": "x",
+      "reason": "ensemble",
+      "confidence": "high",
+      "basis": "Meta-score integrating multiple component predictors plus allele frequency; trained on clinical data.",
+      "ref": "Feng, Hum Mutat 2017",
+      "family": "BayesDel",
+      "representative": false
+    },
+    "BayesDel_noAF_score": {
+      "level": "x",
+      "reason": "ensemble",
+      "confidence": "high",
+      "basis": "As above without the allele-frequency term. Still an ensemble of component predictors.",
+      "ref": "Feng, Hum Mutat 2017",
+      "family": "BayesDel",
+      "representative": true
+    },
+    "ClinPred_score": {
+      "level": "x",
+      "reason": "ensemble",
+      "confidence": "high",
+      "basis": "Ensemble over existing predictor scores and allele frequency, trained directly on ClinVar.",
+      "ref": "Alirezaie et al., Am J Hum Genet 2018",
+      "family": "ClinPred",
+      "representative": true
+    },
+    "LIST-S2_score": {
+      "level": 0,
+      "confidence": "medium",
+      "basis": "Taxonomy-weighted conservation across homologues. Conservation-based rather than clinically supervised.",
+      "ref": "Malhis et al., Nucleic Acids Res 2020",
+      "family": "LIST-S2",
+      "representative": true
+    },
+    "VARITY_R_score": {
+      "level": 2,
+      "confidence": "high",
+      "basis": "Supervised on ClinVar. This is the in-training-data column; the manuscript uses the LOO variant for its main comparisons.",
+      "ref": "Wu et al., Am J Hum Genet 2021",
+      "family": "VARITY",
+      "representative": false
+    },
+    "VARITY_ER_score": {
+      "level": 2,
+      "confidence": "high",
+      "basis": "VARITY variant with extended training set. Supervised on clinical labels.",
+      "ref": "Wu et al., Am J Hum Genet 2021",
+      "family": "VARITY",
+      "representative": false
+    },
+    "VARITY_R_LOO_score": {
+      "level": 2,
+      "confidence": "high",
+      "basis": "VARITY_R with leave-one-out scoring. Still supervised on ClinVar; LOO removes the variant, not its gene. This is the column used in the manuscript.",
+      "ref": "Wu et al., Am J Hum Genet 2021",
+      "family": "VARITY",
+      "representative": true
+    },
+    "VARITY_ER_LOO_score": {
+      "level": 2,
+      "confidence": "high",
+      "basis": "VARITY_ER with leave-one-out scoring.",
+      "ref": "Wu et al., Am J Hum Genet 2021",
+      "family": "VARITY",
+      "representative": false
+    },
+    "ESM1b_score": {
+      "level": 0,
+      "confidence": "high",
+      "basis": "Protein language model scored zero-shot. Trained on sequence only, never on clinical labels.",
+      "ref": "Brandes et al., Nat Genet 2023",
+      "family": "ESM1b",
+      "representative": true
+    },
+    "EVE_score": {
+      "level": 0,
+      "confidence": "high",
+      "basis": "Unsupervised generative model of evolutionary sequence data. Explicitly avoids clinical labels.",
+      "ref": "Frazer et al., Nature 2021",
+      "family": "EVE",
+      "representative": true
+    },
+    "AlphaMissense_score": {
+      "level": 1,
+      "confidence": "high",
+      "basis": "Trained on population frequency and structural context, not on clinical labels; ClinVar used for threshold calibration and evaluation. Same level assigned in the five-predictor analysis.",
+      "ref": "Cheng et al., Science 2023",
+      "family": "AlphaMissense",
+      "representative": true
+    },
+    "PHACTboost_score": {
+      "level": 0,
+      "confidence": "low",
+      "basis": "Gradient boosting over phylogenetic and alignment features. Believed conservation-driven, but the training target needs checking against the paper before this is treated as settled.",
+      "ref": "Kilinc et al., Mol Biol Evol 2024",
+      "family": "PHACTboost",
+      "representative": true
+    },
+    "MutFormer_score": {
+      "level": 2,
+      "confidence": "low",
+      "basis": "Transformer fine-tuned for pathogenicity; the fine-tuning corpus needs confirmation before this is treated as settled.",
+      "ref": "Jiang et al., 2022",
+      "family": "MutFormer",
+      "representative": true
+    },
+    "MutScore_score": {
+      "level": 2,
+      "confidence": "low",
+      "basis": "Reported as trained on curated pathogenic and benign missense sets; needs confirmation.",
+      "ref": "Rousseau et al., 2023",
+      "family": "MutScore",
+      "representative": true
+    },
+    "CADD_raw": {
+      "level": 1,
+      "confidence": "high",
+      "basis": "Trained to separate simulated de novo variants from derived alleles fixed in humans. No clinical labels; the training signal is evolutionary, not diagnostic.",
+      "ref": "Rentzsch et al., Nucleic Acids Res 2019",
+      "family": "CADD",
+      "representative": true
+    },
+    "DANN_score": {
+      "level": 1,
+      "confidence": "high",
+      "basis": "Neural network on the CADD training objective and feature set. Same simulated-vs-derived target.",
+      "ref": "Quang et al., Bioinformatics 2015",
+      "family": "DANN",
+      "representative": true
+    },
+    "Eigen-raw_coding": {
+      "level": 0,
+      "confidence": "medium",
+      "basis": "Unsupervised spectral combination of functional annotations. No labelled training set.",
+      "ref": "Ionita-Laza et al., Nat Genet 2016",
+      "family": "Eigen-raw_coding",
+      "representative": true
+    },
+    "GenoCanyon_score": {
+      "level": 0,
+      "confidence": "medium",
+      "basis": "Unsupervised statistical model of functional potential from genomic annotations.",
+      "ref": "Lu et al., Sci Rep 2015",
+      "family": "GenoCanyon",
+      "representative": true
+    },
+    "integrated_fitCons_score": {
+      "level": 0,
+      "confidence": "medium",
+      "basis": "Fitness consequence from patterns of polymorphism and divergence. Population and comparative genomics.",
+      "ref": "Gulko et al., Nat Genet 2015",
+      "family": "integrated_fitCons",
+      "representative": true
+    },
+    "fathmm-MKL_coding_score": {
+      "level": 2,
+      "confidence": "medium",
+      "basis": "Multiple kernel learning over functional annotations, trained on pathogenic variants from clinical databases.",
+      "ref": "Shihab et al., Bioinformatics 2015",
+      "family": "fathmm",
+      "representative": true
+    },
+    "fathmm-XF_coding_score": {
+      "level": 2,
+      "confidence": "medium",
+      "basis": "Successor to fathmm-MKL, trained on curated pathogenic vs benign variants.",
+      "ref": "Rogers et al., Bioinformatics 2018",
+      "family": "fathmm",
+      "representative": false
+    },
+    "MutPred2_score": {
+      "level": 2,
+      "confidence": "high",
+      "family": "MutPred",
+      "representative": true,
+      "basis": "Trained on pathogenic amino acid substitutions drawn from HGMD and SwissProt against unlabelled/neutral substitutions. Supervised on curated disease databases.",
+      "ref": "Pejaver et al., Nat Commun 2020;11:5918. PMID 33219223"
+    },
+    "MisFit_S_score": {
+      "level": 0,
+      "confidence": "high",
+      "family": "MisFit",
+      "representative": true,
+      "basis": "Selection coefficient from a probabilistic graphical model fitted to observed allele counts in 236,017 individuals. Population genetics only; no clinical labels.",
+      "ref": "Nat Commun 2025, doi:10.1038/s41467-025-59937-2"
+    },
+    "MisFit_D_score": {
+      "level": 0,
+      "confidence": "high",
+      "family": "MisFit",
+      "representative": false,
+      "basis": "Molecular-effect output of the same graphical model as MisFit_S. Same training, no clinical labels; not independent of MisFit_S.",
+      "ref": "Nat Commun 2025, doi:10.1038/s41467-025-59937-2"
+    },
+    "popEVE_score": {
+      "level": 0,
+      "confidence": "high",
+      "family": "popEVE",
+      "representative": true,
+      "note": "Builds on EVE. EVE itself is absent from this extract, so no non-independence arises within this panel.",
+      "basis": "EVE's unsupervised generative model of evolutionary sequence data, rescaled by a population-constraint term learned from UK Biobank and gnomAD presence/absence. No clinical labels at any stage.",
+      "ref": "Nat Genet 2025, doi:10.1038/s41588-025-02400-1"
+    }
+  }
+}

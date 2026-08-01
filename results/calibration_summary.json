@@ -1,0 +1,210 @@
+{
+  "alphamissense": {
+    "n": 22886,
+    "score_note": "native [0,1] score",
+    "auroc": 0.9559247205407473,
+    "ece": 0.07300125841125578,
+    "mce": 0.29820758122743685,
+    "brier": 0.09238715348684785,
+    "ece_after_temperature": 0.0694664030144862,
+    "mce_after_temperature": 0.3118361813845552,
+    "brier_after_temperature": 0.092555316825429,
+    "mean_temperature": 0.96,
+    "conformal": {
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.8999825220658918,
+      "mean_set_size": 1.0654548632351657,
+      "frac_both_labels": 0.0654548632351656,
+      "frac_empty": 0.0
+    },
+    "protein_level": {
+      "n_proteins": 474,
+      "median_auroc": 0.9705882352941176,
+      "frac_proteins_below_0.7": 0.035864978902953586,
+      "median_frac_ambiguous": 0.05263157894736842,
+      "worst_proteins": [
+        {
+          "gene_symbol": "CARS2",
+          "n_variants": 11,
+          "auroc": 0.09999999999999998
+        },
+        {
+          "gene_symbol": "MUTYH",
+          "n_variants": 12,
+          "auroc": 0.28571428571428575
+        },
+        {
+          "gene_symbol": "ACADM",
+          "n_variants": 141,
+          "auroc": 0.3345323741007194
+        },
+        {
+          "gene_symbol": "IVD",
+          "n_variants": 11,
+          "auroc": 0.5
+        },
+        {
+          "gene_symbol": "GUF1",
+          "n_variants": 14,
+          "auroc": 0.5384615384615384
+        }
+      ]
+    }
+  },
+  "varity": {
+    "n": 21995,
+    "score_note": "native [0,1] score",
+    "auroc": 0.9603098532635101,
+    "ece": 0.026779780736691697,
+    "mce": 0.0687344798581011,
+    "brier": 0.07590170259413527,
+    "ece_after_temperature": 0.009387657962680531,
+    "mce_after_temperature": 0.06819172196159673,
+    "brier_after_temperature": 0.07531903240722017,
+    "mean_temperature": 0.8299999999999998,
+    "conformal": {
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.9000227324391907,
+      "mean_set_size": 1.0017731302568766,
+      "frac_both_labels": 0.001773130256876563,
+      "frac_empty": 0.0
+    },
+    "protein_level": {
+      "n_proteins": 457,
+      "median_auroc": 0.9705882352941175,
+      "frac_proteins_below_0.7": 0.045951859956236324,
+      "median_frac_ambiguous": 0.06666666666666667,
+      "worst_proteins": [
+        {
+          "gene_symbol": "DYRK1A",
+          "n_variants": 16,
+          "auroc": 0.19999999999999996
+        },
+        {
+          "gene_symbol": "PRX",
+          "n_variants": 26,
+          "auroc": 0.19999999999999996
+        },
+        {
+          "gene_symbol": "CARS2",
+          "n_variants": 11,
+          "auroc": 0.4
+        },
+        {
+          "gene_symbol": "ACTG2",
+          "n_variants": 39,
+          "auroc": 0.42105263157894735
+        },
+        {
+          "gene_symbol": "PDHX",
+          "n_variants": 12,
+          "auroc": 0.45
+        }
+      ]
+    }
+  },
+  "gmvp": {
+    "n": 21049,
+    "score_note": "native [0,1] score",
+    "auroc": 0.9492432061370496,
+    "ece": 0.04951307758555038,
+    "mce": 0.14413523957842866,
+    "brier": 0.09014716139789096,
+    "ece_after_temperature": 0.036806270807341855,
+    "mce_after_temperature": 0.14040928193666702,
+    "brier_after_temperature": 0.08886868590143625,
+    "mean_temperature": 0.8,
+    "conformal": {
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.8997102000095016,
+      "mean_set_size": 1.0437075395505724,
+      "frac_both_labels": 0.04370753955057247,
+      "frac_empty": 0.0
+    },
+    "protein_level": {
+      "n_proteins": 438,
+      "median_auroc": 0.9444444444444444,
+      "frac_proteins_below_0.7": 0.045662100456621,
+      "median_frac_ambiguous": 0.09090909090909091,
+      "worst_proteins": [
+        {
+          "gene_symbol": "DYRK1A",
+          "n_variants": 16,
+          "auroc": 0.2666666666666667
+        },
+        {
+          "gene_symbol": "PRX",
+          "n_variants": 26,
+          "auroc": 0.31999999999999995
+        },
+        {
+          "gene_symbol": "LAMP2",
+          "n_variants": 23,
+          "auroc": 0.39285714285714285
+        },
+        {
+          "gene_symbol": "TCN2",
+          "n_variants": 18,
+          "auroc": 0.4117647058823529
+        },
+        {
+          "gene_symbol": "CARS2",
+          "n_variants": 11,
+          "auroc": 0.5
+        }
+      ]
+    }
+  },
+  "esm2_score": {
+    "n": 7740,
+    "score_note": "sigmoid-mapped from log-ratio before calibration",
+    "auroc": 0.9078035923323826,
+    "ece": 0.2671884401078807,
+    "mce": 0.6246909849852063,
+    "brier": 0.2391883449160426,
+    "ece_after_temperature": 0.1855296716637117,
+    "mce_after_temperature": 0.39381730122847913,
+    "brier_after_temperature": 0.1735574234687442,
+    "mean_temperature": 4.139999999999999,
+    "conformal": {
+      "target_coverage": 0.9,
+      "empirical_coverage": 0.9003875968992248,
+      "mean_set_size": 1.374031007751938,
+      "frac_both_labels": 0.374031007751938,
+      "frac_empty": 0.0
+    },
+    "protein_level": {
+      "n_proteins": 172,
+      "median_auroc": 0.9725975975975976,
+      "frac_proteins_below_0.7": 0.06395348837209303,
+      "median_frac_ambiguous": 0.044466403162055336,
+      "worst_proteins": [
+        {
+          "gene_symbol": "GCDH",
+          "n_variants": 111,
+          "auroc": 0.17889908256880735
+        },
+        {
+          "gene_symbol": "NEU1",
+          "n_variants": 17,
+          "auroc": 0.375
+        },
+        {
+          "gene_symbol": "COCH",
+          "n_variants": 11,
+          "auroc": 0.39999999999999997
+        },
+        {
+          "gene_symbol": "APP",
+          "n_variants": 13,
+          "auroc": 0.5
+        },
+        {
+          "gene_symbol": "CARS2",
+          "n_variants": 11,
+          "auroc": 0.5
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "n_variants": 169989,
+  "n_genes_total": 13195,
+  "n_genes_evaluable": 1860,
+  "min_per_class": 3,
+  "global_auroc": {
+    "VARITY_R_LOO": 0.9615181044706399,
+    "AlphaMissense": 0.9547832633128484,
+    "gMVP": 0.9590463696211585
+  },
+  "global_ranking": [
+    "VARITY_R_LOO",
+    "gMVP",
+    "AlphaMissense"
+  ],
+  "within_gene_auroc": {
+    "VARITY_R_LOO": 0.9305802427778671,
+    "AlphaMissense": 0.9381002975246763,
+    "gMVP": 0.9114032761313584
+  },
+  "within_gene_ranking": [
+    "AlphaMissense",
+    "VARITY_R_LOO",
+    "gMVP"
+  ],
+  "ranking_changed": true,
+  "reversals": [
+    {
+      "a": "VARITY_R_LOO",
+      "b": "AlphaMissense",
+      "global_diff": 0.006734841157791549,
+      "within_diff": -0.007520054746809137,
+      "p": 0.0,
+      "verdict": "REVERSED"
+    },
+    {
+      "a": "AlphaMissense",
+      "b": "gMVP",
+      "global_diff": -0.004263106308310172,
+      "within_diff": 0.02669702139331789,
+      "p": 0.0,
+      "verdict": "REVERSED"
+    }
+  ],
+  "robustness": {
+    "unweighted mean": {
+      "VARITY_R_LOO": 0.9305802427778671,
+      "AlphaMissense": 0.9381002975246763,
+      "gMVP": 0.9114032761313584
+    },
+    "variant-weighted mean": {
+      "VARITY_R_LOO": 0.9295266508606239,
+      "AlphaMissense": 0.9380429262425917,
+      "gMVP": 0.9151444776866825
+    },
+    "median": {
+      "VARITY_R_LOO": 0.9619909190974133,
+      "AlphaMissense": 0.9666666666666668,
+      "gMVP": 0.9444444444444444
+    },
+    "mean, genes with >=10/class (n=527)": {
+      "VARITY_R_LOO": 0.9409211590177915,
+      "AlphaMissense": 0.9486567420181352,
+      "gMVP": 0.9237065557124041
+    }
+  },
+  "per_gene_wins_excluding_ties": {
+    "AlphaMissense": 600,
+    "VARITY_R_LOO": 457,
+    "gMVP": 245
+  },
+  "n_genes_tied_for_best": 558,
+  "wilcoxon": {
+    "VARITY_R_LOO vs AlphaMissense": {
+      "median_diff": 0.0,
+      "wins": 611,
+      "non_ties": 1415,
+      "win_rate": 0.4318021201413428,
+      "p": 1.1341257920782746e-06
+    },
+    "VARITY_R_LOO vs gMVP": {
+      "median_diff": 0.0029949784791964973,
+      "wins": 962,
+      "non_ties": 1488,
+      "win_rate": 0.646505376344086,
+      "p": 5.961159581080871e-30
+    },
+    "AlphaMissense vs gMVP": {
+      "median_diff": 0.007547277284119469,
+      "wins": 1035,
+      "non_ties": 1479,
+      "win_rate": 0.6997971602434077,
+      "p": 7.162628797942354e-58
+    }
+  },
+  "ceiling_sensitivity": {
+    "all genes": {
+      "VARITY_R_LOO": 0.9305802427778671,
+      "AlphaMissense": 0.9381002975246763,
+      "gMVP": 0.9114032761313584
+    },
+    "excluding any predictor at AUROC 1.0": {
+      "VARITY_R_LOO": 0.8994582345124122,
+      "AlphaMissense": 0.9082750904343772,
+      "gMVP": 0.8763579000394653
+    },
+    "excluding genes where all are at 1.0": {
+      "VARITY_R_LOO": 0.9197010270938015,
+      "AlphaMissense": 0.9283995978830211,
+      "gMVP": 0.8975187149280638
+    }
+  },
+  "note": "Within-gene AUROC removes between-gene label structure by construction: every comparison is between two variants in the same gene, so the gene prior is constant and uninformative.",
+  "caveat": "Only genes with at least MIN_PER_CLASS of each label are evaluable, so this analysis is restricted to well-characterised genes and is not representative of ClinVar as a whole."
+}

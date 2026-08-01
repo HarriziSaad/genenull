@@ -1,0 +1,112 @@
+{
+  "global_ranking": [
+    "VARITY_R_LOO",
+    "gMVP",
+    "AlphaMissense"
+  ],
+  "within_gene_ranking_full": [
+    "AlphaMissense",
+    "VARITY_R_LOO",
+    "gMVP"
+  ],
+  "n_genes_evaluable": 1860,
+  "split_half": {
+    "n_repeats": 200,
+    "halves_agree_with_each_other": 1.0,
+    "both_halves_match_full_ranking": 1.0
+  },
+  "threshold_sensitivity": {
+    "min_per_class_2": {
+      "n_genes": 2440,
+      "ranking": [
+        "AlphaMissense",
+        "VARITY_R_LOO",
+        "gMVP"
+      ],
+      "matches_full": true,
+      "means": {
+        "VARITY_R_LOO": 0.9288254925181584,
+        "AlphaMissense": 0.9347987703795712,
+        "gMVP": 0.9076568307012126
+      }
+    },
+    "min_per_class_3": {
+      "n_genes": 1860,
+      "ranking": [
+        "AlphaMissense",
+        "VARITY_R_LOO",
+        "gMVP"
+      ],
+      "matches_full": true,
+      "means": {
+        "VARITY_R_LOO": 0.9305802427778671,
+        "AlphaMissense": 0.9381002975246763,
+        "gMVP": 0.9114032761313584
+      }
+    },
+    "min_per_class_5": {
+      "n_genes": 1180,
+      "ranking": [
+        "AlphaMissense",
+        "VARITY_R_LOO",
+        "gMVP"
+      ],
+      "matches_full": true,
+      "means": {
+        "VARITY_R_LOO": 0.934485462902326,
+        "AlphaMissense": 0.9413250460470364,
+        "gMVP": 0.9145141701703661
+      }
+    },
+    "min_per_class_10": {
+      "n_genes": 527,
+      "ranking": [
+        "AlphaMissense",
+        "VARITY_R_LOO",
+        "gMVP"
+      ],
+      "matches_full": true,
+      "means": {
+        "VARITY_R_LOO": 0.9409211590177915,
+        "AlphaMissense": 0.9486567420181352,
+        "gMVP": 0.9237065557124041
+      }
+    },
+    "min_per_class_20": {
+      "n_genes": 214,
+      "ranking": [
+        "AlphaMissense",
+        "VARITY_R_LOO",
+        "gMVP"
+      ],
+      "matches_full": true,
+      "means": {
+        "VARITY_R_LOO": 0.9443552002942528,
+        "AlphaMissense": 0.9499712497722168,
+        "gMVP": 0.9354784968976486
+      }
+    }
+  },
+  "leave_one_gene_out": {
+    "n_genes": 1860,
+    "n_removals_that_change_ranking": 0,
+    "fraction": 0.0
+  },
+  "pairwise": {
+    "VARITY_R_LOO vs AlphaMissense": {
+      "global_diff": 0.006734841157791549,
+      "within_gene_diff": -0.007520054746809137,
+      "reversed": true
+    },
+    "VARITY_R_LOO vs gMVP": {
+      "global_diff": 0.0024717348494813773,
+      "within_gene_diff": 0.019176966646508753,
+      "reversed": false
+    },
+    "AlphaMissense vs gMVP": {
+      "global_diff": -0.004263106308310172,
+      "within_gene_diff": 0.02669702139331789,
+      "reversed": true
+    }
+  }
+}

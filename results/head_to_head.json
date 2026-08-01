@@ -1,0 +1,12 @@
+{
+  "n_common": 169989,
+  "n_genes": 13195,
+  "gene_identity_null_auroc": 0.9191064379350592,
+  "varity_circularity_inflation": 0.0019562953114022896,
+  "circularity_note": "Leave-one-out removes the variant itself but leaves every other variant in the same gene in training, so gene-level label structure survives it intact.",
+  "esm2": {
+    "n": 4031,
+    "auroc": 0.9049373568197228,
+    "note": "mitochondrial and matched control sets only; not part of the common intersection"
+  }
+}

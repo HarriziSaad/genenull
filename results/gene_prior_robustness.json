@@ -1,0 +1,5 @@
+{
+  "question": "Is the gene-identity null an artefact of sparsely annotated genes?",
+  "answer": "No. The single-class fraction falls from 73.6% to 7.6% across the thresholds while the null AUROC stays flat at 0.920-0.924.",
+  "split": "random variant-level 10-fold, unseen genes -> 0.5"
+}

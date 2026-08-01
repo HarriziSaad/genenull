@@ -1,0 +1,196 @@
+{
+  "n_variants": 59045,
+  "n_genes_total": 1826,
+  "n_genes_evaluable": 1055,
+  "min_per_class": 3,
+  "global_auroc": {
+    "VARITY_R_LOO": 0.9428765792839645,
+    "AlphaMissense": 0.9384285516251105,
+    "gMVP": 0.9453018417643179,
+    "PolyPhen-2": 0.8617302756802298,
+    "SIFT": 0.8288164467978346
+  },
+  "global_ranking": [
+    "gMVP",
+    "VARITY_R_LOO",
+    "AlphaMissense",
+    "PolyPhen-2",
+    "SIFT"
+  ],
+  "within_gene_auroc": {
+    "VARITY_R_LOO": 0.9301489005632622,
+    "AlphaMissense": 0.9418510385355267,
+    "gMVP": 0.9193138961098231,
+    "PolyPhen-2": 0.8876213238763504,
+    "SIFT": 0.8670177450688284
+  },
+  "within_gene_ranking": [
+    "AlphaMissense",
+    "VARITY_R_LOO",
+    "gMVP",
+    "PolyPhen-2",
+    "SIFT"
+  ],
+  "ranking_changed": true,
+  "reversals": [
+    {
+      "a": "VARITY_R_LOO",
+      "b": "AlphaMissense",
+      "global_diff": 0.004448027658853992,
+      "within_diff": -0.011702137972264366,
+      "p": 0.0,
+      "verdict": "REVERSED"
+    },
+    {
+      "a": "VARITY_R_LOO",
+      "b": "gMVP",
+      "global_diff": -0.002425262480353352,
+      "within_diff": 0.010835004453439321,
+      "p": 0.0,
+      "verdict": "REVERSED"
+    },
+    {
+      "a": "AlphaMissense",
+      "b": "gMVP",
+      "global_diff": -0.006873290139207344,
+      "within_diff": 0.022537142425703687,
+      "p": 0.0,
+      "verdict": "REVERSED"
+    }
+  ],
+  "robustness": {
+    "unweighted mean": {
+      "VARITY_R_LOO": 0.9301489005632622,
+      "AlphaMissense": 0.9418510385355267,
+      "gMVP": 0.9193138961098231,
+      "PolyPhen-2": 0.8876213238763504,
+      "SIFT": 0.8670177450688284
+    },
+    "variant-weighted mean": {
+      "VARITY_R_LOO": 0.9236130445872026,
+      "AlphaMissense": 0.9351110783713177,
+      "gMVP": 0.9185831000968709,
+      "PolyPhen-2": 0.8508221299451301,
+      "SIFT": 0.8405161158043535
+    },
+    "median": {
+      "VARITY_R_LOO": 0.9642857142857143,
+      "AlphaMissense": 0.9739130434782608,
+      "gMVP": 0.9545454545454546,
+      "PolyPhen-2": 0.9236111111111112,
+      "SIFT": 0.8888708630759247
+    },
+    "mean, genes with >=10/class (n=274)": {
+      "VARITY_R_LOO": 0.9443946868429793,
+      "AlphaMissense": 0.9551655574857821,
+      "gMVP": 0.9374936981074975,
+      "PolyPhen-2": 0.8783261150511361,
+      "SIFT": 0.8570372394623889
+    }
+  },
+  "per_gene_wins_excluding_ties": {
+    "AlphaMissense": 281,
+    "VARITY_R_LOO": 137,
+    "gMVP": 126,
+    "PolyPhen-2": 63,
+    "SIFT": 46
+  },
+  "n_genes_tied_for_best": 402,
+  "wilcoxon": {
+    "VARITY_R_LOO vs AlphaMissense": {
+      "median_diff": 0.0,
+      "wins": 296,
+      "non_ties": 774,
+      "win_rate": 0.38242894056847543,
+      "p": 1.1059045281305463e-10
+    },
+    "VARITY_R_LOO vs gMVP": {
+      "median_diff": 0.0,
+      "wins": 474,
+      "non_ties": 811,
+      "win_rate": 0.5844636251541308,
+      "p": 9.45275651077677e-08
+    },
+    "VARITY_R_LOO vs PolyPhen-2": {
+      "median_diff": 0.018548387096774088,
+      "wins": 631,
+      "non_ties": 855,
+      "win_rate": 0.7380116959064328,
+      "p": 8.330833567764805e-46
+    },
+    "VARITY_R_LOO vs SIFT": {
+      "median_diff": 0.04999999999999993,
+      "wins": 748,
+      "non_ties": 919,
+      "win_rate": 0.8139281828073993,
+      "p": 5.6389338392628505e-86
+    },
+    "AlphaMissense vs gMVP": {
+      "median_diff": 0.00520833333333337,
+      "wins": 560,
+      "non_ties": 814,
+      "win_rate": 0.687960687960688,
+      "p": 2.1691440194076714e-29
+    },
+    "AlphaMissense vs PolyPhen-2": {
+      "median_diff": 0.029629629629629672,
+      "wins": 678,
+      "non_ties": 867,
+      "win_rate": 0.7820069204152249,
+      "p": 3.326070703606191e-66
+    },
+    "AlphaMissense vs SIFT": {
+      "median_diff": 0.061594202898550776,
+      "wins": 794,
+      "non_ties": 927,
+      "win_rate": 0.8565264293419633,
+      "p": 1.1761838669535486e-100
+    },
+    "gMVP vs PolyPhen-2": {
+      "median_diff": 0.012728361784965614,
+      "wins": 569,
+      "non_ties": 897,
+      "win_rate": 0.6343366778149386,
+      "p": 3.4953162554066463e-20
+    },
+    "gMVP vs SIFT": {
+      "median_diff": 0.04166666666666663,
+      "wins": 701,
+      "non_ties": 939,
+      "win_rate": 0.7465388711395101,
+      "p": 5.838739919411463e-56
+    },
+    "PolyPhen-2 vs SIFT": {
+      "median_diff": 0.01948051948051943,
+      "wins": 612,
+      "non_ties": 943,
+      "win_rate": 0.6489925768822906,
+      "p": 3.705404537176969e-15
+    }
+  },
+  "ceiling_sensitivity": {
+    "all genes": {
+      "VARITY_R_LOO": 0.9301489005632622,
+      "AlphaMissense": 0.9418510385355267,
+      "gMVP": 0.9193138961098231,
+      "PolyPhen-2": 0.8876213238763504,
+      "SIFT": 0.8670177450688284
+    },
+    "excluding any predictor at AUROC 1.0": {
+      "VARITY_R_LOO": 0.890068098605315,
+      "AlphaMissense": 0.907376092420705,
+      "gMVP": 0.8799209166254242,
+      "PolyPhen-2": 0.84171336332707,
+      "SIFT": 0.8230885063228808
+    },
+    "excluding genes where all are at 1.0": {
+      "VARITY_R_LOO": 0.9259367739640619,
+      "AlphaMissense": 0.938344568497468,
+      "gMVP": 0.9144484024079027,
+      "PolyPhen-2": 0.8808447202910047,
+      "SIFT": 0.8589987146207175
+    }
+  },
+  "note": "Within-gene AUROC removes between-gene label structure by construction: every comparison is between two variants in the same gene, so the gene prior is constant and uninformative.",
+  "caveat": "Only genes with at least MIN_PER_CLASS of each label are evaluable, so this analysis is restricted to well-characterised genes and is not representative of ClinVar as a whole."
+}

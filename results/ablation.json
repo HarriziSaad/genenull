@@ -1,0 +1,9 @@
+{
+  "question": "Do mitochondria-specific interpretable features contribute predictive signal on a correctly constructed dataset?",
+  "set": "MitoCarta 3.0, ClinVar review status >=2 stars",
+  "split": "leave-cluster-out, MMseqs2 30% identity",
+  "n_variants": 4031,
+  "full_set_auroc": 0.7411884510429791,
+  "alphamissense_auroc": 0.9397939762023189,
+  "note": "Length and absolute-position features are excluded by design; on the contaminated dataset protein_length alone reached AUROC 0.672 through gene-size confounding."
+}

@@ -1,0 +1,7 @@
+{
+  "n_assays_available": 3,
+  "n_assays_scored": 3,
+  "skipped": [],
+  "metric": "Spearman correlation against DMS fitness, sign-flipped so that a higher value means better agreement with the assay",
+  "source": "s3://proteingym/DMS_substitutions.parquet"
+}

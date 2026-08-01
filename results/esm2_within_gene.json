@@ -1,0 +1,26 @@
+{
+  "n_variants": 6839,
+  "n_genes": 890,
+  "n_genes_evaluable": 133,
+  "global_auroc": {
+    "VARITY_R_LOO": 0.9558449281472893,
+    "AlphaMissense": 0.9499430360844665,
+    "gMVP": 0.9456598503214928,
+    "ESM-2 zero-shot": 0.9072735497698605
+  },
+  "within_gene_auroc": {
+    "VARITY_R_LOO": 0.9600952043818319,
+    "AlphaMissense": 0.9493959908397781,
+    "gMVP": 0.9326607535399486,
+    "ESM-2 zero-shot": 0.9239890271147341
+  },
+  "change": {
+    "VARITY_R_LOO": 0.00425027623454266,
+    "AlphaMissense": -0.0005470452446884044,
+    "gMVP": -0.012999096781544206,
+    "ESM-2 zero-shot": 0.016715477344873553
+  },
+  "esm2_gain_exceeds_supervised_gain_frac_bootstrap": 0.9155,
+  "directional_prediction_supported": true,
+  "scope_limit": "ESM-2 was scored only on the mitochondrial and matched control sets, so only 133 genes are evaluable here against 1,860 in the main analysis. This tests the direction of change, not the ranking reversal, which is not reproducible at this sample size and is not claimed."
+}

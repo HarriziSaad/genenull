@@ -1,0 +1,20 @@
+{
+  "n_variants": 4031,
+  "n_clusters": 449,
+  "n_proteins": 507,
+  "split": "leave-cluster-out over MMseqs2 clusters, 30% identity, 80% coverage",
+  "alphamissense_coverage": 0.9915653683949393,
+  "results": {
+    "interpretable only": 0.7411884510429791,
+    "interpretable + ESM-2 zero-shot": 0.9112067086519522,
+    "ESM-2 zero-shot alone (no training)": 0.9049373568197228,
+    "AlphaMissense": 0.9397939762023189,
+    "gene-identity null, in-sample": 0.9290978566563759
+  },
+  "differences_from_original": [
+    "The original used 128 principal components of ESM-2 embeddings; the language model enters here as the zero-shot masked-marginal score.",
+    "Splitting is leave-cluster-out rather than random, which is correct and also harder.",
+    "The original was trained on a variant set that was 79% non-mitochondrial; this uses MitoCarta 3.0 membership alone."
+  ],
+  "note": "Replaces the previously reported AUROC 0.890, which came from the contaminated pipeline and was not recomputable here."
+}

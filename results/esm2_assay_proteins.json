@@ -1,0 +1,9 @@
+{
+  "proteins": {
+    "CASP3": "P42574",
+    "OTC": "P00480",
+    "PRKN": "O60260"
+  },
+  "n_substitutions": 20824,
+  "scoring": "masked marginal, log p(mut) - log p(wt), sign flipped so higher means more damaging"
+}

@@ -1,0 +1,146 @@
+{
+  "n_variants": 59045,
+  "n_genes_evaluable": 1055,
+  "levels": [
+    0.0,
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95
+  ],
+  "n_repeats": 5,
+  "fit_coefficients": [
+    -0.37607794825738017,
+    0.5337376916068406,
+    -0.1837921850231567
+  ],
+  "fit_n_points": 95,
+  "observed": {
+    "VARITY_R_LOO": {
+      "global": 0.9428765792839645,
+      "within": 0.9301489005632622,
+      "change": -0.012727678720702351,
+      "headroom_expected": -0.01488282104756175,
+      "residual": 0.0021551423268593994,
+      "exposure": 2,
+      "exposure_label": "supervised on ClinVar",
+      "residual_ci": [
+        -0.0040174798996250915,
+        0.008407899012340483
+      ],
+      "residual_excludes_zero": false
+    },
+    "AlphaMissense": {
+      "global": 0.9384285516251105,
+      "within": 0.9418510385355267,
+      "change": 0.0034224869104161337,
+      "headroom_expected": -0.014109844215160733,
+      "residual": 0.017532331125576867,
+      "exposure": 1,
+      "exposure_label": "calibrated on, not fitted to",
+      "residual_ci": [
+        0.011748756124353794,
+        0.023334998014486182
+      ],
+      "residual_excludes_zero": true
+    },
+    "gMVP": {
+      "global": 0.9453018417643179,
+      "within": 0.9193138961098231,
+      "change": -0.025987945654494804,
+      "headroom_expected": -0.01531055143399046,
+      "residual": -0.010677394220504344,
+      "exposure": 2,
+      "exposure_label": "supervised on ClinVar",
+      "residual_ci": [
+        -0.017213151956594657,
+        -0.003952063390485634
+      ],
+      "residual_excludes_zero": true
+    },
+    "PolyPhen-2": {
+      "global": 0.8617302756802298,
+      "within": 0.8876213238763504,
+      "change": 0.025891048196120647,
+      "headroom_expected": -0.003121869215179679,
+      "residual": 0.029012917411300326,
+      "exposure": 0,
+      "exposure_label": "none w.r.t. modern ClinVar",
+      "residual_ci": [
+        0.011918885767224899,
+        0.05172368219845214
+      ],
+      "residual_excludes_zero": true
+    },
+    "SIFT": {
+      "global": 0.8288164467978346,
+      "within": 0.8670177450688284,
+      "change": 0.03820129827099383,
+      "headroom_expected": 0.00023664640416132254,
+      "residual": 0.03796465186683251,
+      "exposure": 0,
+      "exposure_label": "none; conservation only",
+      "residual_ci": [
+        0.02537748944486684,
+        0.051572644862598896
+      ],
+      "residual_excludes_zero": true
+    }
+  },
+  "spearman": {
+    "exposure_vs_raw_change": [
+      -0.9486832980505137,
+      0.013846832988859099
+    ],
+    "global_vs_raw_change": [
+      -0.9999999999999999,
+      1.4042654220543608e-24
+    ],
+    "exposure_vs_residual": [
+      -0.9486832980505137,
+      0.013846832988859099
+    ],
+    "rank_test_caveat": "The rank correlation with the residual is preserved trivially, because the correction is monotone in global AUROC and global AUROC is perfectly rank-correlated with the raw change. The rank test is not the evidence; the magnitude comparison below is."
+  },
+  "magnitude": {
+    "observed_span": 0.06418924392548864,
+    "headroom_span": -0.015547197838151783,
+    "ratio": 4.128669654410168,
+    "percent_of_spread_explained_by_headroom": 24.220877030736002
+  },
+  "matched_pairs": [
+    {
+      "a": "VARITY_R_LOO",
+      "b": "AlphaMissense",
+      "global_gap": 0.004448027658853992,
+      "change_a": -0.012727678720702351,
+      "change_b": 0.0034224869104161337,
+      "change_gap": -0.016150165631118485
+    },
+    {
+      "a": "AlphaMissense",
+      "b": "gMVP",
+      "global_gap": 0.006873290139207344,
+      "change_a": 0.0034224869104161337,
+      "change_b": -0.025987945654494804,
+      "change_gap": 0.029410432564910938
+    }
+  ],
+  "note": "Noise is injected on the rank scale over the whole score column, degrading between-gene and within-gene discrimination together, so the sweep traces what a genuinely weaker predictor does.",
+  "caveat": "Six predictors is a small basis for a rank correlation. The matched-pair comparison is model-free and does not depend on the fitted curve."
+}

@@ -1,0 +1,52 @@
+{
+  "n_human_assays_total": 96,
+  "n_assays_mapped": 55,
+  "n_assays_all_three": 47,
+  "min_substitutions": 100,
+  "min_coverage": 0.5,
+  "mean_spearman": {
+    "AlphaMissense": 0.41699467658085343,
+    "VARITY_R_LOO": 0.4132486181111058,
+    "gMVP": 0.390604793914594
+  },
+  "dms_ranking": [
+    "AlphaMissense",
+    "VARITY_R_LOO",
+    "gMVP"
+  ],
+  "global_clinvar_ranking": [
+    "gMVP",
+    "VARITY_R_LOO",
+    "AlphaMissense"
+  ],
+  "within_gene_clinvar_ranking": [
+    "AlphaMissense",
+    "VARITY_R_LOO",
+    "gMVP"
+  ],
+  "rank_agreement_global": -1.0,
+  "rank_agreement_within_gene": 1.0,
+  "verdict": "within-gene",
+  "pairwise": {
+    "AlphaMissense vs VARITY_R_LOO": {
+      "mean_diff": 0.003746058469747559,
+      "wins": 21,
+      "n": 47,
+      "p": 0.6406818488860608
+    },
+    "AlphaMissense vs gMVP": {
+      "mean_diff": 0.026389882666259388,
+      "wins": 31,
+      "n": 47,
+      "p": 0.027159535011236358
+    },
+    "VARITY_R_LOO vs gMVP": {
+      "mean_diff": 0.022643824196511828,
+      "wins": 34,
+      "n": 47,
+      "p": 0.002269551528186753
+    }
+  },
+  "note": "DMS agreement is structurally a within-protein comparison: every substitution is in one protein, so no between-gene label structure exists to exploit and the gene-identity null is undefined. Spearman signs are flipped so higher always means better agreement.",
+  "caveat": "Assays differ in what they measure (abundance, binding, activity), and agreement with a functional assay is not the same quantity as clinical pathogenicity. This arbitrates between two rankings; it does not validate either metric as a measure of clinical utility."
+}

@@ -1,0 +1,106 @@
+{
+  "n_variants": 112248,
+  "n_genes": 10458,
+  "n_predictors": 22,
+  "predictors": [
+    "SIFT_score",
+    "Polyphen2_HVAR_score",
+    "MutationTaster_score",
+    "MutationAssessor_score",
+    "PROVEAN_score",
+    "VEST4_score",
+    "MutPred2_score",
+    "MVP_score",
+    "gMVP_score",
+    "MisFit_S_score",
+    "MPC_score",
+    "PrimateAI_score",
+    "DEOGEN2_score",
+    "LIST-S2_score",
+    "VARITY_R_LOO_score",
+    "ESM1b_score",
+    "AlphaMissense_score",
+    "PHACTboost_score",
+    "MutFormer_score",
+    "MutScore_score",
+    "popEVE_score",
+    "DANN_score"
+  ],
+  "min_coverage": 0.5,
+  "fit_coefficients": [
+    0.7064993866106969,
+    -1.1269480266210596,
+    0.393045326403944
+  ],
+  "primary_high_confidence": {
+    "n": 13,
+    "exposure_vs_change": [
+      -0.5383247530938363,
+      0.05771026456456795
+    ],
+    "exposure_vs_change_perm_p": 0.06,
+    "n_permutations": 20000,
+    "exposure_vs_residual": [
+      -0.8211733521770385,
+      0.0005784155158673214
+    ],
+    "exposure_vs_residual_perm_p": 0.00165,
+    "global_vs_change": [
+      -0.34065934065934067,
+      0.2547064607541252
+    ]
+  },
+  "sensitivity_all_representatives": {
+    "n": 22,
+    "exposure_vs_change": [
+      -0.4283769437451498,
+      0.04669422813456554
+    ],
+    "exposure_vs_change_perm_p": 0.04905,
+    "n_permutations": 20000,
+    "exposure_vs_residual": [
+      -0.6579968617180543,
+      0.0008727273287887803
+    ],
+    "exposure_vs_residual_perm_p": 0.00135,
+    "global_vs_change": [
+      -0.25578769057029926,
+      0.25057252861489687
+    ]
+  },
+  "difference_in_differences": {
+    "n_genes": 1359,
+    "level0": [
+      "SIFT_score",
+      "MutationAssessor_score",
+      "PROVEAN_score",
+      "MisFit_S_score",
+      "MPC_score",
+      "PrimateAI_score",
+      "LIST-S2_score",
+      "ESM1b_score",
+      "PHACTboost_score",
+      "popEVE_score"
+    ],
+    "level2": [
+      "MutationTaster_score",
+      "VEST4_score",
+      "MutPred2_score",
+      "MVP_score",
+      "gMVP_score",
+      "DEOGEN2_score",
+      "VARITY_R_LOO_score",
+      "MutFormer_score",
+      "MutScore_score"
+    ],
+    "within_gene_gap": -0.02589327986535361,
+    "global_gap": -0.05111476924356351,
+    "difference_in_differences": 0.0252214893782099,
+    "ci": [
+      0.023400619283479633,
+      0.02696171019325537
+    ],
+    "p": 0.0,
+    "note": "Positive means the never-trained group closes ground on the supervised group once gene identity is removed, which is what the exposure hypothesis predicts."
+  }
+}

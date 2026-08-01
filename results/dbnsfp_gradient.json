@@ -1,0 +1,41 @@
+{
+  "n_predictors_total": 37,
+  "n_used": 37,
+  "n_family_representatives": 22,
+  "n_excluded_ensemble": 8,
+  "n_below_coverage": 0,
+  "min_coverage": 0.5,
+  "primary_representatives_high_confidence": {
+    "n": 13,
+    "exposure_vs_change": [
+      -0.5109523080212683,
+      0.07435324402506412
+    ],
+    "global_vs_change": [
+      -0.30769230769230765,
+      0.30644705251252896
+    ]
+  },
+  "representatives_all_confidence": {
+    "n": 22,
+    "exposure_vs_change": [
+      -0.4746712820461387,
+      0.025603258746775458
+    ],
+    "global_vs_change": [
+      -0.27272727272727276,
+      0.2194550778840765
+    ]
+  },
+  "sensitivity_every_column": {
+    "n": 29,
+    "exposure_vs_change": [
+      -0.46294134768218625,
+      0.01144210390539173
+    ],
+    "global_vs_change": [
+      -0.2571428571428571,
+      0.17810318213701737
+    ]
+  }
+}

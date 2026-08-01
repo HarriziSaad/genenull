@@ -1,0 +1,60 @@
+{
+  "source": "ProteinGym clinical_substitutions.parquet (independent curation)",
+  "n_variants": 49260,
+  "n_proteins": 2046,
+  "n_proteins_evaluable": 929,
+  "pathogenic_fraction": 0.5120178643930167,
+  "global_auroc": {
+    "VARITY_R_LOO": 0.946189203546688,
+    "AlphaMissense": 0.9419524998246868,
+    "gMVP": 0.9474071122052944
+  },
+  "global_ranking": [
+    "gMVP",
+    "VARITY_R_LOO",
+    "AlphaMissense"
+  ],
+  "within_protein_auroc": {
+    "VARITY_R_LOO": 0.9340170502623343,
+    "AlphaMissense": 0.9484269162847538,
+    "gMVP": 0.9284039723164221
+  },
+  "within_protein_ranking": [
+    "AlphaMissense",
+    "VARITY_R_LOO",
+    "gMVP"
+  ],
+  "ranking_changed": true,
+  "pairwise": {
+    "VARITY_R_LOO vs AlphaMissense": {
+      "global_diff": 0.004236703722001245,
+      "within_diff": -0.014409866022419497,
+      "ci": [
+        -0.018938727404946603,
+        -0.009994867815160804
+      ],
+      "p": 0.0,
+      "reversed": true
+    },
+    "VARITY_R_LOO vs gMVP": {
+      "global_diff": -0.0012179086586063814,
+      "within_diff": 0.005613077945912267,
+      "ci": [
+        0.0004347414111096884,
+        0.010680237758523387
+      ],
+      "p": 0.041,
+      "reversed": true
+    },
+    "AlphaMissense vs gMVP": {
+      "global_diff": -0.005454612380607626,
+      "within_diff": 0.020022943968331767,
+      "ci": [
+        0.015366602478152424,
+        0.02513150551916849
+      ],
+      "p": 0.0,
+      "reversed": true
+    }
+  }
+}
