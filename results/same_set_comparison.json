@@ -1,0 +1,144 @@
+{
+  "n_variants_intersection": 169989,
+  "n_genes_evaluable": 1860,
+  "n_variants_evaluable": 96142,
+  "min_per_class": 3,
+  "n_boot": 2000,
+  "table": [
+    {
+      "predictor": "VARITY_R_LOO",
+      "global_same_set": 0.9462439768898115,
+      "within_mean": 0.9305802427778671,
+      "within_pooled": 0.9423573011222193,
+      "change_mean": -0.01566373411194444,
+      "change_pooled": -0.0038866757675922736,
+      "global_full_intersection": 0.9615181044706399
+    },
+    {
+      "predictor": "AlphaMissense",
+      "global_same_set": 0.9374084322052159,
+      "within_mean": 0.9381002975246763,
+      "within_pooled": 0.950597552915509,
+      "change_mean": 0.0006918653194604163,
+      "change_pooled": 0.0131891207102931,
+      "global_full_intersection": 0.9547832633128484
+    },
+    {
+      "predictor": "gMVP",
+      "global_same_set": 0.9443465584108709,
+      "within_mean": 0.9114032761313584,
+      "within_pooled": 0.9374651217185299,
+      "change_mean": -0.03294328227951249,
+      "change_pooled": -0.006881436692340981,
+      "global_full_intersection": 0.9590463696211585
+    },
+    {
+      "predictor": "Gene-identity null (random split)",
+      "global_same_set": 0.858958364045271,
+      "within_mean": 0.17478135988225116,
+      "within_pooled": 0.3544730091840884,
+      "change_mean": -0.6841770041630199,
+      "change_pooled": -0.5044853548611826,
+      "global_full_intersection": null
+    }
+  ],
+  "comparisons": [
+    {
+      "comparison": "VARITY_R_LOO - AlphaMissense",
+      "metric": "global",
+      "diff": 0.008835544684595686,
+      "ci_low": 0.00404299383414253,
+      "ci_high": 0.013314520508330959,
+      "p": 0.001
+    },
+    {
+      "comparison": "VARITY_R_LOO - AlphaMissense",
+      "metric": "mean",
+      "diff": -0.007520054746809168,
+      "ci_low": -0.010861700659352233,
+      "ci_high": -0.004480919480239154,
+      "p": 0.0
+    },
+    {
+      "comparison": "VARITY_R_LOO - AlphaMissense",
+      "metric": "pooled",
+      "diff": -0.008240251793289688,
+      "ci_low": -0.011893339878711173,
+      "ci_high": -0.004469744055868164,
+      "p": 0.0
+    },
+    {
+      "comparison": "VARITY_R_LOO - gMVP",
+      "metric": "global",
+      "diff": 0.001897418478940649,
+      "ci_low": -0.0027742880590148843,
+      "ci_high": 0.006586667221232298,
+      "p": 0.42
+    },
+    {
+      "comparison": "VARITY_R_LOO - gMVP",
+      "metric": "mean",
+      "diff": 0.019176966646508697,
+      "ci_low": 0.015244496848939392,
+      "ci_high": 0.022919314554674806,
+      "p": 0.0
+    },
+    {
+      "comparison": "VARITY_R_LOO - gMVP",
+      "metric": "pooled",
+      "diff": 0.004892179403689356,
+      "ci_low": 0.0012289924914168915,
+      "ci_high": 0.009147485417943524,
+      "p": 0.01
+    },
+    {
+      "comparison": "AlphaMissense - gMVP",
+      "metric": "global",
+      "diff": -0.0069381262056550375,
+      "ci_low": -0.012204628603938329,
+      "ci_high": -0.0011203752153744655,
+      "p": 0.011
+    },
+    {
+      "comparison": "AlphaMissense - gMVP",
+      "metric": "mean",
+      "diff": 0.026697021393317866,
+      "ci_low": 0.02330332045042218,
+      "ci_high": 0.029966852003089513,
+      "p": 0.0
+    },
+    {
+      "comparison": "AlphaMissense - gMVP",
+      "metric": "pooled",
+      "diff": 0.013132431196979044,
+      "ci_low": 0.00946005498646127,
+      "ci_high": 0.017346565399145118,
+      "p": 0.0
+    },
+    {
+      "comparison": "VARITY_R_LOO - gene null",
+      "metric": "global",
+      "diff": 0.0872856128445405,
+      "ci_low": 0.07510314144286107,
+      "ci_high": 0.10241657498987489,
+      "p": 0.0
+    },
+    {
+      "comparison": "AlphaMissense - gene null",
+      "metric": "global",
+      "diff": 0.07845006815994482,
+      "ci_low": 0.06516230473224345,
+      "ci_high": 0.09420194173825619,
+      "p": 0.0
+    },
+    {
+      "comparison": "gMVP - gene null",
+      "metric": "global",
+      "diff": 0.08538819436559986,
+      "ci_low": 0.07494944637230509,
+      "ci_high": 0.09788757220992997,
+      "p": 0.0
+    }
+  ],
+  "note": "All quantities on the same evaluable-gene variants. Pooled within-gene AUROC = sum of per-gene U / sum of n_pos*n_neg. Bootstrap resamples whole genes."
+}

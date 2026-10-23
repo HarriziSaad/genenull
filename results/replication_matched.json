@@ -1,0 +1,285 @@
+{
+  "n_variants": 48695,
+  "n_proteins": 2046,
+  "n_rows_as_submitted": 49260,
+  "n_substitutions_counted_more_than_once_as_submitted": 565,
+  "fraction_in_our_clinvar_table": 0.846021152069001,
+  "label_agreement_on_overlap": 0.9997572638784378,
+  "fraction_of_proteins_with_any_overlap": 0.9740957966764419,
+  "all_variants": {
+    "n_variants_all": 48695,
+    "n_proteins_all": 2046,
+    "n_proteins_evaluable": 922,
+    "n_variants_evaluable": 37083,
+    "auroc": {
+      "VARITY_R_LOO": {
+        "global_unmatched": 0.9461470855003133,
+        "global_matched": 0.9465250429720098,
+        "within_mean": 0.9338185430334897,
+        "within_pooled": 0.9566411126210705
+      },
+      "AlphaMissense": {
+        "global_unmatched": 0.9431302872451586,
+        "global_matched": 0.9443234225186856,
+        "within_mean": 0.9495351465138564,
+        "within_pooled": 0.9621807041021332
+      },
+      "gMVP": {
+        "global_unmatched": 0.9474071485897845,
+        "global_matched": 0.9472995269997078,
+        "within_mean": 0.9281524038856686,
+        "within_pooled": 0.952173477044583
+      }
+    },
+    "ranking_global_unmatched": [
+      "gMVP",
+      "VARITY_R_LOO",
+      "AlphaMissense"
+    ],
+    "ranking_global_matched": [
+      "gMVP",
+      "VARITY_R_LOO",
+      "AlphaMissense"
+    ],
+    "ranking_within_mean": [
+      "AlphaMissense",
+      "VARITY_R_LOO",
+      "gMVP"
+    ],
+    "ranking_within_pooled": [
+      "AlphaMissense",
+      "VARITY_R_LOO",
+      "gMVP"
+    ],
+    "pairwise": [
+      {
+        "comparison": "VARITY_R_LOO - AlphaMissense",
+        "metric": "global",
+        "diff": 0.0022016204533241712,
+        "ci": [
+          -0.0029550867024765114,
+          0.007128680815447463
+        ],
+        "p": 0.396
+      },
+      {
+        "comparison": "VARITY_R_LOO - AlphaMissense",
+        "metric": "mean",
+        "diff": -0.015716603480366742,
+        "ci": [
+          -0.020155307841866192,
+          -0.011455951922405042
+        ],
+        "p": 0.0
+      },
+      {
+        "comparison": "VARITY_R_LOO - AlphaMissense",
+        "metric": "pooled",
+        "diff": -0.0055395914810626445,
+        "ci": [
+          -0.011969504339315064,
+          0.0002670360079819896
+        ],
+        "p": 0.061
+      },
+      {
+        "comparison": "VARITY_R_LOO - gMVP",
+        "metric": "global",
+        "diff": -0.0007744840276979748,
+        "ci": [
+          -0.006266832754891233,
+          0.0046468909035923805
+        ],
+        "p": 0.829
+      },
+      {
+        "comparison": "VARITY_R_LOO - gMVP",
+        "metric": "mean",
+        "diff": 0.005666139147821103,
+        "ci": [
+          0.0006117508196495758,
+          0.010794963369077086
+        ],
+        "p": 0.026
+      },
+      {
+        "comparison": "VARITY_R_LOO - gMVP",
+        "metric": "pooled",
+        "diff": 0.00446763557648755,
+        "ci": [
+          -0.00184930583159032,
+          0.010962757495197541
+        ],
+        "p": 0.146
+      },
+      {
+        "comparison": "AlphaMissense - gMVP",
+        "metric": "global",
+        "diff": -0.002976104481022146,
+        "ci": [
+          -0.00909811665340795,
+          0.003582309648263016
+        ],
+        "p": 0.392
+      },
+      {
+        "comparison": "AlphaMissense - gMVP",
+        "metric": "mean",
+        "diff": 0.021382742628187845,
+        "ci": [
+          0.016870147556309188,
+          0.02641580752694666
+        ],
+        "p": 0.0
+      },
+      {
+        "comparison": "AlphaMissense - gMVP",
+        "metric": "pooled",
+        "diff": 0.010007227057550194,
+        "ci": [
+          0.005649958536448433,
+          0.014925926610208376
+        ],
+        "p": 0.0
+      }
+    ]
+  },
+  "not_in_our_table": {
+    "n_variants_all": 7498,
+    "n_proteins_all": 1393,
+    "n_proteins_evaluable": 121,
+    "n_variants_evaluable": 2655,
+    "auroc": {
+      "VARITY_R_LOO": {
+        "global_unmatched": 0.9128888571092081,
+        "global_matched": 0.9032520961135196,
+        "within_mean": 0.9323602264124647,
+        "within_pooled": 0.9510912063695173
+      },
+      "AlphaMissense": {
+        "global_unmatched": 0.9060256533684281,
+        "global_matched": 0.9091927619236048,
+        "within_mean": 0.9326818386971,
+        "within_pooled": 0.9419563517452193
+      },
+      "gMVP": {
+        "global_unmatched": 0.9113943163598681,
+        "global_matched": 0.9214048015349452,
+        "within_mean": 0.9219867302601213,
+        "within_pooled": 0.9392194497760716
+      }
+    },
+    "ranking_global_unmatched": [
+      "VARITY_R_LOO",
+      "gMVP",
+      "AlphaMissense"
+    ],
+    "ranking_global_matched": [
+      "gMVP",
+      "AlphaMissense",
+      "VARITY_R_LOO"
+    ],
+    "ranking_within_mean": [
+      "AlphaMissense",
+      "VARITY_R_LOO",
+      "gMVP"
+    ],
+    "ranking_within_pooled": [
+      "VARITY_R_LOO",
+      "AlphaMissense",
+      "gMVP"
+    ],
+    "pairwise": [
+      {
+        "comparison": "VARITY_R_LOO - AlphaMissense",
+        "metric": "global",
+        "diff": -0.005940665810085122,
+        "ci": [
+          -0.02299569037229835,
+          0.010974529287960916
+        ],
+        "p": 0.487
+      },
+      {
+        "comparison": "VARITY_R_LOO - AlphaMissense",
+        "metric": "mean",
+        "diff": -0.00032161228463523095,
+        "ci": [
+          -0.014487383332469132,
+          0.014926897716519564
+        ],
+        "p": 0.973
+      },
+      {
+        "comparison": "VARITY_R_LOO - AlphaMissense",
+        "metric": "pooled",
+        "diff": 0.009134854624297972,
+        "ci": [
+          -0.002376704080663733,
+          0.022790518745621727
+        ],
+        "p": 0.145
+      },
+      {
+        "comparison": "VARITY_R_LOO - gMVP",
+        "metric": "global",
+        "diff": -0.018152705421425552,
+        "ci": [
+          -0.038644062875239985,
+          0.004161424161950937
+        ],
+        "p": 0.115
+      },
+      {
+        "comparison": "VARITY_R_LOO - gMVP",
+        "metric": "mean",
+        "diff": 0.010373496152343398,
+        "ci": [
+          -0.004289333103657614,
+          0.02642397565940533
+        ],
+        "p": 0.174
+      },
+      {
+        "comparison": "VARITY_R_LOO - gMVP",
+        "metric": "pooled",
+        "diff": 0.011871756593445637,
+        "ci": [
+          -0.0009760507769285942,
+          0.02363442300876099
+        ],
+        "p": 0.07
+      },
+      {
+        "comparison": "AlphaMissense - gMVP",
+        "metric": "global",
+        "diff": -0.01221203961134043,
+        "ci": [
+          -0.03359772404180801,
+          0.012085954102770443
+        ],
+        "p": 0.365
+      },
+      {
+        "comparison": "AlphaMissense - gMVP",
+        "metric": "mean",
+        "diff": 0.010695108436978629,
+        "ci": [
+          -0.005798933593037103,
+          0.02808207645922492
+        ],
+        "p": 0.235
+      },
+      {
+        "comparison": "AlphaMissense - gMVP",
+        "metric": "pooled",
+        "diff": 0.002736901969147665,
+        "ci": [
+          -0.010998395919117818,
+          0.01654175509441361
+        ],
+        "p": 0.734
+      }
+    ]
+  }
+}

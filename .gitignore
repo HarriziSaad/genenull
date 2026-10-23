@@ -1,0 +1,5 @@
+__pycache__/
+data/downloads/
+figures/output/*.pdf
+figures/output/*.png
+figures/output/*.tif*

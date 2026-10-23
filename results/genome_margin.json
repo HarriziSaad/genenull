@@ -1,0 +1,22 @@
+{
+  "n_variants": 195270,
+  "n_genes": 14745,
+  "alphamissense_auroc": 0.9559116082388516,
+  "null_random_split_auroc": 0.9206060497301587,
+  "margin": 0.03530555850869288,
+  "margin_ci": [
+    0.029448184299435572,
+    0.04160778412315907
+  ],
+  "n_boot": 2000,
+  "ceiling": {
+    "n_genes": 1860,
+    "at_1_per_predictor": {
+      "alphamissense": 533,
+      "varity": 499,
+      "gmvp": 408
+    },
+    "genes_left_excluding_any_at_1": 1123,
+    "genes_left_excluding_all_at_1": 1608
+  }
+}

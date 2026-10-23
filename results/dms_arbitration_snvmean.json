@@ -1,0 +1,61 @@
+{
+  "n_assays_proteingym": 217,
+  "n_human_assays_total": 96,
+  "n_assays_mapped": 55,
+  "n_assays_all_three": 47,
+  "min_substitutions_scored_by_all_three": 100,
+  "snv_rule": "mean",
+  "median_substitutions_scored_by_all_three": 1126.0,
+  "median_fraction_of_assay_scored_by_all_three": 0.3211743772241993,
+  "median_coverage": {
+    "AlphaMissense": 1.0,
+    "VARITY_R_LOO": 0.3211743772241993,
+    "gMVP": 0.3211743772241993
+  },
+  "n_proteins": 40,
+  "mean_spearman": {
+    "AlphaMissense": 0.45981391186660514,
+    "VARITY_R_LOO": 0.43406854775170944,
+    "gMVP": 0.415036803903857
+  },
+  "dms_ranking": [
+    "AlphaMissense",
+    "VARITY_R_LOO",
+    "gMVP"
+  ],
+  "global_clinvar_ranking": [
+    "VARITY_R_LOO",
+    "gMVP",
+    "AlphaMissense"
+  ],
+  "within_gene_clinvar_ranking": [
+    "AlphaMissense",
+    "VARITY_R_LOO",
+    "gMVP"
+  ],
+  "rank_agreement_global": -0.5,
+  "rank_agreement_within_gene": 1.0,
+  "verdict": "within-gene",
+  "pairwise": {
+    "AlphaMissense vs VARITY_R_LOO": {
+      "mean_diff": 0.025745364114895763,
+      "wins": 29,
+      "n": 47,
+      "p": 0.058431615505526224
+    },
+    "AlphaMissense vs gMVP": {
+      "mean_diff": 0.04477710796274815,
+      "wins": 34,
+      "n": 47,
+      "p": 9.861699609814423e-06
+    },
+    "VARITY_R_LOO vs gMVP": {
+      "mean_diff": 0.019031743847852372,
+      "wins": 33,
+      "n": 47,
+      "p": 0.012520237195232653
+    }
+  },
+  "note": "DMS agreement is structurally a within-protein comparison: every substitution is in one protein, so no between-gene label structure exists to exploit and the gene-identity null is undefined. Spearman signs are flipped so higher always means better agreement.",
+  "caveat": "Assays differ in what they measure (abundance, binding, activity), and agreement with a functional assay is not the same quantity as clinical pathogenicity. This arbitrates between two rankings; it does not validate either metric as a measure of clinical utility."
+}

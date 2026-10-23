@@ -9,9 +9,9 @@ from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import GroupKFold
 from sklearn.preprocessing import StandardScaler
 
-BASE = Path(__file__).resolve().parents[2]
+BASE = Path(__file__).resolve().parents[1]
 DATA = BASE / "data" / "rebuild"
-RES = BASE / "results" / "rebuild"
+RES = BASE / "results"
 UNIPROT = BASE / "data" / "raw" / "uniprot_human_reviewed.parquet"
 RES.mkdir(parents=True, exist_ok=True)
 
@@ -48,8 +48,10 @@ GROUPS = {
 }
 ALL_FEATS = [f for g in GROUPS.values() for f in g]
 
+
 def log(m):
     print(f"[{datetime.now():%H:%M:%S}] {m}", flush=True)
+
 
 def entropy(s):
     if not s:
@@ -57,6 +59,7 @@ def entropy(s):
     _, c = np.unique(list(s), return_counts=True)
     p = c / c.sum()
     return float(-(p * np.log2(p)).sum())
+
 
 def featurise(df, seqs):
     rows = []
@@ -102,6 +105,7 @@ def featurise(df, seqs):
         })
     return pd.DataFrame(rows, index=df.index)
 
+
 def cv_auc(X, y, groups, seed=42):
     n_splits = min(N_SPLITS, len(np.unique(groups)))
     if n_splits < 2 or len(np.unique(y)) < 2 or X.shape[1] == 0:
@@ -118,6 +122,7 @@ def cv_auc(X, y, groups, seed=42):
     if ok.sum() < 50 or len(np.unique(y[ok])) < 2:
         return np.nan
     return float(roc_auc_score(y[ok], pred[ok]))
+
 
 def main():
     df = pd.read_parquet(DATA / 'variants_mito.parquet')
@@ -187,6 +192,7 @@ def main():
                 'AUROC 0.672 through gene-size confounding.',
     }, indent=2, default=float))
     log(f"wrote {RES / 'ablation.csv'}")
+
 
 if __name__ == '__main__':
     main()

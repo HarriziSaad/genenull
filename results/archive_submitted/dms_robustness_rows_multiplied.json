@@ -1,0 +1,292 @@
+{
+  "per_assay": {
+    "n": 47,
+    "mean_rho": {
+      "AlphaMissense": 0.41699467658085343,
+      "VARITY_R_LOO": 0.4132486181111058,
+      "gMVP": 0.390604793914594
+    },
+    "ranking": [
+      "AlphaMissense",
+      "VARITY_R_LOO",
+      "gMVP"
+    ],
+    "AlphaMissense vs VARITY_R_LOO": {
+      "mean_diff": 0.0037460584697475564,
+      "wins": 21,
+      "n": 47,
+      "p": 0.6406818488860608
+    },
+    "AlphaMissense vs gMVP": {
+      "mean_diff": 0.0263898826662594,
+      "wins": 31,
+      "n": 47,
+      "p": 0.027159535011236358
+    },
+    "VARITY_R_LOO vs gMVP": {
+      "mean_diff": 0.022643824196511845,
+      "wins": 34,
+      "n": 47,
+      "p": 0.002269551528186753
+    }
+  },
+  "per_protein": {
+    "n": 40,
+    "mean_rho": {
+      "AlphaMissense": 0.4158505890421891,
+      "VARITY_R_LOO": 0.4116509989373471,
+      "gMVP": 0.3957083403762316
+    },
+    "ranking": [
+      "AlphaMissense",
+      "VARITY_R_LOO",
+      "gMVP"
+    ],
+    "AlphaMissense vs VARITY_R_LOO": {
+      "mean_diff": 0.004199590104841901,
+      "wins": 18,
+      "n": 40,
+      "p": 0.5717037787562731
+    },
+    "AlphaMissense vs gMVP": {
+      "mean_diff": 0.020142248665957426,
+      "wins": 26,
+      "n": 40,
+      "p": 0.0918240616483672
+    },
+    "VARITY_R_LOO vs gMVP": {
+      "mean_diff": 0.015942658561115524,
+      "wins": 27,
+      "n": 40,
+      "p": 0.011536851214259514
+    }
+  },
+  "thresholds": {
+    "clinvar_q75": 83.75,
+    "clinvar_median": 12.5
+  },
+  "excl_top_quartile": {
+    "n": 30,
+    "mean_rho": {
+      "AlphaMissense": 0.4045145958459799,
+      "VARITY_R_LOO": 0.3924502028716814,
+      "gMVP": 0.3802908252203915
+    },
+    "ranking": [
+      "AlphaMissense",
+      "VARITY_R_LOO",
+      "gMVP"
+    ],
+    "AlphaMissense vs VARITY_R_LOO": {
+      "mean_diff": 0.012064392974298545,
+      "wins": 13,
+      "n": 30,
+      "p": 0.8552717231214046
+    },
+    "AlphaMissense vs gMVP": {
+      "mean_diff": 0.024223770625588413,
+      "wins": 21,
+      "n": 30,
+      "p": 0.08793856762349606
+    },
+    "VARITY_R_LOO vs gMVP": {
+      "mean_diff": 0.01215937765128987,
+      "wins": 19,
+      "n": 30,
+      "p": 0.0426517054438591
+    }
+  },
+  "excl_above_median": {
+    "n": 20,
+    "mean_rho": {
+      "AlphaMissense": 0.43911244392238025,
+      "VARITY_R_LOO": 0.4456030135818991,
+      "gMVP": 0.41689750236423134
+    },
+    "ranking": [
+      "VARITY_R_LOO",
+      "AlphaMissense",
+      "gMVP"
+    ],
+    "AlphaMissense vs VARITY_R_LOO": {
+      "mean_diff": -0.006490569659518835,
+      "wins": 7,
+      "n": 20,
+      "p": 0.47490501403808594
+    },
+    "AlphaMissense vs gMVP": {
+      "mean_diff": 0.02221494155814884,
+      "wins": 14,
+      "n": 20,
+      "p": 0.11398696899414062
+    },
+    "VARITY_R_LOO vs gMVP": {
+      "mean_diff": 0.02870551121766768,
+      "wins": 14,
+      "n": 20,
+      "p": 0.01531219482421875
+    }
+  },
+  "disease_ge1": {
+    "n": 31,
+    "mean_rho": {
+      "AlphaMissense": 0.40218772769968886,
+      "VARITY_R_LOO": 0.40070875940882233,
+      "gMVP": 0.3846216991453473
+    },
+    "ranking": [
+      "AlphaMissense",
+      "VARITY_R_LOO",
+      "gMVP"
+    ],
+    "AlphaMissense vs VARITY_R_LOO": {
+      "mean_diff": 0.0014789682908665372,
+      "wins": 14,
+      "n": 31,
+      "p": 0.4677626034244895
+    },
+    "AlphaMissense vs gMVP": {
+      "mean_diff": 0.017566028554341633,
+      "wins": 19,
+      "n": 31,
+      "p": 0.26389263197779655
+    },
+    "VARITY_R_LOO vs gMVP": {
+      "mean_diff": 0.01608706026347509,
+      "wins": 20,
+      "n": 31,
+      "p": 0.03742977511137724
+    }
+  },
+  "disease_ge5": {
+    "n": 23,
+    "mean_rho": {
+      "AlphaMissense": 0.37204017370188536,
+      "VARITY_R_LOO": 0.37112645624515983,
+      "gMVP": 0.36693043696722155
+    },
+    "ranking": [
+      "AlphaMissense",
+      "VARITY_R_LOO",
+      "gMVP"
+    ],
+    "AlphaMissense vs VARITY_R_LOO": {
+      "mean_diff": 0.0009137174567254791,
+      "wins": 10,
+      "n": 23,
+      "p": 0.41003966331481934
+    },
+    "AlphaMissense vs gMVP": {
+      "mean_diff": 0.005109736734663731,
+      "wins": 12,
+      "n": 23,
+      "p": 0.9168474674224854
+    },
+    "VARITY_R_LOO vs gMVP": {
+      "mean_diff": 0.004196019277938259,
+      "wins": 14,
+      "n": 23,
+      "p": 0.23447084426879883
+    }
+  },
+  "not_disease": {
+    "n": 9,
+    "mean_rho": {
+      "AlphaMissense": 0.4629115558885785,
+      "VARITY_R_LOO": 0.44934093509115475,
+      "gMVP": 0.4338956601715
+    },
+    "ranking": [
+      "AlphaMissense",
+      "VARITY_R_LOO",
+      "gMVP"
+    ],
+    "AlphaMissense vs VARITY_R_LOO": {
+      "mean_diff": 0.013570620797423707,
+      "wins": 4,
+      "n": 9,
+      "p": 0.91015625
+    },
+    "AlphaMissense vs gMVP": {
+      "mean_diff": 0.029015895717078508,
+      "wins": 7,
+      "n": 9,
+      "p": 0.0546875
+    },
+    "VARITY_R_LOO vs gMVP": {
+      "mean_diff": 0.015445274919654806,
+      "wins": 7,
+      "n": 9,
+      "p": 0.203125
+    }
+  },
+  "assay_types": {
+    "OrganismalFitness": 20,
+    "Activity": 12,
+    "Expression": 9,
+    "Binding": 5,
+    "Stability": 1
+  },
+  "function_assays": {
+    "n": 32,
+    "mean_rho": {
+      "AlphaMissense": 0.4142448466021119,
+      "VARITY_R_LOO": 0.42695338423480134,
+      "gMVP": 0.38544789435180926
+    },
+    "ranking": [
+      "VARITY_R_LOO",
+      "AlphaMissense",
+      "gMVP"
+    ],
+    "AlphaMissense vs VARITY_R_LOO": {
+      "mean_diff": -0.012708537632689363,
+      "wins": 15,
+      "n": 32,
+      "p": 0.5119121475145221
+    },
+    "AlphaMissense vs gMVP": {
+      "mean_diff": 0.02879695225030266,
+      "wins": 20,
+      "n": 32,
+      "p": 0.07704806188121438
+    },
+    "VARITY_R_LOO vs gMVP": {
+      "mean_diff": 0.04150548988299203,
+      "wins": 23,
+      "n": 32,
+      "p": 0.0023907003924250603
+    }
+  },
+  "other_assays": {
+    "n": 15,
+    "mean_rho": {
+      "AlphaMissense": 0.42286098053550186,
+      "VARITY_R_LOO": 0.38401178371388883,
+      "gMVP": 0.4016061796485348
+    },
+    "ranking": [
+      "AlphaMissense",
+      "gMVP",
+      "VARITY_R_LOO"
+    ],
+    "AlphaMissense vs VARITY_R_LOO": {
+      "mean_diff": 0.03884919682161299,
+      "wins": 6,
+      "n": 15,
+      "p": 0.890380859375
+    },
+    "AlphaMissense vs gMVP": {
+      "mean_diff": 0.02125480088696709,
+      "wins": 11,
+      "n": 15,
+      "p": 0.1876220703125
+    },
+    "VARITY_R_LOO vs gMVP": {
+      "mean_diff": -0.01759439593464589,
+      "wins": 11,
+      "n": 15,
+      "p": 0.359130859375
+    }
+  }
+}

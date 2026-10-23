@@ -78,6 +78,45 @@
         "popEVE_score",
         "LRT_score"
       ]
+    },
+    {
+      "date": "2026-10-05",
+      "made_before_any_result": false,
+      "what": "Three classification corrections and two reference corrections, made in response to peer review (PCOMPBIOL-D-26-02060, Reviewer 2) after the submitted results had been seen. The original entries below are left unchanged; the corrected scheme is applied in scripts/rebuild/33_dbnsfp_matched.py and both are reported.",
+      "corrections": {
+        "PHACTboost_score": "level 0 (low confidence) -> 2. The entry itself said the training target needed checking. Dereli et al., Mol Biol Evol 2024 train on ClinVar, gnomAD and HSV labels; the Atlas of Variant Effects lists it as clinical-trained.",
+        "Polyphen2_HVAR_score": "level 1 -> 2. HumVar is UniProt disease-causing versus common variants, which this file's own definition of level 2 includes ('UniProt humsavar, or similar curated disease databases').",
+        "MPC_score": "level 0 -> x (ensemble). MPC combines missense badness, PolyPhen-2 and regional constraint; PolyPhen-2 is in the panel, so this file's ensemble rule excludes it."
+      },
+      "reference_corrections": {
+        "PHACTboost_score": "Dereli O, Kuru N, Akkoyun E, Bircan A, Tastan O, Adebali O. Mol Biol Evol 2024 (not 'Kilinc et al.')",
+        "MutScore_score": "Quinodoz M, et al. Am J Hum Genet 2022 (not 'Rousseau et al., 2023')"
+      },
+      "external_classification": "In addition, the Atlas of Variant Effects coding-VEP table (data/rebuild/atlas_coding_veps.csv, retrieved 2026-10-05, metadata alongside) is used as a classification with no author discretion: Population-free 0, Population-tuned 1, Clinical-trained 2.",
+      "analysis_changes_not_in_the_original_plan": [
+        "The difference-in-differences between never-trained and supervised predictors was not in the original plan; it was added after the five-predictor and first panel results and is labelled as such.",
+        "Global and within-gene AUROC are now computed on the same variants (genes with >=3 of each class), and a pooled within-gene AUROC is reported alongside the per-gene mean, at the reviewers' request.",
+        "Uncertainty is bootstrapped over predictors as well as genes; permutation p-values are now exact rather than sampled."
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "made_before_any_result": true,
+      "what": "CADD and Eigen recovered and classified. Both were lost at the first extraction because their column names (CADD_raw, Eigen-raw_coding) do not end in '_score'. The extraction was re-run on 2026-10-23; every other column reproduced the first extract exactly. Before any result was computed for them, both were classified under this file's ensemble rule, as MPC was on 2026-10-05.",
+      "corrections": {
+        "CADD_raw": "level 1 -> x (ensemble). The Atlas of Variant Effects lists PolyPhen-2 output among CADD's features; PolyPhen-2 is in the panel.",
+        "Eigen-raw_coding": "level 0 -> x (ensemble). The Atlas lists SIFT, PolyPhen-2 and MutationAssessor among Eigen's inputs; all three are in the panel."
+      }
+    },
+    {
+      "date": "2026-10-23",
+      "made_before_any_result": false,
+      "what": "Sensitivity analysis, added after the panel results were known: the ensemble rule applied to every panel predictor whose inputs include another panel predictor. The primary analysis is unchanged.",
+      "schemes": {
+        "ensemble_named": "MPC, MVP, DANN, DEOGEN2 and MutFormer left out: the Atlas notes name panel predictors among their inputs (DANN through the CADD feature set, DEOGEN2 through PROVEAN, MutFormer through dbNSFP predictors).",
+        "ensemble_named_plus": "also VARITY and MutScore, which the Atlas flags as taking other predictors as input without naming them.",
+        "ensemble_flagged": "every predictor the Atlas flags as taking other predictors as input."
+      }
     }
   ],
   "predictors": {
