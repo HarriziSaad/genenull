@@ -1,0 +1,19 @@
+{
+  "built_utc": "2026-07-27T20:08:54.987893+00:00",
+  "clinvar_md5": "f3d05949f0440bed0600a6bc04956a36",
+  "mitocarta_md5": "f113d5020ab277fb8869954aab773464",
+  "mitocarta_genes": 1136,
+  "counts": {
+    "all": 197904,
+    "mito": 11373,
+    "nonmito": 186531,
+    "control": 11701
+  },
+  "mito_by_stars": {
+    "0": 11373,
+    "1": 10150,
+    "2": 4031,
+    "3": 72
+  },
+  "inclusion_criterion": "MitoCarta3.0 symbol or synonym match; no phenotype keywords"
+}

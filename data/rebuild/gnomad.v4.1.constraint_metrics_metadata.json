@@ -1,0 +1,10 @@
+{
+  "source": "gnomAD v4.1 gene constraint metrics",
+  "url": "https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/constraint/gnomad.v4.1.constraint_metrics.tsv",
+  "used_by": "scripts/rebuild/34_gene_constraint.py, 35_offset_robustness.py",
+  "file": "gnomad.v4.1.constraint_metrics.tsv",
+  "bytes": 95546041,
+  "md5": "14df4b2acb581fcbbb2a82a3a555fd35",
+  "sha256": "68d8abdb7fc48f570869b02dfaa74b9fecaece7fcc5f301ddca40ec1ce12da00",
+  "retrieved": "2026-10-05"
+}

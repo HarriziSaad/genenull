@@ -9,10 +9,10 @@ import pandas as pd
 from scipy.stats import spearmanr
 from sklearn.metrics import roc_auc_score
 
-BASE = Path(__file__).resolve().parents[2]
+BASE = Path(__file__).resolve().parents[1]
 DATA = BASE / "data" / "rebuild"
-RES = BASE / "results" / "rebuild"
-PREREG = BASE / "submission" / "predictor_exposure_prereg.json"
+RES = BASE / "results"
+PREREG = BASE / "prereg" / "predictor_exposure.json"
 
 MIN_PER_CLASS = 3
 MIN_COVERAGE = 0.50
@@ -22,8 +22,10 @@ DEG_LEVELS = np.round(np.arange(0.05, 0.96, 0.05), 2)
 N_DEG_REPEATS = 3
 N_BOOT = 500
 
+
 def log(m):
     print(f"[{datetime.now():%H:%M:%S}] {m}", flush=True)
+
 
 def within_gene_mean(gene, label, score, min_class=MIN_PER_CLASS):
     ok = ~np.isnan(score)
@@ -41,6 +43,7 @@ def within_gene_mean(gene, label, score, min_class=MIN_PER_CLASS):
     auc = (pos_rank - p * (p + 1) / 2) / (p * (t - p))
     return float(auc.mean()), int(len(auc)), auc
 
+
 def exact_or_sampled_perm_p(x, y, observed, rng, max_exact=9):
     n = len(x)
     if n <= max_exact:
@@ -51,6 +54,7 @@ def exact_or_sampled_perm_p(x, y, observed, rng, max_exact=9):
     for _ in range(20000):
         stats.append(abs(spearmanr(x, rng.permutation(y)).statistic))
     return float(np.mean(np.array(stats) >= abs(observed) - 1e-12)), len(stats)
+
 
 def main():
     rng = np.random.default_rng(42)
@@ -226,6 +230,7 @@ def main():
     (RES / "dbnsfp_common.json").write_text(json.dumps(out, indent=2))
     log(f"\nwrote {RES / 'dbnsfp_common.csv'}")
     log(f"wrote {RES / 'dbnsfp_common.json'}")
+
 
 if __name__ == "__main__":
     main()

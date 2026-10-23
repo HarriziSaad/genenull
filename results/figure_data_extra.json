@@ -1,0 +1,26 @@
+{
+  "null_all_variants": {
+    "n_variants": 197904,
+    "in_sample": 0.943330775047796,
+    "random_split": 0.9214808404924717,
+    "leave_gene_out": 0.5
+  },
+  "alphamissense_all_scored": {
+    "n_variants": 195270,
+    "auroc": 0.9559116082388516,
+    "null_random_split_same_variants": 0.9206060497301586
+  },
+  "same_gene_pair_share": {
+    "all_variants": 0.0002938001463692219,
+    "genes_with_both_labels_ge3": 0.0007920041794734504,
+    "n_genes_all": 14871,
+    "n_genes_evaluable": 2127,
+    "fraction_of_genes_label_pure": 0.7364669490955551,
+    "fraction_of_variants_in_label_pure_genes": 0.3075177864014876
+  },
+  "three_predictor_matched": {
+    "n_variants": 96142,
+    "n_genes": 1860,
+    "same_gene_pair_share": 0.0008918376249826773
+  }
+}

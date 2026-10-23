@@ -8,21 +8,24 @@ import pandas as pd
 import torch
 from transformers import AutoModelForMaskedLM, AutoTokenizer
 
-BASE = Path(__file__).resolve().parents[2]
+BASE = Path(__file__).resolve().parents[1]
 DATA = BASE / "data" / "rebuild"
-OUT = BASE / "results" / "rebuild"
+OUT = BASE / "results"
 OUT.mkdir(parents=True, exist_ok=True)
 
 MODEL = "facebook/esm2_t33_650M_UR50D"
 MAX_LEN = 1022
 UNIPROT = BASE / "data" / "raw" / "uniprot_human_reviewed.parquet"
 
+
 def log(m):
     print(f"[{datetime.now():%H:%M:%S}] {m}", flush=True)
+
 
 def load_sequences():
     u = pd.read_parquet(UNIPROT)
     return {a: s for a, s in zip(u.accession, u.sequence) if isinstance(s, str)}
+
 
 def window(seq, pos1):
     n = len(seq)
@@ -31,6 +34,7 @@ def window(seq, pos1):
     half = MAX_LEN // 2
     start = max(0, min(pos1 - 1 - half, n - MAX_LEN))
     return seq[start:start + MAX_LEN], pos1 - 1 - start
+
 
 def main():
     ap = argparse.ArgumentParser()
@@ -129,6 +133,7 @@ def main():
     df.to_parquet(OUT / f'esm2_zeroshot_{args.set}.parquet', index=False)
     (OUT / f'esm2_zeroshot_{args.set}.json').write_text(json.dumps(res, indent=2))
     log(f"wrote {OUT}")
+
 
 if __name__ == '__main__':
     main()

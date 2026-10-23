@@ -2,10 +2,11 @@ from pathlib import Path
 
 import pandas as pd
 
-BASE = Path(__file__).resolve().parents[2]
+BASE = Path(__file__).resolve().parents[1]
 DATA = BASE / "data" / "rebuild"
 
 KEYS = ["uniprot_acc", "gene_symbol", "position_1", "wt_aa", "mut_aa"]
+
 
 def main():
     d = pd.read_parquet(DATA / "variants_all.parquet")
@@ -25,6 +26,7 @@ def main():
           f"{out.gene_symbol.nunique():,} genes")
     print(f"  {size_mb:.1f} MB — upload this to Colab")
     print(f"  columns: {list(out.columns)}  (no labels, by design)")
+
 
 if __name__ == "__main__":
     main()

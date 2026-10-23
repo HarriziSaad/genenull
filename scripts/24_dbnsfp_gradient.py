@@ -8,10 +8,10 @@ import pandas as pd
 from scipy.stats import spearmanr
 from sklearn.metrics import roc_auc_score
 
-BASE = Path(__file__).resolve().parents[2]
+BASE = Path(__file__).resolve().parents[1]
 DATA = BASE / "data" / "rebuild"
-RES = BASE / "results" / "rebuild"
-PREREG = BASE / "submission" / "predictor_exposure_prereg.json"
+RES = BASE / "results"
+PREREG = BASE / "prereg" / "predictor_exposure.json"
 
 MIN_PER_CLASS = 3
 MIN_COVERAGE = 0.50
@@ -21,8 +21,10 @@ NEGATED = {"SIFT_score", "SIFT4G_score", "PROVEAN_score", "FATHMM_score",
 LEVELS = np.round(np.arange(0.05, 0.96, 0.05), 2)
 N_REPEATS = 3
 
+
 def log(m):
     print(f"[{datetime.now():%H:%M:%S}] {m}", flush=True)
+
 
 def within_gene_mean(gene, label, score):
     ok = ~pd.isna(score)
@@ -40,6 +42,7 @@ def within_gene_mean(gene, label, score):
     auc = (pos_rank - p * (p + 1) / 2) / (p * (t - p))
     return float(auc.mean()), int(len(auc))
 
+
 def main():
     prereg = json.loads(PREREG.read_text(encoding="utf8"))["predictors"]
     src = DATA / "dbnsfp_scores.parquet"
@@ -54,6 +57,7 @@ def main():
                   if c.endswith(("_score", "_raw", "_raw_coding"))
                   or c in prereg]
     score_cols = [c for c in score_cols if c in x.columns]
+    score_cols = [c for c in score_cols if c not in ("CADD_raw", "Eigen-raw_coding")]
 
     unknown = [c for c in score_cols if c not in prereg]
     if unknown:
@@ -161,6 +165,7 @@ def main():
     (RES / "dbnsfp_gradient.json").write_text(json.dumps(out, indent=2))
     log(f"\nwrote {RES / 'dbnsfp_gradient.csv'}")
     log(f"wrote {RES / 'dbnsfp_gradient.json'}")
+
 
 if __name__ == "__main__":
     main()

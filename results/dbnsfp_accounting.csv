@@ -1,0 +1,47 @@
+predictor,family,level_plan,confidence,representative,in_extract,coverage,status
+SIFT_score,SIFT,0,high,True,True,0.9288644999595763,in panel
+SIFT4G_score,SIFT,0,high,False,True,0.9311939121998545,not the family representative (SIFT)
+Polyphen2_HDIV_score,Polyphen2,1,medium,False,True,0.9340033551620988,not the family representative (Polyphen2)
+Polyphen2_HVAR_score,Polyphen2,1,medium,True,True,0.9340033551620988,in panel
+LRT_score,LRT,0,high,True,False,,no column of this name among the dbNSFP 5.3.1a score columns
+MutationTaster_score,MutationTaster,2,medium,True,True,0.9266614115934999,in panel
+MutationAssessor_score,MutationAssessor,0,high,True,True,0.9035087719298246,in panel
+FATHMM_score,FATHMM,2,medium,True,False,,no column of this name among the dbNSFP 5.3.1a score columns
+PROVEAN_score,PROVEAN,0,high,True,True,0.9340437788018433,in panel
+VEST4_score,VEST4,2,high,True,True,0.9601473441668688,in panel
+MetaSVM_score,Meta,x,high,True,True,0.977494138572237,excluded by plan: ensemble
+MetaLR_score,Meta,x,high,False,True,0.977494138572237,excluded by plan: ensemble
+MetaRNN_score,Meta,x,high,False,True,0.9788483305036786,excluded by plan: ensemble
+M-CAP_score,M-CAP,x,high,True,True,0.8578704826582586,excluded by plan: ensemble
+REVEL_score,REVEL,x,high,True,True,0.9405721966205837,excluded by plan: ensemble
+MutPred_score,MutPred,2,medium,True,False,,no column of this name among the dbNSFP 5.3.1a score columns
+MVP_score,MVP,2,medium,True,True,0.9259742097178429,in panel
+gMVP_score,gMVP,2,high,True,True,0.9278235912361549,in panel
+MPC_score,MPC,0,medium,True,True,0.8446873231465761,in panel
+PrimateAI_score,PrimateAI,0,high,True,True,0.9575703371331554,in panel
+DEOGEN2_score,DEOGEN2,2,medium,True,True,0.9642806613307462,in panel
+BayesDel_addAF_score,BayesDel,x,high,False,True,0.9819558978090387,excluded by plan: ensemble
+BayesDel_noAF_score,BayesDel,x,high,True,True,0.9819558978090387,excluded by plan: ensemble
+ClinPred_score,ClinPred,x,high,True,True,0.9774031853828119,excluded by plan: ensemble
+LIST-S2_score,LIST-S2,0,medium,True,True,0.9636995715094188,in panel
+VARITY_R_score,VARITY,2,high,False,True,0.921638774355243,not the family representative (VARITY)
+VARITY_ER_score,VARITY,2,high,False,True,0.921638774355243,not the family representative (VARITY)
+VARITY_R_LOO_score,VARITY,2,high,True,True,0.921638774355243,in panel
+VARITY_ER_LOO_score,VARITY,2,high,False,True,0.921638774355243,not the family representative (VARITY)
+ESM1b_score,ESM1b,0,high,True,True,0.986230697712022,in panel
+EVE_score,EVE,0,high,True,False,,no column of this name among the dbNSFP 5.3.1a score columns
+AlphaMissense_score,AlphaMissense,1,high,True,True,0.9707433907349018,in panel
+PHACTboost_score,PHACTboost,0,low,True,True,0.9420729242460991,in panel
+MutFormer_score,MutFormer,2,low,True,True,0.9753820033955858,in panel
+MutScore_score,MutScore,2,low,True,True,0.9688636914867814,in panel
+CADD_raw,CADD,1,high,True,True,0.9862003799822135,recovered in revision; excluded by the ensemble rule: the Atlas lists PolyPhen-2 output among its features
+DANN_score,DANN,1,high,True,True,0.9825268817204301,in panel
+Eigen-raw_coding,Eigen-raw_coding,0,medium,True,True,0.9083798205190395,"recovered in revision; excluded by the ensemble rule: the Atlas lists SIFT, PolyPhen-2 and MutationAssessor among its inputs"
+GenoCanyon_score,GenoCanyon,0,medium,True,False,,no column of this name among the dbNSFP 5.3.1a score columns
+integrated_fitCons_score,integrated_fitCons,0,medium,True,False,,no column of this name among the dbNSFP 5.3.1a score columns
+fathmm-MKL_coding_score,fathmm,2,medium,True,False,,no column of this name among the dbNSFP 5.3.1a score columns
+fathmm-XF_coding_score,fathmm,2,medium,False,True,0.9016796022313849,not the family representative (fathmm)
+MutPred2_score,MutPred,2,high,True,True,0.9853919071873232,in panel
+MisFit_S_score,MisFit,0,high,True,True,0.968974856496079,in panel
+MisFit_D_score,MisFit,0,high,False,True,0.968974856496079,not the family representative (MisFit)
+popEVE_score,popEVE,0,high,True,True,0.7956736599563424,in panel

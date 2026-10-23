@@ -7,11 +7,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-BASE = Path(__file__).resolve().parents[2]
-SCRATCH = Path(
-    r"C:/Users/MSI/AppData/Local/Temp/claude/c--Users-MSI-Documents-IDP"
-    r"/8ab7849a-1242-4d62-8fca-e7d143f8628f/scratchpad"
-)
+BASE = Path(__file__).resolve().parents[1]
+SCRATCH = BASE / "data" / "downloads"
 OUT = BASE / "data" / "rebuild"
 OUT.mkdir(parents=True, exist_ok=True)
 
@@ -44,8 +41,10 @@ STARS = {
 HGVS_3 = re.compile(r'p\.([A-Z][a-z]{2})(\d+)([A-Z][a-z]{2})')
 HGVS_1 = re.compile(r'p\.([A-Z])(\d+)([A-Z])')
 
+
 def log(msg):
     print(f"[{datetime.now():%H:%M:%S}] {msg}", flush=True)
+
 
 def md5(path):
     h = hashlib.md5()
@@ -53,6 +52,7 @@ def md5(path):
         for chunk in iter(lambda: f.read(1 << 20), b''):
             h.update(chunk)
     return h.hexdigest()
+
 
 def load_clinvar():
     log("reading ClinVar variant_summary")
@@ -101,6 +101,7 @@ def load_clinvar():
     return df[['gene_symbol', 'wt_aa', 'position_1', 'mut_aa', 'label',
                'stars', 'ReviewStatus', 'ClinicalSignificance']]
 
+
 def build_uniprot_index():
     log("indexing UniProt reference proteome")
     u = pd.read_parquet(UNIPROT)
@@ -116,6 +117,7 @@ def build_uniprot_index():
                     g2a[key] = acc
     log(f"  {len(seq):,} sequences, {len(g2a):,} gene symbols")
     return seq, g2a
+
 
 def validate(df, seq, g2a):
     log("validating against UniProt canonical sequences")
@@ -138,6 +140,7 @@ def validate(df, seq, g2a):
     log(f"  after de-duplication: {len(df):,}")
     return df
 
+
 def load_mitocarta():
     log("loading MitoCarta 3.0")
     mc = pd.ExcelFile(MITOCARTA).parse('A Human MitoCarta3.0')
@@ -151,6 +154,7 @@ def load_mitocarta():
     meta = meta[~meta.index.duplicated()]
     log(f"  {len(primary)} genes, {len(allsyms)} symbols incl. synonyms")
     return primary, allsyms, meta
+
 
 def matched_control(mito, nonmito, seed=42):
     log("building matched non-mitochondrial control")
@@ -184,6 +188,7 @@ def matched_control(mito, nonmito, seed=42):
     log(f"  matched {len(chosen)}/{len(mstat)} mitochondrial genes "
         f"({unmatched} without a partner)")
     return nonmito[nonmito.gene_symbol.isin(chosen)].copy()
+
 
 def main():
     seq, g2a = build_uniprot_index()
@@ -236,6 +241,7 @@ def main():
     }
     (OUT / 'build_metadata.json').write_text(json.dumps(md, indent=2))
     log(f"\nwrote {OUT}")
+
 
 if __name__ == '__main__':
     main()

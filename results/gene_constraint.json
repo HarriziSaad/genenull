@@ -1,0 +1,73 @@
+{
+  "n_genes": 14871,
+  "n_genes_matched": 14012,
+  "gene_level_correlation": {
+    "genes_n>=5": {
+      "n_genes": 7178,
+      "path_frac_vs_mis_z": 0.24711913823661474,
+      "path_frac_vs_loeuf": -0.21274960192459103,
+      "path_frac_vs_mis_oe": -0.2861325485877279
+    },
+    "genes_n>=20": {
+      "n_genes": 1828,
+      "path_frac_vs_mis_z": 0.18925487301754984,
+      "path_frac_vs_loeuf": -0.01483053985159243,
+      "path_frac_vs_mis_oe": -0.32034809895157
+    }
+  },
+  "n_variants_with_constraint": 182027,
+  "n_genes_with_constraint": 13882,
+  "variant_level_baselines": {
+    "mis_z": 0.6184052195996184,
+    "minus_loeuf": 0.5558455707466372,
+    "minus_mis_oe": 0.6511907317473887,
+    "constraint_model_leave_gene_out": 0.6633193567831183,
+    "gene_identity_null_random_split": 0.9211754448977441
+  },
+  "gene_null_within_constraint_deciles": 0.9080683395484108,
+  "mis_z_within_constraint_deciles": 0.5886128355443733,
+  "across_predictors": {
+    "benign_offset_vs_path_frac~change_pooled": {
+      "rho": -0.25804630152456237,
+      "p": 0.24626760313236853
+    },
+    "benign_offset_vs_path_frac_given_mis_z~change_pooled": {
+      "rho": -0.25804630152456237,
+      "p": 0.24626760313236853
+    },
+    "benign_offset_vs_mis_z_given_path_frac~change_pooled": {
+      "rho": 0.40033879164313946,
+      "p": 0.0648584895029248
+    }
+  },
+  "offset_means_by_atlas_type": {
+    "Clinical-trained": {
+      "benign_offset_vs_path_frac": 0.18306875728965322,
+      "benign_offset_vs_mis_z": 0.2009969432945386,
+      "benign_offset_vs_path_frac_given_mis_z": 0.18949621715566586,
+      "benign_offset_vs_mis_z_given_path_frac": 0.2062205162834992,
+      "change_pooled": 0.013909821520070531
+    },
+    "Population-free": {
+      "benign_offset_vs_path_frac": -0.0558226268696953,
+      "benign_offset_vs_mis_z": 0.06393982311438877,
+      "benign_offset_vs_path_frac_given_mis_z": -0.05537653917551903,
+      "benign_offset_vs_mis_z_given_path_frac": 0.06349588689450111,
+      "change_pooled": 0.0130502482553107
+    },
+    "Population-tuned": {
+      "benign_offset_vs_path_frac": -0.015379334679652875,
+      "benign_offset_vs_mis_z": 0.36137264168392186,
+      "benign_offset_vs_path_frac_given_mis_z": -0.01629663402224484,
+      "benign_offset_vs_mis_z_given_path_frac": 0.36229786627215677,
+      "change_pooled": 0.04918080469873168
+    },
+    "not in Atlas": {
+      "benign_offset_vs_path_frac": 0.047839187868359646,
+      "benign_offset_vs_mis_z": 0.6108570697456616,
+      "benign_offset_vs_path_frac_given_mis_z": 0.06817928450190106,
+      "benign_offset_vs_mis_z_given_path_frac": 0.6120694559948737,
+      "change_pooled": 0.1382592987753577
+    }
+  }
+}

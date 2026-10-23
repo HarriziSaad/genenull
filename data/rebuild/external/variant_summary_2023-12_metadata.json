@@ -1,0 +1,10 @@
+{
+  "source": "ClinVar variant_summary, December 2023 monthly archive",
+  "url": "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/archive/2023/variant_summary_2023-12.txt.gz",
+  "used_by": "scripts/rebuild/38_temporal_split.py",
+  "file": "variant_summary_2023-12.txt.gz",
+  "bytes": 217978467,
+  "md5": "53dbd6d7415436d5d72381a42e9e09b0",
+  "sha256": "19d7a2663d3eb3bab1b3440ca495b9b1b182a85e878a8899d53787bb9361f7c2",
+  "retrieved": "2026-10-05"
+}

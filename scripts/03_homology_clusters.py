@@ -6,17 +6,20 @@ from pathlib import Path
 
 import pandas as pd
 
-BASE = Path(__file__).resolve().parents[2]
+BASE = Path(__file__).resolve().parents[1]
 DATA = BASE / "data" / "rebuild"
 UNIPROT = BASE / "data" / "raw" / "uniprot_human_reviewed.parquet"
 MMSEQS = "~/mmseqs/bin/mmseqs"
 
+
 def log(m):
     print(f"[{datetime.now():%H:%M:%S}] {m}", flush=True)
+
 
 def to_wsl(p: Path) -> str:
     s = str(p.resolve()).replace('\\', '/')
     return f"/mnt/{s[0].lower()}{s[2:]}"
+
 
 def wsl(cmd, timeout=3600):
     r = subprocess.run(['wsl', '--', 'bash', '-lc', cmd],
@@ -24,6 +27,7 @@ def wsl(cmd, timeout=3600):
     if r.returncode != 0:
         raise RuntimeError(f"WSL command failed:\n{cmd}\n{r.stderr[-2000:]}")
     return r.stdout
+
 
 def main():
     ap = argparse.ArgumentParser()
@@ -113,6 +117,7 @@ def main():
     }
     log(json.dumps(meta, indent=2))
     (DATA / f'cluster_metadata{args.tag}.json').write_text(json.dumps(meta, indent=2))
+
 
 if __name__ == '__main__':
     main()

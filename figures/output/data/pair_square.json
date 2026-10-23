@@ -1,0 +1,8 @@
+{
+  "n_pathogenic": 66382,
+  "n_benign": 131522,
+  "pairs": 8730693404,
+  "same_gene_share": 0.0002938001463692219,
+  "n_genes": 14871,
+  "n_genes_both": 3919
+}

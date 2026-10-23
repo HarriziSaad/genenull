@@ -1,0 +1,2413 @@
+{
+  "n_intersection": 112248,
+  "n_genes_intersection": 10458,
+  "n_genes_evaluable": 1359,
+  "n_variants_matched": 58569,
+  "n_boot": 1000,
+  "same_gene_pair_share": 0.0011243801631742472,
+  "gene_prior_reference": {
+    "global_matched": 0.8660288952383511,
+    "within_pooled": 0.5,
+    "cross_gene": 0.8664409141331779
+  },
+  "headroom_fit": {
+    "mean": [
+      -0.19650324901291502,
+      0.27487963058382286,
+      -0.10054804994185933
+    ],
+    "pooled": [
+      -0.23679003304827823,
+      0.3818461706504487,
+      -0.14485498171325395
+    ]
+  },
+  "amendments": {
+    "PHACTboost_score": {
+      "level": 2,
+      "reason": "Plan marked it low-confidence pending a check of the training target. Dereli et al. 2024 train on ClinVar, gnomAD and HSV; the Atlas lists it as clinical-trained (R2.7)."
+    },
+    "Polyphen2_HVAR_score": {
+      "level": 2,
+      "reason": "HumVar is UniProt disease-causing versus common variants; the plan's own level 2 includes curated UniProt disease sets (R2.7)."
+    },
+    "MPC_score": {
+      "level": "x",
+      "reason": "MPC combines missense badness, PolyPhen-2 and regional constraint. PolyPhen-2 is in the panel, so the plan's ensemble rule excludes it (R2.7)."
+    }
+  },
+  "atlas_source": {
+    "source": "Atlas of Variant Effects Alliance, coding VEP table (compiled by B. Livesey and T. Walsh, Marsh lab, University of Edinburgh)",
+    "page": "https://www.varianteffect.org/veps/",
+    "sheet": "https://docs.google.com/spreadsheets/d/17Zsqz-VIS8HQ_Rfl135zRozjyEEcvf9sYdBkxoXwWqc/edit#gid=0",
+    "export_url": "https://docs.google.com/spreadsheets/d/17Zsqz-VIS8HQ_Rfl135zRozjyEEcvf9sYdBkxoXwWqc/export?format=csv&gid=0",
+    "page_last_modified": "2026-08-28",
+    "retrieved": "2026-10-05",
+    "sha256": "7bc2d034cd2bf464a6a4437537883b6a5020a0b4fee4c29bb68ccb07dde0fc3c",
+    "use": "External classification of predictor training (Population-free / Population-tuned / Clinical-trained), suggested by Reviewer 2 (R2.7). Read by scripts/rebuild/33_dbnsfp_matched.py; not edited by hand."
+  },
+  "schemes": {
+    "submitted": {
+      "n": 22,
+      "levels": {
+        "SIFT_score": 0,
+        "Polyphen2_HVAR_score": 1,
+        "MutationTaster_score": 2,
+        "MutationAssessor_score": 0,
+        "PROVEAN_score": 0,
+        "VEST4_score": 2,
+        "MVP_score": 2,
+        "gMVP_score": 2,
+        "MPC_score": 0,
+        "PrimateAI_score": 0,
+        "DEOGEN2_score": 2,
+        "LIST-S2_score": 0,
+        "VARITY_R_LOO_score": 2,
+        "ESM1b_score": 0,
+        "AlphaMissense_score": 1,
+        "PHACTboost_score": 0,
+        "MutFormer_score": 2,
+        "MutScore_score": 2,
+        "DANN_score": 1,
+        "MutPred2_score": 2,
+        "MisFit_S_score": 0,
+        "popEVE_score": 0
+      },
+      "counts": {
+        "0": 10,
+        "1": 3,
+        "2": 9
+      },
+      "submitted": {
+        "exposure_vs_change": {
+          "rho": -0.4283769437451498,
+          "p_exact": 0.0482538570351686,
+          "n_arrangements": 142262120
+        },
+        "global_vs_change": {
+          "rho": -0.25578769057029926,
+          "p_asymptotic": 0.25057252861489687
+        }
+      },
+      "mean": {
+        "exposure_vs_change": {
+          "rho": -0.5333107772273911,
+          "p_exact": 0.012197048659193325,
+          "n_arrangements": 142262120
+        },
+        "exposure_vs_residual": {
+          "rho": -0.4944235330545605,
+          "p_exact": 0.02113784048768569
+        },
+        "global_vs_change": {
+          "rho": -0.8306041784302655,
+          "p_asymptotic": 1.7103307524006414e-06
+        }
+      },
+      "pooled": {
+        "exposure_vs_change": {
+          "rho": -0.5993573665368018,
+          "p_exact": 0.004209497229480342,
+          "n_arrangements": 142262120
+        },
+        "exposure_vs_residual": {
+          "rho": -0.5382488399794966,
+          "p_exact": 0.011325291651776313
+        },
+        "global_vs_change": {
+          "rho": -0.7165443252399775,
+          "p_asymptotic": 0.0001757934507563793
+        }
+      },
+      "did_groups": {
+        "low_levels": [
+          0
+        ],
+        "low": [
+          "SIFT_score",
+          "MutationAssessor_score",
+          "PROVEAN_score",
+          "MPC_score",
+          "PrimateAI_score",
+          "LIST-S2_score",
+          "ESM1b_score",
+          "PHACTboost_score",
+          "MisFit_S_score",
+          "popEVE_score"
+        ],
+        "high": [
+          "MutationTaster_score",
+          "VEST4_score",
+          "MVP_score",
+          "gMVP_score",
+          "DEOGEN2_score",
+          "VARITY_R_LOO_score",
+          "MutFormer_score",
+          "MutScore_score",
+          "MutPred2_score"
+        ]
+      },
+      "did_submitted_unmatched": 0.025221489378210116,
+      "did_mean": {
+        "n_low": 10,
+        "n_high": 9,
+        "global_gap": -0.06846503659593894,
+        "within_gap": -0.02589327986535339,
+        "did": 0.042571756730585324,
+        "boot_genes": {
+          "estimate": 0.042571756730585324,
+          "ci": [
+            0.03363843893746928,
+            0.05152203380967271
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.042571756730585324,
+          "ci": [
+            0.009735364263855573,
+            0.07706098911112977
+          ],
+          "p": 0.01
+        },
+        "boot_both": {
+          "estimate": 0.042571756730585324,
+          "ci": [
+            0.00908731980148396,
+            0.07807865928114412
+          ],
+          "p": 0.014
+        }
+      },
+      "did_pooled": {
+        "n_low": 10,
+        "n_high": 9,
+        "global_gap": -0.06846503659593894,
+        "within_gap": -0.028256621757793754,
+        "did": 0.04020841483814495,
+        "boot_genes": {
+          "estimate": 0.04020841483814495,
+          "ci": [
+            0.03054081762037311,
+            0.050029420178508345
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.04020841483814495,
+          "ci": [
+            0.013821013839192873,
+            0.07058950858910634
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.04020841483814495,
+          "ci": [
+            0.011841584805530209,
+            0.07145878361735448
+          ],
+          "p": 0.002
+        }
+      },
+      "did_pooled_headroom": {
+        "n_low": 10,
+        "n_high": 9,
+        "global_gap": -0.06846503659593894,
+        "within_gap": -0.028256621757793754,
+        "did": 0.03784743496385022,
+        "boot_genes": {
+          "estimate": 0.03784743496385022,
+          "ci": [
+            0.02843474304849427,
+            0.0478132125922062
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.03784743496385022,
+          "ci": [
+            0.01222561583900391,
+            0.06735974682840605
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.03784743496385022,
+          "ci": [
+            0.010392231926895253,
+            0.06828069284732162
+          ],
+          "p": 0.002
+        }
+      }
+    },
+    "submitted_high_confidence": {
+      "n": 13,
+      "levels": {
+        "SIFT_score": 0,
+        "MutationAssessor_score": 0,
+        "PROVEAN_score": 0,
+        "VEST4_score": 2,
+        "gMVP_score": 2,
+        "PrimateAI_score": 0,
+        "VARITY_R_LOO_score": 2,
+        "ESM1b_score": 0,
+        "AlphaMissense_score": 1,
+        "DANN_score": 1,
+        "MutPred2_score": 2,
+        "MisFit_S_score": 0,
+        "popEVE_score": 0
+      },
+      "counts": {
+        "0": 7,
+        "1": 2,
+        "2": 4
+      },
+      "submitted": {
+        "exposure_vs_change": {
+          "rho": -0.5383247530938363,
+          "p_exact": 0.06270396270396271,
+          "n_arrangements": 25740
+        },
+        "global_vs_change": {
+          "rho": -0.34065934065934067,
+          "p_asymptotic": 0.2547064607541252
+        }
+      },
+      "mean": {
+        "exposure_vs_change": {
+          "rho": -0.5748213465239269,
+          "p_exact": 0.0452991452991453,
+          "n_arrangements": 25740
+        },
+        "exposure_vs_residual": {
+          "rho": -0.45620741787613245,
+          "p_exact": 0.12097902097902098
+        },
+        "global_vs_change": {
+          "rho": -0.8516483516483516,
+          "p_asymptotic": 0.00022021941625366217
+        }
+      },
+      "pooled": {
+        "exposure_vs_change": {
+          "rho": -0.6569386817416307,
+          "p_exact": 0.019114219114219115,
+          "n_arrangements": 25740
+        },
+        "exposure_vs_residual": {
+          "rho": -0.520076456378791,
+          "p_exact": 0.0735042735042735
+        },
+        "global_vs_change": {
+          "rho": -0.532967032967033,
+          "p_asymptotic": 0.06073650306561789
+        }
+      },
+      "did_groups": {
+        "low_levels": [
+          0
+        ],
+        "low": [
+          "SIFT_score",
+          "MutationAssessor_score",
+          "PROVEAN_score",
+          "PrimateAI_score",
+          "ESM1b_score",
+          "MisFit_S_score",
+          "popEVE_score"
+        ],
+        "high": [
+          "VEST4_score",
+          "gMVP_score",
+          "VARITY_R_LOO_score",
+          "MutPred2_score"
+        ]
+      },
+      "did_submitted_unmatched": 0.024204219558379036,
+      "did_mean": {
+        "n_low": 7,
+        "n_high": 4,
+        "global_gap": -0.07342288967986765,
+        "within_gap": -0.02945933249029542,
+        "did": 0.04396355718957212,
+        "boot_genes": {
+          "estimate": 0.04396355718957212,
+          "ci": [
+            0.03545739493343544,
+            0.05288840330181902
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.04396355718957212,
+          "ci": [
+            0.012116782171983746,
+            0.08092421026711041
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.04396355718957212,
+          "ci": [
+            0.011706529202849309,
+            0.08240645270395906
+          ],
+          "p": 0.0
+        }
+      },
+      "did_pooled": {
+        "n_low": 7,
+        "n_high": 4,
+        "global_gap": -0.07342288967986765,
+        "within_gap": -0.03091764731324731,
+        "did": 0.04250524236662032,
+        "boot_genes": {
+          "estimate": 0.04250524236662032,
+          "ci": [
+            0.033360407097251396,
+            0.051651881020162965
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.04250524236662032,
+          "ci": [
+            0.00963649852533223,
+            0.08052089916507148
+          ],
+          "p": 0.008
+        },
+        "boot_both": {
+          "estimate": 0.04250524236662032,
+          "ci": [
+            0.008753484230488082,
+            0.08117881778971991
+          ],
+          "p": 0.01
+        }
+      },
+      "did_pooled_headroom": {
+        "n_low": 7,
+        "n_high": 4,
+        "global_gap": -0.07342288967986765,
+        "within_gap": -0.03091764731324731,
+        "did": 0.03946742679929293,
+        "boot_genes": {
+          "estimate": 0.03946742679929293,
+          "ci": [
+            0.030368302730165764,
+            0.04866550321581114
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.03946742679929293,
+          "ci": [
+            0.007355858902819367,
+            0.07680528982387244
+          ],
+          "p": 0.01
+        },
+        "boot_both": {
+          "estimate": 0.03946742679929293,
+          "ci": [
+            0.006244025678018893,
+            0.07739866512949227
+          ],
+          "p": 0.018
+        }
+      }
+    },
+    "amended": {
+      "n": 21,
+      "levels": {
+        "SIFT_score": 0,
+        "Polyphen2_HVAR_score": 2,
+        "MutationTaster_score": 2,
+        "MutationAssessor_score": 0,
+        "PROVEAN_score": 0,
+        "VEST4_score": 2,
+        "MVP_score": 2,
+        "gMVP_score": 2,
+        "PrimateAI_score": 0,
+        "DEOGEN2_score": 2,
+        "LIST-S2_score": 0,
+        "VARITY_R_LOO_score": 2,
+        "ESM1b_score": 0,
+        "AlphaMissense_score": 1,
+        "PHACTboost_score": 2,
+        "MutFormer_score": 2,
+        "MutScore_score": 2,
+        "DANN_score": 1,
+        "MutPred2_score": 2,
+        "MisFit_S_score": 0,
+        "popEVE_score": 0
+      },
+      "counts": {
+        "0": 8,
+        "1": 2,
+        "2": 11
+      },
+      "submitted": {
+        "exposure_vs_change": {
+          "rho": -0.25524005190183713,
+          "p_exact": 0.2609497600209674,
+          "n_arrangements": 15872220
+        },
+        "global_vs_change": {
+          "rho": -0.14415584415584418,
+          "p_asymptotic": 0.5330058743165694
+        }
+      },
+      "mean": {
+        "exposure_vs_change": {
+          "rho": -0.4756746421806965,
+          "p_exact": 0.031239612354163438,
+          "n_arrangements": 15872220
+        },
+        "exposure_vs_residual": {
+          "rho": -0.427817132449102,
+          "p_exact": 0.05455960161842515
+        },
+        "global_vs_change": {
+          "rho": -0.8051948051948051,
+          "p_asymptotic": 1.0678393833166896e-05
+        }
+      },
+      "pooled": {
+        "exposure_vs_change": {
+          "rho": -0.5721147754276974,
+          "p_exact": 0.008203011298986531,
+          "n_arrangements": 15872220
+        },
+        "exposure_vs_residual": {
+          "rho": -0.5032289659655539,
+          "p_exact": 0.02197524983902693
+        },
+        "global_vs_change": {
+          "rho": -0.6779220779220779,
+          "p_asymptotic": 0.0007325317500767633
+        }
+      },
+      "did_groups": {
+        "low_levels": [
+          0
+        ],
+        "low": [
+          "SIFT_score",
+          "MutationAssessor_score",
+          "PROVEAN_score",
+          "PrimateAI_score",
+          "LIST-S2_score",
+          "ESM1b_score",
+          "MisFit_S_score",
+          "popEVE_score"
+        ],
+        "high": [
+          "Polyphen2_HVAR_score",
+          "MutationTaster_score",
+          "VEST4_score",
+          "MVP_score",
+          "gMVP_score",
+          "DEOGEN2_score",
+          "VARITY_R_LOO_score",
+          "PHACTboost_score",
+          "MutFormer_score",
+          "MutScore_score",
+          "MutPred2_score"
+        ]
+      },
+      "did_mean": {
+        "n_low": 8,
+        "n_high": 11,
+        "global_gap": -0.06650171109154868,
+        "within_gap": -0.03334906932737092,
+        "did": 0.03315264176417802,
+        "boot_genes": {
+          "estimate": 0.03315264176417802,
+          "ci": [
+            0.0247860495407876,
+            0.04124902314117463
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.03315264176417802,
+          "ci": [
+            0.004645841302220995,
+            0.06590242735464207
+          ],
+          "p": 0.014
+        },
+        "boot_both": {
+          "estimate": 0.03315264176417802,
+          "ci": [
+            0.003831400712465842,
+            0.0689539260772735
+          ],
+          "p": 0.026
+        }
+      },
+      "did_pooled": {
+        "n_low": 8,
+        "n_high": 11,
+        "global_gap": -0.06650171109154868,
+        "within_gap": -0.028159278755812478,
+        "did": 0.03834243233573621,
+        "boot_genes": {
+          "estimate": 0.03834243233573621,
+          "ci": [
+            0.029523056882305155,
+            0.04708202755431817
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.03834243233573621,
+          "ci": [
+            0.00978509942119043,
+            0.07313695413571712
+          ],
+          "p": 0.002
+        },
+        "boot_both": {
+          "estimate": 0.03834243233573621,
+          "ci": [
+            0.009164147716448093,
+            0.07509709477796796
+          ],
+          "p": 0.006
+        }
+      },
+      "did_pooled_headroom": {
+        "n_low": 8,
+        "n_high": 11,
+        "global_gap": -0.06650171109154868,
+        "within_gap": -0.028159278755812478,
+        "did": 0.035697778890724736,
+        "boot_genes": {
+          "estimate": 0.035697778890724736,
+          "ci": [
+            0.02707979979207798,
+            0.044350110752595366
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.035697778890724736,
+          "ci": [
+            0.007929389938885725,
+            0.06919212489491071
+          ],
+          "p": 0.002
+        },
+        "boot_both": {
+          "estimate": 0.035697778890724736,
+          "ci": [
+            0.0073996231243822095,
+            0.07131370465062642
+          ],
+          "p": 0.01
+        }
+      }
+    },
+    "atlas": {
+      "n": 20,
+      "levels": {
+        "SIFT_score": 0,
+        "Polyphen2_HVAR_score": 2,
+        "MutationTaster_score": 2,
+        "MutationAssessor_score": 0,
+        "PROVEAN_score": 0,
+        "VEST4_score": 2,
+        "MVP_score": 2,
+        "gMVP_score": 2,
+        "PrimateAI_score": 1,
+        "DEOGEN2_score": 2,
+        "LIST-S2_score": 1,
+        "VARITY_R_LOO_score": 2,
+        "ESM1b_score": 0,
+        "AlphaMissense_score": 1,
+        "PHACTboost_score": 2,
+        "MutFormer_score": 2,
+        "MutScore_score": 2,
+        "DANN_score": 2,
+        "MutPred2_score": 2,
+        "popEVE_score": 1
+      },
+      "counts": {
+        "0": 4,
+        "1": 4,
+        "2": 12
+      },
+      "submitted": {
+        "exposure_vs_change": {
+          "rho": -0.2330736112705097,
+          "p_exact": 0.3262393540412116,
+          "n_arrangements": 8817900
+        },
+        "global_vs_change": {
+          "rho": -0.037593984962406006,
+          "p_asymptotic": 0.8749652018566715
+        }
+      },
+      "mean": {
+        "exposure_vs_change": {
+          "rho": -0.23992871748434824,
+          "p_exact": 0.311593690107622,
+          "n_arrangements": 8817900
+        },
+        "exposure_vs_residual": {
+          "rho": -0.18508786777364009,
+          "p_exact": 0.4387815693078851
+        },
+        "global_vs_change": {
+          "rho": -0.7819548872180451,
+          "p_asymptotic": 4.646775894116184e-05
+        }
+      },
+      "pooled": {
+        "exposure_vs_change": {
+          "rho": -0.48671254118253504,
+          "p_exact": 0.03236235384842196,
+          "n_arrangements": 8817900
+        },
+        "exposure_vs_residual": {
+          "rho": -0.43872679768566536,
+          "p_exact": 0.05625103482688622
+        },
+        "global_vs_change": {
+          "rho": -0.6526315789473683,
+          "p_asymptotic": 0.0018136097760447355
+        }
+      },
+      "did_groups": {
+        "low_levels": [
+          0,
+          1
+        ],
+        "low": [
+          "SIFT_score",
+          "MutationAssessor_score",
+          "PROVEAN_score",
+          "PrimateAI_score",
+          "LIST-S2_score",
+          "ESM1b_score",
+          "AlphaMissense_score",
+          "popEVE_score"
+        ],
+        "high": [
+          "Polyphen2_HVAR_score",
+          "MutationTaster_score",
+          "VEST4_score",
+          "MVP_score",
+          "gMVP_score",
+          "DEOGEN2_score",
+          "VARITY_R_LOO_score",
+          "PHACTboost_score",
+          "MutFormer_score",
+          "MutScore_score",
+          "DANN_score",
+          "MutPred2_score"
+        ]
+      },
+      "did_mean": {
+        "n_low": 8,
+        "n_high": 12,
+        "global_gap": -0.036609982374714245,
+        "within_gap": -0.0206636006326838,
+        "did": 0.015946381742030464,
+        "boot_genes": {
+          "estimate": 0.015946381742030464,
+          "ci": [
+            0.009492131972792126,
+            0.022234673063240406
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.015946381742030464,
+          "ci": [
+            -0.004702832739062302,
+            0.03740145567411176
+          ],
+          "p": 0.148
+        },
+        "boot_both": {
+          "estimate": 0.015946381742030464,
+          "ci": [
+            -0.005777078957397376,
+            0.038831386420222457
+          ],
+          "p": 0.184
+        }
+      },
+      "did_pooled": {
+        "n_low": 8,
+        "n_high": 12,
+        "global_gap": -0.036609982374714245,
+        "within_gap": -0.012643635426139,
+        "did": 0.02396634694857513,
+        "boot_genes": {
+          "estimate": 0.02396634694857513,
+          "ci": [
+            0.017152118938603637,
+            0.03005025583062664
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.02396634694857513,
+          "ci": [
+            0.005527903300126017,
+            0.046928937859952814
+          ],
+          "p": 0.01
+        },
+        "boot_both": {
+          "estimate": 0.02396634694857513,
+          "ci": [
+            0.004066593770941521,
+            0.048350606925506974
+          ],
+          "p": 0.02
+        }
+      },
+      "did_pooled_headroom": {
+        "n_low": 8,
+        "n_high": 12,
+        "global_gap": -0.036609982374714245,
+        "within_gap": -0.012643635426139,
+        "did": 0.02216548632185339,
+        "boot_genes": {
+          "estimate": 0.02216548632185339,
+          "ci": [
+            0.015446232104397968,
+            0.0281691909284577
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.02216548632185339,
+          "ci": [
+            0.0038551620683127943,
+            0.04463547331392428
+          ],
+          "p": 0.014
+        },
+        "boot_both": {
+          "estimate": 0.02216548632185339,
+          "ci": [
+            0.00279673563944458,
+            0.04568860539479357
+          ],
+          "p": 0.026
+        }
+      },
+      "did_pooled_free_only": {
+        "n_low": 4,
+        "n_high": 12,
+        "global_gap": -0.01931833923444637,
+        "within_gap": -0.01341727050758168,
+        "did": 0.005901068726864643,
+        "boot_genes": {
+          "estimate": 0.005901068726864643,
+          "ci": [
+            -0.0012921650730950917,
+            0.012272575527783446
+          ],
+          "p": 0.122
+        },
+        "boot_predictors": {
+          "estimate": 0.005901068726864643,
+          "ci": [
+            -0.004196195324303138,
+            0.016322117467894255
+          ],
+          "p": 0.3
+        },
+        "boot_both": {
+          "estimate": 0.005901068726864643,
+          "ci": [
+            -0.008272588321166166,
+            0.018147269445654278
+          ],
+          "p": 0.44
+        }
+      },
+      "did_pooled_tuned_only": {
+        "n_low": 4,
+        "n_high": 12,
+        "global_gap": -0.05390162551498212,
+        "within_gap": -0.01187000034469643,
+        "did": 0.042031625170285615,
+        "boot_genes": {
+          "estimate": 0.042031625170285615,
+          "ci": [
+            0.03271199325718809,
+            0.050386823401843715
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.042031625170285615,
+          "ci": [
+            0.015864603632195686,
+            0.07293735918359463
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.042031625170285615,
+          "ci": [
+            0.013997861765106388,
+            0.07486876754478441
+          ],
+          "p": 0.0
+        }
+      }
+    },
+    "atlas_misfit_as_tuned": {
+      "n": 21,
+      "levels": {
+        "SIFT_score": 0,
+        "Polyphen2_HVAR_score": 2,
+        "MutationTaster_score": 2,
+        "MutationAssessor_score": 0,
+        "PROVEAN_score": 0,
+        "VEST4_score": 2,
+        "MVP_score": 2,
+        "gMVP_score": 2,
+        "PrimateAI_score": 1,
+        "DEOGEN2_score": 2,
+        "LIST-S2_score": 1,
+        "VARITY_R_LOO_score": 2,
+        "ESM1b_score": 0,
+        "AlphaMissense_score": 1,
+        "PHACTboost_score": 2,
+        "MutFormer_score": 2,
+        "MutScore_score": 2,
+        "DANN_score": 2,
+        "MutPred2_score": 2,
+        "MisFit_S_score": 1,
+        "popEVE_score": 1
+      },
+      "counts": {
+        "0": 4,
+        "1": 5,
+        "2": 12
+      },
+      "submitted": {
+        "exposure_vs_change": {
+          "rho": -0.2716800587543374,
+          "p_exact": 0.23146338157395213,
+          "n_arrangements": 37035180
+        },
+        "global_vs_change": {
+          "rho": -0.14415584415584418,
+          "p_asymptotic": 0.5330058743165694
+        }
+      },
+      "mean": {
+        "exposure_vs_change": {
+          "rho": -0.2760502473670077,
+          "p_exact": 0.22393227196411628,
+          "n_arrangements": 37035180
+        },
+        "exposure_vs_residual": {
+          "rho": -0.22506471355252075,
+          "p_exact": 0.3237475287010891
+        },
+        "global_vs_change": {
+          "rho": -0.8051948051948051,
+          "p_asymptotic": 1.0678393833166896e-05
+        }
+      },
+      "pooled": {
+        "exposure_vs_change": {
+          "rho": -0.5025716904570852,
+          "p_exact": 0.021834266770135856,
+          "n_arrangements": 37035180
+        },
+        "exposure_vs_residual": {
+          "rho": -0.45814143956160375,
+          "p_exact": 0.038294994111004725
+        },
+        "global_vs_change": {
+          "rho": -0.6779220779220779,
+          "p_asymptotic": 0.0007325317500767633
+        }
+      },
+      "did_groups": {
+        "low_levels": [
+          0,
+          1
+        ],
+        "low": [
+          "SIFT_score",
+          "MutationAssessor_score",
+          "PROVEAN_score",
+          "PrimateAI_score",
+          "LIST-S2_score",
+          "ESM1b_score",
+          "AlphaMissense_score",
+          "MisFit_S_score",
+          "popEVE_score"
+        ],
+        "high": [
+          "Polyphen2_HVAR_score",
+          "MutationTaster_score",
+          "VEST4_score",
+          "MVP_score",
+          "gMVP_score",
+          "DEOGEN2_score",
+          "VARITY_R_LOO_score",
+          "PHACTboost_score",
+          "MutFormer_score",
+          "MutScore_score",
+          "DANN_score",
+          "MutPred2_score"
+        ]
+      },
+      "did_mean": {
+        "n_low": 9,
+        "n_high": 12,
+        "global_gap": -0.045396785425457,
+        "within_gap": -0.018031905820973804,
+        "did": 0.02736487960448331,
+        "boot_genes": {
+          "estimate": 0.02736487960448331,
+          "ci": [
+            0.019486316145747192,
+            0.03528762023621641
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.02736487960448331,
+          "ci": [
+            0.0014153120337968693,
+            0.05886332054456698
+          ],
+          "p": 0.038
+        },
+        "boot_both": {
+          "estimate": 0.02736487960448331,
+          "ci": [
+            -0.0005910324821714519,
+            0.06031348162358225
+          ],
+          "p": 0.06
+        }
+      },
+      "did_pooled": {
+        "n_low": 9,
+        "n_high": 12,
+        "global_gap": -0.045396785425457,
+        "within_gap": -0.009525574888177846,
+        "did": 0.03587121053727918,
+        "boot_genes": {
+          "estimate": 0.03587121053727918,
+          "ci": [
+            0.02774514329367628,
+            0.0436663263620073
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.03587121053727918,
+          "ci": [
+            0.010102184474021555,
+            0.06787312917875886
+          ],
+          "p": 0.002
+        },
+        "boot_both": {
+          "estimate": 0.03587121053727918,
+          "ci": [
+            0.008540426303547129,
+            0.06953502546581522
+          ],
+          "p": 0.004
+        }
+      },
+      "did_pooled_headroom": {
+        "n_low": 9,
+        "n_high": 12,
+        "global_gap": -0.045396785425457,
+        "within_gap": -0.009525574888177846,
+        "did": 0.0338745111796954,
+        "boot_genes": {
+          "estimate": 0.0338745111796954,
+          "ci": [
+            0.0258897133688288,
+            0.041665207276877385
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.0338745111796954,
+          "ci": [
+            0.008413917585149377,
+            0.0652967318757249
+          ],
+          "p": 0.002
+        },
+        "boot_both": {
+          "estimate": 0.0338745111796954,
+          "ci": [
+            0.007566799084933312,
+            0.06664478193341665
+          ],
+          "p": 0.004
+        }
+      },
+      "did_pooled_free_only": {
+        "n_low": 4,
+        "n_high": 12,
+        "global_gap": -0.01931833923444637,
+        "within_gap": -0.01341727050758168,
+        "did": 0.005901068726864643,
+        "boot_genes": {
+          "estimate": 0.005901068726864643,
+          "ci": [
+            -0.0012921650730950917,
+            0.012272575527783446
+          ],
+          "p": 0.122
+        },
+        "boot_predictors": {
+          "estimate": 0.005901068726864643,
+          "ci": [
+            -0.004196195324303138,
+            0.016322117467894255
+          ],
+          "p": 0.3
+        },
+        "boot_both": {
+          "estimate": 0.005901068726864643,
+          "ci": [
+            -0.008272588321166166,
+            0.018147269445654278
+          ],
+          "p": 0.44
+        }
+      },
+      "did_pooled_tuned_only": {
+        "n_low": 5,
+        "n_high": 12,
+        "global_gap": -0.0662595423782657,
+        "within_gap": -0.006412218392654823,
+        "did": 0.059847323985610816,
+        "boot_genes": {
+          "estimate": 0.059847323985610816,
+          "ci": [
+            0.04852857708299472,
+            0.07131141298053102
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.059847323985610816,
+          "ci": [
+            0.02460829423361005,
+            0.10016771117102695
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.059847323985610816,
+          "ci": [
+            0.023600391417428566,
+            0.10206708132864349
+          ],
+          "p": 0.0
+        }
+      }
+    },
+    "atlas_excluding_meta": {
+      "n": 13,
+      "levels": {
+        "SIFT_score": 0,
+        "Polyphen2_HVAR_score": 2,
+        "MutationTaster_score": 2,
+        "MutationAssessor_score": 0,
+        "PROVEAN_score": 0,
+        "VEST4_score": 2,
+        "gMVP_score": 2,
+        "PrimateAI_score": 1,
+        "LIST-S2_score": 1,
+        "ESM1b_score": 0,
+        "AlphaMissense_score": 1,
+        "PHACTboost_score": 2,
+        "MutPred2_score": 2
+      },
+      "counts": {
+        "0": 4,
+        "1": 3,
+        "2": 6
+      },
+      "submitted": {
+        "exposure_vs_change": {
+          "rho": 0.12403473458920847,
+          "p_exact": 0.6829170829170829,
+          "n_arrangements": 60060
+        },
+        "global_vs_change": {
+          "rho": 0.010989010989010988,
+          "p_asymptotic": 0.971577682777073
+        }
+      },
+      "mean": {
+        "exposure_vs_change": {
+          "rho": -0.15652002221971542,
+          "p_exact": 0.6052281052281052,
+          "n_arrangements": 60060
+        },
+        "exposure_vs_residual": {
+          "rho": -0.020672455764868074,
+          "p_exact": 0.948984348984349
+        },
+        "global_vs_change": {
+          "rho": -0.6648351648351648,
+          "p_asymptotic": 0.013165575845550257
+        }
+      },
+      "pooled": {
+        "exposure_vs_change": {
+          "rho": -0.3927766595324934,
+          "p_exact": 0.18295038295038296,
+          "n_arrangements": 60060
+        },
+        "exposure_vs_residual": {
+          "rho": -0.32485287630506976,
+          "p_exact": 0.2745920745920746
+        },
+        "global_vs_change": {
+          "rho": -0.7747252747252747,
+          "p_asymptotic": 0.0018713615028719086
+        }
+      },
+      "did_groups": {
+        "low_levels": [
+          0,
+          1
+        ],
+        "low": [
+          "SIFT_score",
+          "MutationAssessor_score",
+          "PROVEAN_score",
+          "PrimateAI_score",
+          "LIST-S2_score",
+          "ESM1b_score",
+          "AlphaMissense_score"
+        ],
+        "high": [
+          "Polyphen2_HVAR_score",
+          "MutationTaster_score",
+          "VEST4_score",
+          "gMVP_score",
+          "PHACTboost_score",
+          "MutPred2_score"
+        ]
+      },
+      "did_mean": {
+        "n_low": 7,
+        "n_high": 6,
+        "global_gap": -0.05907078823984069,
+        "within_gap": -0.0419781891374873,
+        "did": 0.017092599102353213,
+        "boot_genes": {
+          "estimate": 0.017092599102353213,
+          "ci": [
+            0.011865756320441415,
+            0.02227953660466075
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.017092599102353213,
+          "ci": [
+            -0.00028276402101889216,
+            0.0387100950767591
+          ],
+          "p": 0.052
+        },
+        "boot_both": {
+          "estimate": 0.017092599102353213,
+          "ci": [
+            0.0002666552430081368,
+            0.04213155260733519
+          ],
+          "p": 0.044
+        }
+      },
+      "did_pooled": {
+        "n_low": 7,
+        "n_high": 6,
+        "global_gap": -0.05907078823984069,
+        "within_gap": -0.03693100377323477,
+        "did": 0.02213978446660591,
+        "boot_genes": {
+          "estimate": 0.02213978446660591,
+          "ci": [
+            0.015476975633852245,
+            0.027851090237646734
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.02213978446660591,
+          "ci": [
+            0.004129112807779881,
+            0.04807426313549873
+          ],
+          "p": 0.01
+        },
+        "boot_both": {
+          "estimate": 0.02213978446660591,
+          "ci": [
+            0.002464319897250389,
+            0.04848546066153417
+          ],
+          "p": 0.024
+        }
+      },
+      "did_pooled_headroom": {
+        "n_low": 7,
+        "n_high": 6,
+        "global_gap": -0.05907078823984069,
+        "within_gap": -0.03693100377323477,
+        "did": 0.01959471835190612,
+        "boot_genes": {
+          "estimate": 0.01959471835190612,
+          "ci": [
+            0.012950774670579222,
+            0.0253034296417296
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.01959471835190612,
+          "ci": [
+            0.0022462260426398817,
+            0.04501321807798123
+          ],
+          "p": 0.016
+        },
+        "boot_both": {
+          "estimate": 0.01959471835190612,
+          "ci": [
+            0.0007587240030984469,
+            0.045768120167957435
+          ],
+          "p": 0.042
+        }
+      },
+      "did_pooled_free_only": {
+        "n_low": 4,
+        "n_high": 6,
+        "global_gap": -0.04125010661671469,
+        "within_gap": -0.03347030580984334,
+        "did": 0.007779800806871397,
+        "boot_genes": {
+          "estimate": 0.007779800806871397,
+          "ci": [
+            0.0009626275000614005,
+            0.013235630194660904
+          ],
+          "p": 0.032
+        },
+        "boot_predictors": {
+          "estimate": 0.007779800806871397,
+          "ci": [
+            -0.003417654366927687,
+            0.01924329660352648
+          ],
+          "p": 0.212
+        },
+        "boot_both": {
+          "estimate": 0.007779800806871397,
+          "ci": [
+            -0.006737691823970597,
+            0.02051439468186021
+          ],
+          "p": 0.294
+        }
+      },
+      "did_pooled_tuned_only": {
+        "n_low": 3,
+        "n_high": 6,
+        "global_gap": -0.08283169707067506,
+        "within_gap": -0.04154526772442324,
+        "did": 0.04128642934625193,
+        "boot_genes": {
+          "estimate": 0.04128642934625193,
+          "ci": [
+            0.031478815272368815,
+            0.05050383159415321
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.04128642934625193,
+          "ci": [
+            0.010129965407597401,
+            0.0827058085657158
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.04128642934625193,
+          "ci": [
+            0.009959614992169906,
+            0.08137589169451684
+          ],
+          "p": 0.0
+        }
+      }
+    },
+    "amended_ensemble_named": {
+      "n": 17,
+      "levels": {
+        "SIFT_score": 0,
+        "Polyphen2_HVAR_score": 2,
+        "MutationTaster_score": 2,
+        "MutationAssessor_score": 0,
+        "PROVEAN_score": 0,
+        "VEST4_score": 2,
+        "gMVP_score": 2,
+        "PrimateAI_score": 0,
+        "LIST-S2_score": 0,
+        "VARITY_R_LOO_score": 2,
+        "ESM1b_score": 0,
+        "AlphaMissense_score": 1,
+        "PHACTboost_score": 2,
+        "MutScore_score": 2,
+        "MutPred2_score": 2,
+        "MisFit_S_score": 0,
+        "popEVE_score": 0
+      },
+      "counts": {
+        "0": 8,
+        "1": 1,
+        "2": 8
+      },
+      "submitted": {
+        "exposure_vs_change": {
+          "rho": -0.259913730031377,
+          "p_exact": 0.31870743635449517,
+          "n_arrangements": 218790
+        },
+        "global_vs_change": {
+          "rho": -0.31617647058823534,
+          "p_asymptotic": 0.21632697166875522
+        }
+      },
+      "mean": {
+        "exposure_vs_change": {
+          "rho": -0.5693348372115877,
+          "p_exact": 0.021225832990538873,
+          "n_arrangements": 218790
+        },
+        "exposure_vs_residual": {
+          "rho": -0.49507377148833714,
+          "p_exact": 0.048676813382695736
+        },
+        "global_vs_change": {
+          "rho": -0.7843137254901962,
+          "p_asymptotic": 0.0001936516431726821
+        }
+      },
+      "pooled": {
+        "exposure_vs_change": {
+          "rho": -0.6931032800836721,
+          "p_exact": 0.003629050687874217,
+          "n_arrangements": 218790
+        },
+        "exposure_vs_residual": {
+          "rho": -0.63121905864763,
+          "p_exact": 0.009378856437679967
+        },
+        "global_vs_change": {
+          "rho": -0.875,
+          "p_asymptotic": 4.280115581127821e-06
+        }
+      },
+      "did_groups": {
+        "low_levels": [
+          0
+        ],
+        "low": [
+          "SIFT_score",
+          "MutationAssessor_score",
+          "PROVEAN_score",
+          "PrimateAI_score",
+          "LIST-S2_score",
+          "ESM1b_score",
+          "MisFit_S_score",
+          "popEVE_score"
+        ],
+        "high": [
+          "Polyphen2_HVAR_score",
+          "MutationTaster_score",
+          "VEST4_score",
+          "gMVP_score",
+          "VARITY_R_LOO_score",
+          "PHACTboost_score",
+          "MutScore_score",
+          "MutPred2_score"
+        ]
+      },
+      "did_mean": {
+        "n_low": 8,
+        "n_high": 8,
+        "global_gap": -0.07950486048456451,
+        "within_gap": -0.04064019043025313,
+        "did": 0.03886467005431149,
+        "boot_genes": {
+          "estimate": 0.03886467005431149,
+          "ci": [
+            0.030914497578027115,
+            0.046637173490871334
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.03886467005431149,
+          "ci": [
+            0.010137779358408379,
+            0.07083241756676785
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.03886467005431149,
+          "ci": [
+            0.010802084353311934,
+            0.07424542311093325
+          ],
+          "p": 0.0
+        }
+      },
+      "did_pooled": {
+        "n_low": 8,
+        "n_high": 8,
+        "global_gap": -0.07950486048456451,
+        "within_gap": -0.037330041480859055,
+        "did": 0.04217481900370536,
+        "boot_genes": {
+          "estimate": 0.04217481900370536,
+          "ci": [
+            0.03382678292141981,
+            0.05059947189820385
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.04217481900370536,
+          "ci": [
+            0.012879150764409885,
+            0.0751883854056305
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.04217481900370536,
+          "ci": [
+            0.011522626246627013,
+            0.0769664195566348
+          ],
+          "p": 0.002
+        }
+      },
+      "did_pooled_headroom": {
+        "n_low": 8,
+        "n_high": 8,
+        "global_gap": -0.07950486048456451,
+        "within_gap": -0.037330041480859055,
+        "did": 0.03883061440728465,
+        "boot_genes": {
+          "estimate": 0.03883061440728465,
+          "ci": [
+            0.03059859457631378,
+            0.04726391148112521
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.03883061440728465,
+          "ci": [
+            0.010242151890563062,
+            0.07042726326979692
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.03883061440728465,
+          "ci": [
+            0.0087816373664055,
+            0.07284390680959847
+          ],
+          "p": 0.004
+        }
+      }
+    },
+    "atlas_ensemble_named": {
+      "n": 16,
+      "levels": {
+        "SIFT_score": 0,
+        "Polyphen2_HVAR_score": 2,
+        "MutationTaster_score": 2,
+        "MutationAssessor_score": 0,
+        "PROVEAN_score": 0,
+        "VEST4_score": 2,
+        "gMVP_score": 2,
+        "PrimateAI_score": 1,
+        "LIST-S2_score": 1,
+        "VARITY_R_LOO_score": 2,
+        "ESM1b_score": 0,
+        "AlphaMissense_score": 1,
+        "PHACTboost_score": 2,
+        "MutScore_score": 2,
+        "MutPred2_score": 2,
+        "popEVE_score": 1
+      },
+      "counts": {
+        "0": 4,
+        "1": 4,
+        "2": 8
+      },
+      "submitted": {
+        "exposure_vs_change": {
+          "rho": -0.12143612323416698,
+          "p_exact": 0.6572804972804973,
+          "n_arrangements": 900900
+        },
+        "global_vs_change": {
+          "rho": -0.17941176470588235,
+          "p_asymptotic": 0.5061395399904387
+        }
+      },
+      "mean": {
+        "exposure_vs_change": {
+          "rho": -0.3579169947954396,
+          "p_exact": 0.17533799533799535,
+          "n_arrangements": 900900
+        },
+        "exposure_vs_residual": {
+          "rho": -0.26843774609657967,
+          "p_exact": 0.3154068154068154
+        },
+        "global_vs_change": {
+          "rho": -0.7441176470588236,
+          "p_asymptotic": 0.0009482827857378677
+        }
+      },
+      "pooled": {
+        "exposure_vs_change": {
+          "rho": -0.517701367471975,
+          "p_exact": 0.04357642357642358,
+          "n_arrangements": 900900
+        },
+        "exposure_vs_residual": {
+          "rho": -0.441004868587238,
+          "p_exact": 0.09045621045621045
+        },
+        "global_vs_change": {
+          "rho": -0.8529411764705882,
+          "p_asymptotic": 2.679074057724725e-05
+        }
+      },
+      "did_groups": {
+        "low_levels": [
+          0,
+          1
+        ],
+        "low": [
+          "SIFT_score",
+          "MutationAssessor_score",
+          "PROVEAN_score",
+          "PrimateAI_score",
+          "LIST-S2_score",
+          "ESM1b_score",
+          "AlphaMissense_score",
+          "popEVE_score"
+        ],
+        "high": [
+          "Polyphen2_HVAR_score",
+          "MutationTaster_score",
+          "VEST4_score",
+          "gMVP_score",
+          "VARITY_R_LOO_score",
+          "PHACTboost_score",
+          "MutScore_score",
+          "MutPred2_score"
+        ]
+      },
+      "did_mean": {
+        "n_low": 8,
+        "n_high": 8,
+        "global_gap": -0.06223295592045175,
+        "within_gap": -0.03751889826144672,
+        "did": 0.024714057659005112,
+        "boot_genes": {
+          "estimate": 0.024714057659005112,
+          "ci": [
+            0.01923482428534435,
+            0.029915716736343655
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.024714057659005112,
+          "ci": [
+            0.007099896798083542,
+            0.04476229125343651
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.024714057659005112,
+          "ci": [
+            0.0063641087817357936,
+            0.046637167243533575
+          ],
+          "p": 0.0
+        }
+      },
+      "did_pooled": {
+        "n_low": 8,
+        "n_high": 8,
+        "global_gap": -0.06223295592045175,
+        "within_gap": -0.035117009391027576,
+        "did": 0.02711594652942409,
+        "boot_genes": {
+          "estimate": 0.02711594652942409,
+          "ci": [
+            0.020603474114906855,
+            0.0328510604986034
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.02711594652942409,
+          "ci": [
+            0.0095672133438725,
+            0.05015354080890497
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.02711594652942409,
+          "ci": [
+            0.00871553397415519,
+            0.05037380546081767
+          ],
+          "p": 0.004
+        }
+      },
+      "did_pooled_headroom": {
+        "n_low": 8,
+        "n_high": 8,
+        "global_gap": -0.06223295592045175,
+        "within_gap": -0.035117009391027576,
+        "did": 0.024306764439708868,
+        "boot_genes": {
+          "estimate": 0.024306764439708868,
+          "ci": [
+            0.01780341884020813,
+            0.03005647616556817
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.024306764439708868,
+          "ci": [
+            0.007407723065637872,
+            0.04657756516977298
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.024306764439708868,
+          "ci": [
+            0.00647683542281938,
+            0.04742663493072853
+          ],
+          "p": 0.006
+        }
+      },
+      "did_pooled_free_only": {
+        "n_low": 4,
+        "n_high": 8,
+        "global_gap": -0.04494131278018387,
+        "within_gap": -0.03589064447247026,
+        "did": 0.009050668307713602,
+        "boot_genes": {
+          "estimate": 0.009050668307713602,
+          "ci": [
+            0.0017755260683910584,
+            0.014852834468223898
+          ],
+          "p": 0.012
+        },
+        "boot_predictors": {
+          "estimate": 0.009050668307713602,
+          "ci": [
+            -0.0006679298700147103,
+            0.018848841815972642
+          ],
+          "p": 0.072
+        },
+        "boot_both": {
+          "estimate": 0.009050668307713602,
+          "ci": [
+            -0.004244532937345554,
+            0.02029420686963864
+          ],
+          "p": 0.184
+        }
+      },
+      "did_pooled_tuned_only": {
+        "n_low": 4,
+        "n_high": 8,
+        "global_gap": -0.07952459906071963,
+        "within_gap": -0.034343374309585006,
+        "did": 0.04518122475113458,
+        "boot_genes": {
+          "estimate": 0.04518122475113458,
+          "ci": [
+            0.03590722529183961,
+            0.05324666884626224
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.04518122475113458,
+          "ci": [
+            0.017796936529697147,
+            0.07273781811563064
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.04518122475113458,
+          "ci": [
+            0.016903526205403575,
+            0.07484832344777774
+          ],
+          "p": 0.0
+        }
+      }
+    },
+    "amended_ensemble_named_plus": {
+      "n": 15,
+      "levels": {
+        "SIFT_score": 0,
+        "Polyphen2_HVAR_score": 2,
+        "MutationTaster_score": 2,
+        "MutationAssessor_score": 0,
+        "PROVEAN_score": 0,
+        "VEST4_score": 2,
+        "gMVP_score": 2,
+        "PrimateAI_score": 0,
+        "LIST-S2_score": 0,
+        "ESM1b_score": 0,
+        "AlphaMissense_score": 1,
+        "PHACTboost_score": 2,
+        "MutPred2_score": 2,
+        "MisFit_S_score": 0,
+        "popEVE_score": 0
+      },
+      "counts": {
+        "0": 8,
+        "1": 1,
+        "2": 6
+      },
+      "submitted": {
+        "exposure_vs_change": {
+          "rho": -0.12073632210407378,
+          "p_exact": 0.6657342657342658,
+          "n_arrangements": 45045
+        },
+        "global_vs_change": {
+          "rho": -0.23571428571428568,
+          "p_asymptotic": 0.39770294590327276
+        }
+      },
+      "mean": {
+        "exposure_vs_change": {
+          "rho": -0.4648348401006841,
+          "p_exact": 0.08205128205128205,
+          "n_arrangements": 45045
+        },
+        "exposure_vs_residual": {
+          "rho": -0.3642212383472892,
+          "p_exact": 0.17942057942057943
+        },
+        "global_vs_change": {
+          "rho": -0.7678571428571428,
+          "p_asymptotic": 0.0008293296291369941
+        }
+      },
+      "pooled": {
+        "exposure_vs_change": {
+          "rho": -0.6258166029061157,
+          "p_exact": 0.015451215451215451,
+          "n_arrangements": 45045
+        },
+        "exposure_vs_residual": {
+          "rho": -0.5755098020294183,
+          "p_exact": 0.028194028194028196
+        },
+        "global_vs_change": {
+          "rho": -0.8392857142857142,
+          "p_asymptotic": 9.136935846519938e-05
+        }
+      },
+      "did_groups": {
+        "low_levels": [
+          0
+        ],
+        "low": [
+          "SIFT_score",
+          "MutationAssessor_score",
+          "PROVEAN_score",
+          "PrimateAI_score",
+          "LIST-S2_score",
+          "ESM1b_score",
+          "MisFit_S_score",
+          "popEVE_score"
+        ],
+        "high": [
+          "Polyphen2_HVAR_score",
+          "MutationTaster_score",
+          "VEST4_score",
+          "gMVP_score",
+          "PHACTboost_score",
+          "MutPred2_score"
+        ]
+      },
+      "did_mean": {
+        "n_low": 8,
+        "n_high": 6,
+        "global_gap": -0.07581365432109533,
+        "within_gap": -0.040298558018350805,
+        "did": 0.035515096302744555,
+        "boot_genes": {
+          "estimate": 0.035515096302744555,
+          "ci": [
+            0.02793569879049189,
+            0.04342999375236089
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.035515096302744555,
+          "ci": [
+            0.007151265442702831,
+            0.06962649191525279
+          ],
+          "p": 0.004
+        },
+        "boot_both": {
+          "estimate": 0.035515096302744555,
+          "ci": [
+            0.006860937629514714,
+            0.07151510243122151
+          ],
+          "p": 0.006
+        }
+      },
+      "did_pooled": {
+        "n_low": 8,
+        "n_high": 6,
+        "global_gap": -0.07581365432109533,
+        "within_gap": -0.034909702818232136,
+        "did": 0.040903951502863155,
+        "boot_genes": {
+          "estimate": 0.040903951502863155,
+          "ci": [
+            0.033179698298236776,
+            0.04894225392913577
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.040903951502863155,
+          "ci": [
+            0.011158088841372125,
+            0.07699740227230169
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.040903951502863155,
+          "ci": [
+            0.01043945919390177,
+            0.07780809341078841
+          ],
+          "p": 0.0
+        }
+      },
+      "did_pooled_headroom": {
+        "n_low": 8,
+        "n_high": 6,
+        "global_gap": -0.07581365432109533,
+        "within_gap": -0.034909702818232136,
+        "did": 0.03778329472424274,
+        "boot_genes": {
+          "estimate": 0.03778329472424274,
+          "ci": [
+            0.03011924810091291,
+            0.045747968238110705
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.03778329472424274,
+          "ci": [
+            0.008972022858081588,
+            0.07291045586473559
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.03778329472424274,
+          "ci": [
+            0.00781860837914776,
+            0.07353700501425683
+          ],
+          "p": 0.002
+        }
+      }
+    },
+    "atlas_ensemble_named_plus": {
+      "n": 14,
+      "levels": {
+        "SIFT_score": 0,
+        "Polyphen2_HVAR_score": 2,
+        "MutationTaster_score": 2,
+        "MutationAssessor_score": 0,
+        "PROVEAN_score": 0,
+        "VEST4_score": 2,
+        "gMVP_score": 2,
+        "PrimateAI_score": 1,
+        "LIST-S2_score": 1,
+        "ESM1b_score": 0,
+        "AlphaMissense_score": 1,
+        "PHACTboost_score": 2,
+        "MutPred2_score": 2,
+        "popEVE_score": 1
+      },
+      "counts": {
+        "0": 4,
+        "1": 4,
+        "2": 6
+      },
+      "submitted": {
+        "exposure_vs_change": {
+          "rho": 0.07969722925954421,
+          "p_exact": 0.7882974168688455,
+          "n_arrangements": 210210
+        },
+        "global_vs_change": {
+          "rho": -0.059340659340659345,
+          "p_asymptotic": 0.8403017626906825
+        }
+      },
+      "mean": {
+        "exposure_vs_change": {
+          "rho": -0.16877060313785835,
+          "p_exact": 0.5624375624375625,
+          "n_arrangements": 210210
+        },
+        "exposure_vs_residual": {
+          "rho": -0.04688072309384954,
+          "p_exact": 0.8772180200751629
+        },
+        "global_vs_change": {
+          "rho": -0.7186813186813187,
+          "p_asymptotic": 0.0037795799614122904
+        }
+      },
+      "pooled": {
+        "exposure_vs_change": {
+          "rho": -0.37973385706018126,
+          "p_exact": 0.18064792350506637,
+          "n_arrangements": 210210
+        },
+        "exposure_vs_residual": {
+          "rho": -0.31878891703817686,
+          "p_exact": 0.2651443794300937
+        },
+        "global_vs_change": {
+          "rho": -0.8065934065934066,
+          "p_asymptotic": 0.0004911128961691055
+        }
+      },
+      "did_groups": {
+        "low_levels": [
+          0,
+          1
+        ],
+        "low": [
+          "SIFT_score",
+          "MutationAssessor_score",
+          "PROVEAN_score",
+          "PrimateAI_score",
+          "LIST-S2_score",
+          "ESM1b_score",
+          "AlphaMissense_score",
+          "popEVE_score"
+        ],
+        "high": [
+          "Polyphen2_HVAR_score",
+          "MutationTaster_score",
+          "VEST4_score",
+          "gMVP_score",
+          "PHACTboost_score",
+          "MutPred2_score"
+        ]
+      },
+      "did_mean": {
+        "n_low": 8,
+        "n_high": 6,
+        "global_gap": -0.058541749756982564,
+        "within_gap": -0.037177265849544394,
+        "did": 0.02136448390743818,
+        "boot_genes": {
+          "estimate": 0.02136448390743818,
+          "ci": [
+            0.01616780636680025,
+            0.0265319038096176
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.02136448390743818,
+          "ci": [
+            0.0031272191934904247,
+            0.04174111121821498
+          ],
+          "p": 0.024
+        },
+        "boot_both": {
+          "estimate": 0.02136448390743818,
+          "ci": [
+            0.00192917016096068,
+            0.04319869812994725
+          ],
+          "p": 0.028
+        }
+      },
+      "did_pooled": {
+        "n_low": 8,
+        "n_high": 6,
+        "global_gap": -0.058541749756982564,
+        "within_gap": -0.032696670728400656,
+        "did": 0.025845079028581883,
+        "boot_genes": {
+          "estimate": 0.025845079028581883,
+          "ci": [
+            0.01952990319082323,
+            0.03119741160784765
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.025845079028581883,
+          "ci": [
+            0.006363090467821912,
+            0.047941026668371606
+          ],
+          "p": 0.002
+        },
+        "boot_both": {
+          "estimate": 0.025845079028581883,
+          "ci": [
+            0.006220965938737864,
+            0.05043508505214376
+          ],
+          "p": 0.012
+        }
+      },
+      "did_pooled_headroom": {
+        "n_low": 8,
+        "n_high": 6,
+        "global_gap": -0.058541749756982564,
+        "within_gap": -0.032696670728400656,
+        "did": 0.023259444756666955,
+        "boot_genes": {
+          "estimate": 0.023259444756666955,
+          "ci": [
+            0.01707277852131901,
+            0.028558683489058483
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.023259444756666955,
+          "ci": [
+            0.00447743683389343,
+            0.04485811772553368
+          ],
+          "p": 0.004
+        },
+        "boot_both": {
+          "estimate": 0.023259444756666955,
+          "ci": [
+            0.003875455090117595,
+            0.04669488559063736
+          ],
+          "p": 0.018
+        }
+      },
+      "did_pooled_free_only": {
+        "n_low": 4,
+        "n_high": 6,
+        "global_gap": -0.04125010661671469,
+        "within_gap": -0.03347030580984334,
+        "did": 0.007779800806871397,
+        "boot_genes": {
+          "estimate": 0.007779800806871397,
+          "ci": [
+            0.0009626275000614005,
+            0.013235630194660904
+          ],
+          "p": 0.032
+        },
+        "boot_predictors": {
+          "estimate": 0.007779800806871397,
+          "ci": [
+            -0.003417654366927687,
+            0.01924329660352648
+          ],
+          "p": 0.212
+        },
+        "boot_both": {
+          "estimate": 0.007779800806871397,
+          "ci": [
+            -0.006737691823970597,
+            0.02051439468186021
+          ],
+          "p": 0.294
+        }
+      },
+      "did_pooled_tuned_only": {
+        "n_low": 4,
+        "n_high": 6,
+        "global_gap": -0.07583339289725044,
+        "within_gap": -0.03192303564695809,
+        "did": 0.043910357250292374,
+        "boot_genes": {
+          "estimate": 0.043910357250292374,
+          "ci": [
+            0.03493748067930756,
+            0.051905929739488564
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.043910357250292374,
+          "ci": [
+            0.015585355316621396,
+            0.07372612468814947
+          ],
+          "p": 0.0
+        },
+        "boot_both": {
+          "estimate": 0.043910357250292374,
+          "ci": [
+            0.01371185401670467,
+            0.07618396842752098
+          ],
+          "p": 0.0
+        }
+      }
+    },
+    "amended_ensemble_flagged": {
+      "n": 14,
+      "levels": {
+        "SIFT_score": 0,
+        "Polyphen2_HVAR_score": 2,
+        "MutationTaster_score": 2,
+        "MutationAssessor_score": 0,
+        "PROVEAN_score": 0,
+        "VEST4_score": 2,
+        "gMVP_score": 2,
+        "PrimateAI_score": 0,
+        "LIST-S2_score": 0,
+        "ESM1b_score": 0,
+        "AlphaMissense_score": 1,
+        "PHACTboost_score": 2,
+        "MutPred2_score": 2,
+        "MisFit_S_score": 0
+      },
+      "counts": {
+        "0": 7,
+        "1": 1,
+        "2": 6
+      },
+      "submitted": {
+        "exposure_vs_change": {
+          "rho": -0.022114958019228692,
+          "p_exact": 0.940975690975691,
+          "n_arrangements": 24024
+        },
+        "global_vs_change": {
+          "rho": -0.1912087912087912,
+          "p_asymptotic": 0.5125839704707786
+        }
+      },
+      "mean": {
+        "exposure_vs_change": {
+          "rho": -0.4128125496922688,
+          "p_exact": 0.14294039294039293,
+          "n_arrangements": 24024
+        },
+        "exposure_vs_residual": {
+          "rho": -0.29978054203843335,
+          "p_exact": 0.2943722943722944
+        },
+        "global_vs_change": {
+          "rho": -0.7274725274725276,
+          "p_asymptotic": 0.0031906163189881495
+        }
+      },
+      "pooled": {
+        "exposure_vs_change": {
+          "rho": -0.5971038665191746,
+          "p_exact": 0.028388278388278388,
+          "n_arrangements": 24024
+        },
+        "exposure_vs_residual": {
+          "rho": -0.5405878626922569,
+          "p_exact": 0.049700299700299704
+        },
+        "global_vs_change": {
+          "rho": -0.8153846153846154,
+          "p_asymptotic": 0.00037913223820058227
+        }
+      },
+      "did_groups": {
+        "low_levels": [
+          0
+        ],
+        "low": [
+          "SIFT_score",
+          "MutationAssessor_score",
+          "PROVEAN_score",
+          "PrimateAI_score",
+          "LIST-S2_score",
+          "ESM1b_score",
+          "MisFit_S_score"
+        ],
+        "high": [
+          "Polyphen2_HVAR_score",
+          "MutationTaster_score",
+          "VEST4_score",
+          "gMVP_score",
+          "PHACTboost_score",
+          "MutPred2_score"
+        ]
+      },
+      "did_mean": {
+        "n_low": 7,
+        "n_high": 6,
+        "global_gap": -0.07881010774168384,
+        "within_gap": -0.04554538018755172,
+        "did": 0.03326472755413193,
+        "boot_genes": {
+          "estimate": 0.03326472755413193,
+          "ci": [
+            0.025581817543512183,
+            0.04095866653182307
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.03326472755413193,
+          "ci": [
+            0.005082184911037808,
+            0.06919368033359594
+          ],
+          "p": 0.018
+        },
+        "boot_both": {
+          "estimate": 0.03326472755413193,
+          "ci": [
+            0.0034011960482840707,
+            0.07020700859830127
+          ],
+          "p": 0.016
+        }
+      },
+      "did_pooled": {
+        "n_low": 7,
+        "n_high": 6,
+        "global_gap": -0.07881010774168384,
+        "within_gap": -0.039460183304470764,
+        "did": 0.03934992443721308,
+        "boot_genes": {
+          "estimate": 0.03934992443721308,
+          "ci": [
+            0.031305464540060654,
+            0.04724847699559629
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.03934992443721308,
+          "ci": [
+            0.008466102302010638,
+            0.07713855082707224
+          ],
+          "p": 0.004
+        },
+        "boot_both": {
+          "estimate": 0.03934992443721308,
+          "ci": [
+            0.00704616958824011,
+            0.07824109533210973
+          ],
+          "p": 0.012
+        }
+      },
+      "did_pooled_headroom": {
+        "n_low": 7,
+        "n_high": 6,
+        "global_gap": -0.07881010774168384,
+        "within_gap": -0.039460183304470764,
+        "did": 0.03619340402913558,
+        "boot_genes": {
+          "estimate": 0.03619340402913558,
+          "ci": [
+            0.028148353361701836,
+            0.04413753930672818
+          ],
+          "p": 0.0
+        },
+        "boot_predictors": {
+          "estimate": 0.03619340402913558,
+          "ci": [
+            0.005836178260718698,
+            0.07349415548729094
+          ],
+          "p": 0.004
+        },
+        "boot_both": {
+          "estimate": 0.03619340402913558,
+          "ci": [
+            0.004645008251803669,
+            0.07451758331552821
+          ],
+          "p": 0.016
+        }
+      }
+    }
+  }
+}

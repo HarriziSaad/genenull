@@ -1,0 +1,710 @@
+{
+  "specified_before_running": true,
+  "calibration": {
+    "uniform noise": 0.010188222995719531,
+    "AlphaMissense": 0.021039441667732833,
+    "AlphaMissense + 0.1 x gene pathogenic fraction": 0.15442378436027937,
+    "AlphaMissense + 0.3 x gene pathogenic fraction": 0.39552112691694935
+  },
+  "primary_test": {
+    "align_adj": {
+      "clinical_minus_rest": 0.12216192497394854,
+      "p_exact": 0.0009208541716281655,
+      "n_splits": 125970,
+      "n_clinical": 12,
+      "n_rest": 8,
+      "atlas_level_rho": 0.6855106213838521,
+      "atlas_level_p_exact": 0.0013388675308179951
+    },
+    "align_benign": {
+      "clinical_minus_rest": 0.22960998841057897,
+      "p_exact": 0.004270858140827181,
+      "n_splits": 125970,
+      "n_clinical": 12,
+      "n_rest": 8,
+      "atlas_level_rho": 0.630669771673144,
+      "atlas_level_p_exact": 0.00389072228081516
+    },
+    "align_adj_ge5": {
+      "clinical_minus_rest": 0.1387380647246563,
+      "p_exact": 0.0016114948003492894,
+      "n_splits": 125970,
+      "n_clinical": 12,
+      "n_rest": 8,
+      "atlas_level_rho": 0.5895391343901129,
+      "atlas_level_p_exact": 0.007765794576940088
+    },
+    "align_adj_ge10": {
+      "clinical_minus_rest": 0.125167370795953,
+      "p_exact": 0.027395411605937923,
+      "n_splits": 125970,
+      "n_clinical": 12,
+      "n_rest": 8,
+      "atlas_level_rho": 0.42501658525798836,
+      "atlas_level_p_exact": 0.06507944068315585
+    }
+  },
+  "S4_covariates": {
+    "n_genes": 1248,
+    "rho_path_frac_vs": {
+      "mis_z": -0.011031820594373038,
+      "loeuf": 0.12799886323322493,
+      "pli": -0.003770008917216623,
+      "cds_length": -0.3637849990369398,
+      "log_n": 0.10923203092923536,
+      "density": 0.3669907773626825
+    }
+  },
+  "S5_two_star": {
+    "n_variants": 14146,
+    "n_genes": 427
+  },
+  "S6_three_predictor_set": {
+    "n_variants": 96142,
+    "n_genes": 1860,
+    "AlphaMissense": {
+      "alignment": 0.0678348581319445,
+      "ci": [
+        0.01895565179242162,
+        0.11201429460378103
+      ],
+      "n_genes": 1860,
+      "alignment_covariate_adjusted": 0.020284509225759816,
+      "n_genes_adjusted": 1724
+    },
+    "VARITY_R_LOO": {
+      "alignment": 0.2268944675700363,
+      "ci": [
+        0.18445968664749035,
+        0.2696451980371089
+      ],
+      "n_genes": 1860,
+      "alignment_covariate_adjusted": 0.07322964298446155,
+      "n_genes_adjusted": 1724
+    },
+    "gMVP": {
+      "alignment": 0.18966765159765245,
+      "ci": [
+        0.1422238596656769,
+        0.23408626426118997
+      ],
+      "n_genes": 1860,
+      "alignment_covariate_adjusted": 0.044781692794292484,
+      "n_genes_adjusted": 1724
+    },
+    "VARITY_R (not LOO)": {
+      "alignment": 0.22791127514562234,
+      "ci": [
+        0.1852626931573874,
+        0.2712714980038999
+      ],
+      "n_genes": 1860,
+      "alignment_covariate_adjusted": 0.07411622501908542,
+      "n_genes_adjusted": 1724
+    }
+  },
+  "S7_proteingym_replication": {
+    "n_variants": 37083,
+    "n_proteins": 922,
+    "overlap_with_our_clinvar_variants": 0.846021152069001,
+    "label_agreement_on_overlap": 0.9997572638784378,
+    "AlphaMissense": {
+      "alignment": -0.019015553573848286,
+      "ci": [
+        -0.09428261005959153,
+        0.04084286327261864
+      ],
+      "n_proteins": 922
+    },
+    "VARITY_R_LOO": {
+      "alignment": 0.16705315423190906,
+      "ci": [
+        0.10316024632356556,
+        0.2274839413742811
+      ],
+      "n_proteins": 922
+    },
+    "gMVP": {
+      "alignment": 0.11589560486710997,
+      "ci": [
+        0.04796837515536934,
+        0.1819459963990636
+      ],
+      "n_proteins": 922
+    },
+    "not_in_our_set": {
+      "n_variants": 2655,
+      "n_proteins": 121,
+      "AlphaMissense": {
+        "alignment": -0.08808215309808647,
+        "ci": [
+          -0.24662198967320695,
+          0.10307939741740012
+        ],
+        "n_proteins": 121
+      },
+      "VARITY_R_LOO": {
+        "alignment": -0.011732990151041758,
+        "ci": [
+          -0.17512734152262813,
+          0.16560914051132375
+        ],
+        "n_proteins": 121
+      },
+      "gMVP": {
+        "alignment": 0.026936396799676462,
+        "ci": [
+          -0.1532973091849401,
+          0.2096359085313853
+        ],
+        "n_proteins": 121
+      }
+    }
+  },
+  "robustness_group_tests": {
+    "align_benign_broad": {
+      "clinical_minus_rest": 0.0708121120643076,
+      "p_exact": 0.004239104548702072
+    },
+    "align_adj_partial": {
+      "clinical_minus_rest": 0.06414635592788655,
+      "p_exact": 0.033095181392395014
+    },
+    "align_adj_2star": {
+      "clinical_minus_rest": 0.1424999762680707,
+      "p_exact": 0.0017464475668810034
+    },
+    "align_adj_partial_constraint": {
+      "clinical_minus_rest": 0.11042061013436115,
+      "p_exact": 0.002016353099944431
+    },
+    "align_adj_partial_constraint_cds": {
+      "clinical_minus_rest": 0.10492927504687767,
+      "p_exact": 0.004207350956576963
+    },
+    "align_adj_partial_depth": {
+      "clinical_minus_rest": 0.11516443856236987,
+      "p_exact": 0.0015479876160990713
+    },
+    "align_adj_partial_cds": {
+      "clinical_minus_rest": 0.09415958012194747,
+      "p_exact": 0.006811145510835914
+    },
+    "align_adj_partial_density": {
+      "clinical_minus_rest": 0.06979938065912995,
+      "p_exact": 0.017591490037310472
+    },
+    "align_adj_partial_constraint_density": {
+      "clinical_minus_rest": 0.061412921769251366,
+      "p_exact": 0.035619591966341194
+    }
+  },
+  "per_predictor": [
+    {
+      "predictor": "SIFT_score",
+      "atlas_type": "Population-free",
+      "align_adj": 0.04420781760226429,
+      "align_adj_ci": [
+        -0.008088906795329514,
+        0.10171582646059338
+      ],
+      "align_benign": -0.08982988077506197,
+      "align_pathogenic": 0.09187200908469413,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.04635345623826869,
+      "align_adj_ge10": 0.033086629930469166,
+      "align_benign_broad": 0.4276499668154046,
+      "align_adj_partial": -0.0015613438543259116,
+      "align_adj_partial_constraint": 0.072762017706882,
+      "align_adj_partial_constraint_cds": 0.062006333395965764,
+      "align_adj_partial_depth": 0.03334736853039559,
+      "align_adj_partial_cds": 0.06257103869065293,
+      "align_adj_partial_density": -0.032296896874566,
+      "align_adj_partial_constraint_density": -0.010407689442630904,
+      "align_adj_2star": 0.0001615814205812491
+    },
+    {
+      "predictor": "Polyphen2_HVAR_score",
+      "atlas_type": "Clinical-trained",
+      "align_adj": -0.0008064455400960057,
+      "align_adj_ci": [
+        -0.0512299953818557,
+        0.05191722068200953
+      ],
+      "align_benign": -0.1568950393520245,
+      "align_pathogenic": 0.08393597417060777,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.009326448091752194,
+      "align_adj_ge10": -0.002559819587938336,
+      "align_benign_broad": 0.4221108480065394,
+      "align_adj_partial": -0.0459027080012522,
+      "align_adj_partial_constraint": 0.015211314486381642,
+      "align_adj_partial_constraint_cds": 0.01955461695564312,
+      "align_adj_partial_depth": -0.01928224236823005,
+      "align_adj_partial_cds": 0.0013343227968622205,
+      "align_adj_partial_density": -0.08308686422500217,
+      "align_adj_partial_constraint_density": -0.06629798620503419,
+      "align_adj_2star": 0.0612309555497002
+    },
+    {
+      "predictor": "MutationTaster_score",
+      "atlas_type": "Clinical-trained",
+      "align_adj": 0.18920780255978453,
+      "align_adj_ci": [
+        0.13881902720146297,
+        0.2354578526619787
+      ],
+      "align_benign": 0.18258150709314286,
+      "align_pathogenic": 0.33153728233229285,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.17792738010102033,
+      "align_adj_ge10": 0.169517924238661,
+      "align_benign_broad": 0.40050275726306267,
+      "align_adj_partial": 0.03921216629580593,
+      "align_adj_partial_constraint": 0.18789472391552164,
+      "align_adj_partial_constraint_cds": 0.13684114089668517,
+      "align_adj_partial_depth": 0.14749673067246172,
+      "align_adj_partial_cds": 0.14734832213855079,
+      "align_adj_partial_density": 0.04233274732934079,
+      "align_adj_partial_constraint_density": 0.06538477750091926,
+      "align_adj_2star": 0.09857137341696202
+    },
+    {
+      "predictor": "MutationAssessor_score",
+      "atlas_type": "Population-free",
+      "align_adj": 0.018205233954317356,
+      "align_adj_ci": [
+        -0.033136398342800986,
+        0.0713194970805447
+      ],
+      "align_benign": -0.07586199450931085,
+      "align_pathogenic": 0.20004932529392871,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.06779213026056126,
+      "align_adj_ge10": 0.07748469389200667,
+      "align_benign_broad": 0.4393711567910415,
+      "align_adj_partial": -0.05398655770234207,
+      "align_adj_partial_constraint": 0.013568421887719622,
+      "align_adj_partial_constraint_cds": -0.006195775441883061,
+      "align_adj_partial_depth": 0.015522862978902645,
+      "align_adj_partial_cds": 0.001964030524977242,
+      "align_adj_partial_density": -0.03019291719966497,
+      "align_adj_partial_constraint_density": -0.04834960398436569,
+      "align_adj_2star": 0.06394831408694661
+    },
+    {
+      "predictor": "PROVEAN_score",
+      "atlas_type": "Population-free",
+      "align_adj": 0.05502123899604214,
+      "align_adj_ci": [
+        0.0005220836673558064,
+        0.10650985423785894
+      ],
+      "align_benign": -0.05477886445741731,
+      "align_pathogenic": 0.13315193808562145,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.07150893722604994,
+      "align_adj_ge10": 0.06292583974454187,
+      "align_benign_broad": 0.39194395571113927,
+      "align_adj_partial": -0.009150228989854018,
+      "align_adj_partial_constraint": 0.060901400263374046,
+      "align_adj_partial_constraint_cds": 0.04029674013979317,
+      "align_adj_partial_depth": 0.04059569163546289,
+      "align_adj_partial_cds": 0.04330186379914123,
+      "align_adj_partial_density": -0.012110441570204352,
+      "align_adj_partial_constraint_density": -0.006203820544308658,
+      "align_adj_2star": 0.05279680626529556
+    },
+    {
+      "predictor": "VEST4_score",
+      "atlas_type": "Clinical-trained",
+      "align_adj": 0.08891960927477535,
+      "align_adj_ci": [
+        0.035403125630757495,
+        0.13620201076372673
+      ],
+      "align_benign": 0.03940312820082033,
+      "align_pathogenic": 0.1917716147274957,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.09054220340233299,
+      "align_adj_ge10": 0.04953878070988352,
+      "align_benign_broad": 0.4826836224765413,
+      "align_adj_partial": 0.04033552367529645,
+      "align_adj_partial_constraint": 0.09874314349173392,
+      "align_adj_partial_constraint_cds": 0.08523306439524161,
+      "align_adj_partial_depth": 0.05878062575834035,
+      "align_adj_partial_cds": 0.09099551501139959,
+      "align_adj_partial_density": 0.01972638118495423,
+      "align_adj_partial_constraint_density": 0.04053246456463021,
+      "align_adj_2star": 0.13365728334295543
+    },
+    {
+      "predictor": "MVP_score",
+      "atlas_type": "Clinical-trained",
+      "align_adj": 0.24454942064880095,
+      "align_adj_ci": [
+        0.19082372312383936,
+        0.2897874568849372
+      ],
+      "align_benign": 0.41154642693706095,
+      "align_pathogenic": 0.4438442411691433,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.2557477060168511,
+      "align_adj_ge10": 0.2904523387266961,
+      "align_benign_broad": 0.5042021378843364,
+      "align_adj_partial": 0.12931647371280092,
+      "align_adj_partial_constraint": 0.23692120151923984,
+      "align_adj_partial_constraint_cds": 0.22462290052426848,
+      "align_adj_partial_depth": 0.2199176317837172,
+      "align_adj_partial_cds": 0.2199855870921383,
+      "align_adj_partial_density": 0.12393152350357255,
+      "align_adj_partial_constraint_density": 0.12197338616008778,
+      "align_adj_2star": 0.26202077081219216
+    },
+    {
+      "predictor": "gMVP_score",
+      "atlas_type": "Clinical-trained",
+      "align_adj": 0.1438668771156953,
+      "align_adj_ci": [
+        0.09504575990090872,
+        0.19681097516460364
+      ],
+      "align_benign": 0.3314767163940236,
+      "align_pathogenic": 0.3493286115082185,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.17810594777166244,
+      "align_adj_ge10": 0.24652107666732945,
+      "align_benign_broad": 0.44234375965490813,
+      "align_adj_partial": 0.008223444218278352,
+      "align_adj_partial_constraint": 0.1226232067962379,
+      "align_adj_partial_constraint_cds": 0.07982929034713473,
+      "align_adj_partial_depth": 0.11286872953286291,
+      "align_adj_partial_cds": 0.11420257781496528,
+      "align_adj_partial_density": 0.03933245711342212,
+      "align_adj_partial_constraint_density": 0.03163524023653295,
+      "align_adj_2star": 0.13234535938520178
+    },
+    {
+      "predictor": "MPC_score",
+      "atlas_type": "Clinical-trained",
+      "align_adj": 0.11460485023580529,
+      "align_adj_ci": [
+        0.06517063056429581,
+        0.1694947088697328
+      ],
+      "align_benign": 0.08047562224362656,
+      "align_pathogenic": 0.12456753759672769,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.08603201629490384,
+      "align_adj_ge10": 0.05226103026188635,
+      "align_benign_broad": 0.3220545811531454,
+      "align_adj_partial": 0.03282420733937484,
+      "align_adj_partial_constraint": 0.14790717800090286,
+      "align_adj_partial_constraint_cds": 0.0607243434633153,
+      "align_adj_partial_depth": 0.09180151288943546,
+      "align_adj_partial_cds": 0.11099400913168724,
+      "align_adj_partial_density": 0.06361437911233062,
+      "align_adj_partial_constraint_density": 0.11026338026318315,
+      "align_adj_2star": 0.008656246980888143
+    },
+    {
+      "predictor": "PrimateAI_score",
+      "atlas_type": "Population-tuned",
+      "align_adj": 0.0489687421116784,
+      "align_adj_ci": [
+        -3.054405329332933e-05,
+        0.10720774648886548
+      ],
+      "align_benign": 0.03931079515709996,
+      "align_pathogenic": 0.04425504697203727,
+      "n_genes": 1359,
+      "align_adj_ge5": -0.007808580761373124,
+      "align_adj_ge10": -0.010666873021218949,
+      "align_benign_broad": 0.4276822569304667,
+      "align_adj_partial": 0.06759351071280949,
+      "align_adj_partial_constraint": 0.09865253394616556,
+      "align_adj_partial_constraint_cds": 0.08421446423847814,
+      "align_adj_partial_depth": 0.030719575947127643,
+      "align_adj_partial_cds": 0.08845611577049932,
+      "align_adj_partial_density": 0.01400812860967856,
+      "align_adj_partial_constraint_density": 0.07769920211263973,
+      "align_adj_2star": -0.01578579555936182
+    },
+    {
+      "predictor": "DEOGEN2_score",
+      "atlas_type": "Clinical-trained",
+      "align_adj": 0.21421330457552942,
+      "align_adj_ci": [
+        0.16536552167134005,
+        0.2656727787154739
+      ],
+      "align_benign": 0.3399304565868531,
+      "align_pathogenic": 0.3675400239122771,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.23975136467159766,
+      "align_adj_ge10": 0.2597493906282151,
+      "align_benign_broad": 0.4676185204744204,
+      "align_adj_partial": 0.14017811722355727,
+      "align_adj_partial_constraint": 0.2347747845422794,
+      "align_adj_partial_constraint_cds": 0.21884651373193742,
+      "align_adj_partial_depth": 0.2044468591712731,
+      "align_adj_partial_cds": 0.2199266753569519,
+      "align_adj_partial_density": 0.12363468641311973,
+      "align_adj_partial_constraint_density": 0.13958844513539628,
+      "align_adj_2star": 0.2619461473316947
+    },
+    {
+      "predictor": "LIST-S2_score",
+      "atlas_type": "Population-tuned",
+      "align_adj": 0.08664966861424578,
+      "align_adj_ci": [
+        0.03324045038058068,
+        0.14231026931598137
+      ],
+      "align_benign": 0.026553589798800747,
+      "align_pathogenic": 0.11570340654495263,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.05547472108171493,
+      "align_adj_ge10": -0.022345616916578312,
+      "align_benign_broad": 0.4752831895704269,
+      "align_adj_partial": 0.09500903238849698,
+      "align_adj_partial_constraint": 0.11611827161548582,
+      "align_adj_partial_constraint_cds": 0.11505090751635003,
+      "align_adj_partial_depth": 0.06945909351782098,
+      "align_adj_partial_cds": 0.15023639537596672,
+      "align_adj_partial_density": 0.06666843822188427,
+      "align_adj_partial_constraint_density": 0.09273979955720227,
+      "align_adj_2star": 0.07257673110983634
+    },
+    {
+      "predictor": "VARITY_R_LOO_score",
+      "atlas_type": "Clinical-trained",
+      "align_adj": 0.1874803983264288,
+      "align_adj_ci": [
+        0.14372558254685577,
+        0.23845181237468427
+      ],
+      "align_benign": 0.17695623427048293,
+      "align_pathogenic": 0.3338937681409544,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.18772659963503469,
+      "align_adj_ge10": 0.13414695711847174,
+      "align_benign_broad": 0.47618717842865715,
+      "align_adj_partial": 0.0511128096485987,
+      "align_adj_partial_constraint": 0.1899017098262758,
+      "align_adj_partial_constraint_cds": 0.12849663430244251,
+      "align_adj_partial_depth": 0.18050487438819868,
+      "align_adj_partial_cds": 0.13403728324101785,
+      "align_adj_partial_density": 0.091711649456179,
+      "align_adj_partial_constraint_density": 0.09521106634395564,
+      "align_adj_2star": 0.12077810318511813
+    },
+    {
+      "predictor": "ESM1b_score",
+      "atlas_type": "Population-free",
+      "align_adj": 0.03644669677555242,
+      "align_adj_ci": [
+        -0.012870119337404068,
+        0.0927214105418358
+      ],
+      "align_benign": -0.006857558110202151,
+      "align_pathogenic": 0.09657347216153418,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.03051731391805163,
+      "align_adj_ge10": 0.07942014566889492,
+      "align_benign_broad": 0.37729659930849474,
+      "align_adj_partial": 0.03121701407750995,
+      "align_adj_partial_constraint": 0.06465336023487726,
+      "align_adj_partial_constraint_cds": 0.059188201690251234,
+      "align_adj_partial_depth": 0.01722477603519374,
+      "align_adj_partial_cds": 0.07300623290892952,
+      "align_adj_partial_density": -0.002483135559374076,
+      "align_adj_partial_constraint_density": 0.026901441833294806,
+      "align_adj_2star": 0.01066977008443147
+    },
+    {
+      "predictor": "AlphaMissense_score",
+      "atlas_type": "Population-tuned",
+      "align_adj": 0.021039441667732833,
+      "align_adj_ci": [
+        -0.0288841680560773,
+        0.07477260970735884
+      ],
+      "align_benign": -0.004114256090573043,
+      "align_pathogenic": 0.07478136756880595,
+      "n_genes": 1359,
+      "align_adj_ge5": -0.0005192512777312812,
+      "align_adj_ge10": 0.04644155672178262,
+      "align_benign_broad": 0.3962428113888376,
+      "align_adj_partial": -0.026151893526561856,
+      "align_adj_partial_constraint": 0.05492789711498889,
+      "align_adj_partial_constraint_cds": 0.023329483274606957,
+      "align_adj_partial_depth": 0.0028710510999856416,
+      "align_adj_partial_cds": 0.04357575212736542,
+      "align_adj_partial_density": -0.04275600115564414,
+      "align_adj_partial_constraint_density": -0.006264053823786473,
+      "align_adj_2star": -0.0315912491636894
+    },
+    {
+      "predictor": "PHACTboost_score",
+      "atlas_type": "Clinical-trained",
+      "align_adj": 0.11242077292231029,
+      "align_adj_ci": [
+        0.059181261957157956,
+        0.16824222976662204
+      ],
+      "align_benign": 0.20255942511207253,
+      "align_pathogenic": 0.32057933558569035,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.13313872392525183,
+      "align_adj_ge10": 0.14701282527025164,
+      "align_benign_broad": 0.6033283643604275,
+      "align_adj_partial": 0.04631759134096244,
+      "align_adj_partial_constraint": 0.14712018324203738,
+      "align_adj_partial_constraint_cds": 0.14717139201038923,
+      "align_adj_partial_depth": 0.06690687048122929,
+      "align_adj_partial_cds": 0.1658460682445931,
+      "align_adj_partial_density": -0.008292023946905626,
+      "align_adj_partial_constraint_density": 0.026631055515171347,
+      "align_adj_2star": 0.09850654041376124
+    },
+    {
+      "predictor": "MutFormer_score",
+      "atlas_type": "Clinical-trained",
+      "align_adj": 0.2816074583346102,
+      "align_adj_ci": [
+        0.2288652612373823,
+        0.3310585089928842
+      ],
+      "align_benign": 0.44775582672355396,
+      "align_pathogenic": 0.4465575348374554,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.28538294577653683,
+      "align_adj_ge10": 0.3048024806880309,
+      "align_benign_broad": 0.5505038053641863,
+      "align_adj_partial": 0.18759762754161666,
+      "align_adj_partial_constraint": 0.2953022518000391,
+      "align_adj_partial_constraint_cds": 0.2963963792565424,
+      "align_adj_partial_depth": 0.26997353903189875,
+      "align_adj_partial_cds": 0.2905603786195716,
+      "align_adj_partial_density": 0.15571288554097237,
+      "align_adj_partial_constraint_density": 0.16387069748161265,
+      "align_adj_2star": 0.24984303595295637
+    },
+    {
+      "predictor": "MutScore_score",
+      "atlas_type": "Clinical-trained",
+      "align_adj": 0.1890631620422685,
+      "align_adj_ci": [
+        0.13629883316369149,
+        0.2490401057123845
+      ],
+      "align_benign": 0.2928369454115526,
+      "align_pathogenic": 0.47351164439976756,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.3068349960487831,
+      "align_adj_ge10": 0.3736895885511066,
+      "align_benign_broad": 0.4578759504760826,
+      "align_adj_partial": 0.08045466057326443,
+      "align_adj_partial_constraint": 0.21799778549916926,
+      "align_adj_partial_constraint_cds": 0.2279286775915612,
+      "align_adj_partial_depth": 0.14863227712348293,
+      "align_adj_partial_cds": 0.24069212022637876,
+      "align_adj_partial_density": 0.013467830755574596,
+      "align_adj_partial_constraint_density": 0.042264830252553814,
+      "align_adj_2star": 0.2940644633715835
+    },
+    {
+      "predictor": "DANN_score",
+      "atlas_type": "Clinical-trained",
+      "align_adj": 0.08590995945389462,
+      "align_adj_ci": [
+        0.03376493937665128,
+        0.13942582831900807
+      ],
+      "align_benign": -0.05842510524608161,
+      "align_pathogenic": 0.00652862568434642,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.028210890321699673,
+      "align_adj_ge10": -0.11076927612895371,
+      "align_benign_broad": 0.4878560765062237,
+      "align_adj_partial": 0.0994631243728231,
+      "align_adj_partial_constraint": 0.11675887978141729,
+      "align_adj_partial_constraint_cds": 0.10250750100721946,
+      "align_adj_partial_depth": 0.09156563036199121,
+      "align_adj_partial_cds": 0.12361700373439283,
+      "align_adj_partial_density": 0.09199808414136533,
+      "align_adj_partial_constraint_density": 0.10935079533623616,
+      "align_adj_2star": -0.022262311926667118
+    },
+    {
+      "predictor": "MutPred2_score",
+      "atlas_type": "Clinical-trained",
+      "align_adj": 0.14094405416282638,
+      "align_adj_ci": [
+        0.08686087157209658,
+        0.1925547914716073
+      ],
+      "align_benign": 0.1345143413675313,
+      "align_pathogenic": 0.24852804741432236,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.12390496165995063,
+      "align_adj_ge10": 0.0748756441697693,
+      "align_benign_broad": 0.5023626808567281,
+      "align_adj_partial": 0.04804319202708166,
+      "align_adj_partial_constraint": 0.1358929746571687,
+      "align_adj_partial_constraint_cds": 0.08570312454642616,
+      "align_adj_partial_depth": 0.12930398322101824,
+      "align_adj_partial_cds": 0.11820838849166945,
+      "align_adj_partial_density": 0.07809986157695342,
+      "align_adj_partial_constraint_density": 0.0767604564798075,
+      "align_adj_2star": 0.09307706548459266
+    },
+    {
+      "predictor": "MisFit_S_score",
+      "atlas_type": "not in Atlas",
+      "align_adj": 0.08495305162561378,
+      "align_adj_ci": [
+        0.02795607742898018,
+        0.13913012902937147
+      ],
+      "align_benign": 0.04290117795883215,
+      "align_pathogenic": 0.09494635169768345,
+      "n_genes": 1359,
+      "align_adj_ge5": 0.04396275173472798,
+      "align_adj_ge10": 0.040860716676978735,
+      "align_benign_broad": 0.37160942746265435,
+      "align_adj_partial": 0.10219641330145658,
+      "align_adj_partial_constraint": 0.13632038822207013,
+      "align_adj_partial_constraint_cds": 0.11276208311112251,
+      "align_adj_partial_depth": 0.07045511594539638,
+      "align_adj_partial_cds": 0.13225275920558524,
+      "align_adj_partial_density": 0.058950180490813124,
+      "align_adj_partial_constraint_density": 0.12034484108029252,
+      "align_adj_2star": 0.011856576367756055
+    },
+    {
+      "predictor": "popEVE_score",
+      "atlas_type": "Population-tuned",
+      "align_adj": -0.03624999026220278,
+      "align_adj_ci": [
+        -0.0864117731778419,
+        0.017119593382448187
+      ],
+      "align_benign": -0.10847449596530857,
+      "align_pathogenic": 0.06118850971163525,
+      "n_genes": 1359,
+      "align_adj_ge5": -0.028823132867810054,
+      "align_adj_ge10": 0.023633264980160353,
+      "align_benign_broad": 0.36308363480446926,
+      "align_adj_partial": -0.0665723654429358,
+      "align_adj_partial_constraint": -0.0321873441393813,
+      "align_adj_partial_constraint_cds": -0.04857039814492282,
+      "align_adj_partial_depth": -0.056978922138351776,
+      "align_adj_partial_cds": 0.02811475833921542,
+      "align_adj_partial_density": -0.060186073849451356,
+      "align_adj_partial_constraint_density": -0.05281516399414305,
+      "align_adj_2star": -0.103590110841905
+    }
+  ]
+}

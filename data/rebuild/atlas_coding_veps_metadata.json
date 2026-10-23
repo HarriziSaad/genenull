@@ -1,0 +1,10 @@
+{
+  "source": "Atlas of Variant Effects Alliance, coding VEP table (compiled by B. Livesey and T. Walsh, Marsh lab, University of Edinburgh)",
+  "page": "https://www.varianteffect.org/veps/",
+  "sheet": "https://docs.google.com/spreadsheets/d/17Zsqz-VIS8HQ_Rfl135zRozjyEEcvf9sYdBkxoXwWqc/edit#gid=0",
+  "export_url": "https://docs.google.com/spreadsheets/d/17Zsqz-VIS8HQ_Rfl135zRozjyEEcvf9sYdBkxoXwWqc/export?format=csv&gid=0",
+  "page_last_modified": "2026-08-28",
+  "retrieved": "2026-10-05",
+  "sha256": "7bc2d034cd2bf464a6a4437537883b6a5020a0b4fee4c29bb68ccb07dde0fc3c",
+  "use": "External classification of predictor training (Population-free / Population-tuned / Clinical-trained), suggested by Reviewer 2 (R2.7). Read by scripts/rebuild/33_dbnsfp_matched.py; not edited by hand."
+}

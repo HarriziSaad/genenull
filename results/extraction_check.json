@@ -1,0 +1,34 @@
+{
+  "agreement": {
+    "AlphaMissense_score": {
+      "n": 189734,
+      "identical_within_1e-3": 0.7139416235361085,
+      "differ_by_more_than_0.05": 0.04537404998576955,
+      "pearson": 0.9961656995305398
+    },
+    "VARITY_R_LOO_score": {
+      "n": 182382,
+      "identical_within_1e-3": 0.999791646105427,
+      "differ_by_more_than_0.05": 0.00011514294173767148,
+      "pearson": 0.9999843991309729
+    },
+    "gMVP_score": {
+      "n": 171737,
+      "identical_within_1e-3": 0.004448662780880066,
+      "differ_by_more_than_0.05": 0.7603603183938231,
+      "pearson": 0.9443375632618791
+    }
+  },
+  "alignment_dbnsfp_vs_direct": {
+    "AlphaMissense_score": {
+      "dbnsfp": 0.021039441667732833,
+      "direct": 0.02201774061805636,
+      "n_variants": 58569
+    },
+    "VARITY_R_LOO_score": {
+      "dbnsfp": 0.1874803983264288,
+      "direct": 0.1874803983264288,
+      "n_variants": 58569
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "old_release": "variant_summary_2023-12",
+  "status_counts": {
+    "same": 117441,
+    "new": 80425,
+    "changed": 38
+  },
+  "panel_new_variants": 45584,
+  "T1_new_labels": {
+    "n_genes": 354,
+    "clinical_minus_rest": 0.07166930296920629,
+    "p_exact": 0.04012066365007542,
+    "n_splits": 125970,
+    "atlas_level_rho": 0.5209880722517276,
+    "atlas_level_p_exact": 0.020987763526463216,
+    "by_type": {
+      "Clinical-trained": 0.04257617400630757,
+      "Population-free": -0.03878761831072857,
+      "Population-tuned": -0.014452274896744412,
+      "not in Atlas": 0.005124205774510095
+    },
+    "per_predictor": {
+      "SIFT_score": -0.03072466909171176,
+      "Polyphen2_HVAR_score": -0.07120377050495351,
+      "MutationTaster_score": 0.08217089409353215,
+      "MutationAssessor_score": -0.07767258476009839,
+      "PROVEAN_score": -0.07238886063192876,
+      "VEST4_score": -0.052776356413887275,
+      "MVP_score": 0.15956733215319024,
+      "gMVP_score": 0.045280076189539276,
+      "MPC_score": 0.012897985696360807,
+      "PrimateAI_score": -0.020701260954172313,
+      "DEOGEN2_score": 0.10172116044670226,
+      "LIST-S2_score": 0.00254796406795274,
+      "VARITY_R_LOO_score": 0.008629956462951229,
+      "ESM1b_score": 0.02563564124082463,
+      "AlphaMissense_score": 0.01711798353405441,
+      "PHACTboost_score": -0.029705862303708138,
+      "MutFormer_score": 0.21327319754896132,
+      "MutScore_score": 0.07175755220260276,
+      "DANN_score": -0.019872414953732716,
+      "MutPred2_score": 0.03175051146443997,
+      "MisFit_S_score": 0.005124205774510095,
+      "popEVE_score": -0.05677378623481249
+    }
+  },
+  "T2_historical_composition": {
+    "n_genes": 1023,
+    "clinical_minus_rest": 0.10106440311056883,
+    "p_exact": 0.003167420814479638,
+    "n_splits": 125970,
+    "atlas_level_rho": 0.6855106213838521,
+    "atlas_level_p_exact": 0.0013388675308179951,
+    "by_type": {
+      "Clinical-trained": 0.19855289870499954,
+      "Population-free": 0.06138790104279111,
+      "Population-tuned": 0.12968366571053258,
+      "not in Atlas": 0.17567824738720741
+    },
+    "per_predictor": {
+      "SIFT_score": 0.10569200358193807,
+      "Polyphen2_HVAR_score": 0.03368153895418989,
+      "MutationTaster_score": 0.22777270365230176,
+      "MutationAssessor_score": 0.022439759971198188,
+      "PROVEAN_score": 0.04512128409419727,
+      "VEST4_score": 0.1312744650408435,
+      "MVP_score": 0.2259567332799781,
+      "gMVP_score": 0.17003636829578642,
+      "MPC_score": 0.2219854453182251,
+      "PrimateAI_score": 0.14425850912356358,
+      "DEOGEN2_score": 0.24396423080399346,
+      "LIST-S2_score": 0.16264906804825266,
+      "VARITY_R_LOO_score": 0.2123876018582126,
+      "ESM1b_score": 0.07229855652383092,
+      "AlphaMissense_score": 0.1336935974424592,
+      "PHACTboost_score": 0.2313266494193223,
+      "MutFormer_score": 0.26161749214110436,
+      "MutScore_score": 0.29359507349507763,
+      "DANN_score": 0.14354468373707976,
+      "MutPred2_score": 0.18404469716887886,
+      "MisFit_S_score": 0.17567824738720741,
+      "popEVE_score": 0.07813348822785492
+    }
+  },
+  "three_predictor_new": {
+    "n_variants": 68542,
+    "VARITY_R_LOO": {
+      "alignment": 0.08033738433630319,
+      "ci": [
+        -0.0016524480407909708,
+        0.15771847676935255
+      ],
+      "n_genes": 520
+    },
+    "gMVP": {
+      "alignment": 0.11517126677329034,
+      "ci": [
+        0.03060204608365791,
+        0.19631025552735742
+      ],
+      "n_genes": 520
+    },
+    "AlphaMissense": {
+      "alignment": 0.021717516431156512,
+      "ci": [
+        -0.05888856362769484,
+        0.10292907925270318
+      ],
+      "n_genes": 520
+    }
+  }
+}
